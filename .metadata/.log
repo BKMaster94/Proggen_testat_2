@@ -696,3 +696,91 @@ user global configuration and to define the default location to store repositori
 not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
 EGit might behave differently since they see different configuration options.
 This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY tern.eclipse.ide.core 4 0 2017-06-06 21:49:29.820
+!MESSAGE java.io.IOException: Cannot run program "node" (in directory "D:\Java Workspace\Proggen_testat_2"): CreateProcess error=2, Das System kann die angegebene Datei nicht finden
+!STACK 0
+tern.TernException: java.io.IOException: Cannot run program "node" (in directory "D:\Java Workspace\Proggen_testat_2"): CreateProcess error=2, Das System kann die angegebene Datei nicht finden
+	at tern.eclipse.ide.internal.core.resources.IDETernFileUploader$1.onError(IDETernFileUploader.java:133)
+	at tern.server.nodejs.NodejsTernServer.request(NodejsTernServer.java:131)
+	at tern.eclipse.ide.internal.core.resources.IDETernFileUploader.run(IDETernFileUploader.java:124)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+Caused by: tern.server.nodejs.process.NodejsProcessException: java.io.IOException: Cannot run program "node" (in directory "D:\Java Workspace\Proggen_testat_2"): CreateProcess error=2, Das System kann die angegebene Datei nicht finden
+	at tern.server.nodejs.process.internal.NodejsProcess.start(NodejsProcess.java:245)
+	at tern.server.nodejs.process.AbstractNodejsProcess.start(AbstractNodejsProcess.java:144)
+	at tern.server.nodejs.NodejsTernServer.getBaseURL(NodejsTernServer.java:202)
+	at tern.server.nodejs.NodejsTernServer.makeRequest(NodejsTernServer.java:139)
+	at tern.server.nodejs.NodejsTernServer.request(NodejsTernServer.java:127)
+	... 2 more
+Caused by: java.io.IOException: Cannot run program "node" (in directory "D:\Java Workspace\Proggen_testat_2"): CreateProcess error=2, Das System kann die angegebene Datei nicht finden
+	at java.lang.ProcessBuilder.start(Unknown Source)
+	at tern.server.nodejs.process.internal.NodejsProcess.start(NodejsProcess.java:232)
+	... 6 more
+Caused by: java.io.IOException: CreateProcess error=2, Das System kann die angegebene Datei nicht finden
+	at java.lang.ProcessImpl.create(Native Method)
+	at java.lang.ProcessImpl.<init>(Unknown Source)
+	at java.lang.ProcessImpl.start(Unknown Source)
+	... 8 more
+
+!ENTRY org.nodeclipse.ui 4 4 2017-06-06 21:49:43.141
+!MESSAGE Node.js executable can't be found!
+
+!ENTRY org.eclipse.debug.core 4 125 2017-06-06 21:49:43.280
+!MESSAGE Exception occurred executing command line.
+!STACK 0
+java.io.IOException: Cannot run program "node" (in directory "D:\Java Workspace\Proggen_testat_2"): CreateProcess error=2, Das System kann die angegebene Datei nicht finden
+	at java.lang.ProcessBuilder.start(Unknown Source)
+	at java.lang.Runtime.exec(Unknown Source)
+	at org.eclipse.debug.core.DebugPlugin.exec(DebugPlugin.java:881)
+	at org.nodeclipse.debug.launch.LaunchConfigurationDelegate.launch(LaunchConfigurationDelegate.java:229)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:885)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:739)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1039)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1256)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+Caused by: java.io.IOException: CreateProcess error=2, Das System kann die angegebene Datei nicht finden
+	at java.lang.ProcessImpl.create(Native Method)
+	at java.lang.ProcessImpl.<init>(Unknown Source)
+	at java.lang.ProcessImpl.start(Unknown Source)
+	... 9 more
+
+!ENTRY org.eclipse.debug.core 4 125 2017-06-06 21:49:46.746
+!MESSAGE Exception occurred executing command line.
+!STACK 0
+java.io.IOException: Cannot run program "node" (in directory "D:\Java Workspace\Proggen_testat_2"): CreateProcess error=2, Das System kann die angegebene Datei nicht finden
+	at java.lang.ProcessBuilder.start(Unknown Source)
+	at java.lang.Runtime.exec(Unknown Source)
+	at org.eclipse.debug.core.DebugPlugin.exec(DebugPlugin.java:881)
+	at org.nodeclipse.debug.launch.LaunchConfigurationDelegate.launch(LaunchConfigurationDelegate.java:229)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:885)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:739)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1039)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1256)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+Caused by: java.io.IOException: CreateProcess error=2, Das System kann die angegebene Datei nicht finden
+	at java.lang.ProcessImpl.create(Native Method)
+	at java.lang.ProcessImpl.<init>(Unknown Source)
+	at java.lang.ProcessImpl.start(Unknown Source)
+	... 9 more
+
+!ENTRY org.eclipse.debug.core 4 125 2017-06-06 21:49:48.215
+!MESSAGE Exception occurred executing command line.
+!STACK 0
+java.io.IOException: Cannot run program "node" (in directory "D:\Java Workspace\Proggen_testat_2"): CreateProcess error=2, Das System kann die angegebene Datei nicht finden
+	at java.lang.ProcessBuilder.start(Unknown Source)
+	at java.lang.Runtime.exec(Unknown Source)
+	at org.eclipse.debug.core.DebugPlugin.exec(DebugPlugin.java:881)
+	at org.nodeclipse.debug.launch.LaunchConfigurationDelegate.launch(LaunchConfigurationDelegate.java:229)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:885)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:739)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1039)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1256)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+Caused by: java.io.IOException: CreateProcess error=2, Das System kann die angegebene Datei nicht finden
+	at java.lang.ProcessImpl.create(Native Method)
+	at java.lang.ProcessImpl.<init>(Unknown Source)
+	at java.lang.ProcessImpl.start(Unknown Source)
+	... 9 more
+
+!ENTRY org.eclipse.wst.jsdt.js.node 4 0 2017-06-06 21:49:57.976
+!MESSAGE Unable to run Node.js program. Verify you have a configured Node.js runtime environment in your system and try again.
