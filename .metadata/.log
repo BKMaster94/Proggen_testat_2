@@ -1,0 +1,698 @@
+!SESSION 2017-06-06 21:08:45.923 -----------------------------------------------
+eclipse.buildId=4.6.3.M20170301-0400
+java.version=1.8.0_121
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=de_DE
+Framework arguments:  -product org.eclipse.epp.package.javascript.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.javascript.product
+
+!ENTRY org.eclipse.egit.ui 2 0 2017-06-06 21:09:12.757
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\Bruno'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+!SESSION 2017-06-06 21:16:58.070 -----------------------------------------------
+eclipse.buildId=4.6.3.M20170301-0400
+java.version=1.8.0_121
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=de_DE
+Framework arguments:  -product org.eclipse.epp.package.javascript.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.javascript.product
+
+!ENTRY org.eclipse.egit.ui 2 0 2017-06-06 21:17:06.965
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\Bruno'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY org.nodeclipse.ui 4 4 2017-06-06 21:29:08.128
+!MESSAGE Node.js executable can't be found!
+
+!ENTRY org.nodeclipse.ui 1 0 2017-06-06 21:29:10.863
+!MESSAGE templateRoot: C:\Users\Bruno\eclipse\javascript-neon\eclipse\configuration\org.eclipse.osgi\512\0\.cp\templates\common-templates
+
+!ENTRY org.nodeclipse.ui 1 0 2017-06-06 21:29:10.878
+!MESSAGE RelativityFileSystemStructureProvider.getContents() called. elemnt=C:\Users\Bruno\eclipse\javascript-neon\eclipse\configuration\org.eclipse.osgi\512\0\.cp\templates\common-templates\.jshintrc
+
+!ENTRY org.nodeclipse.ui 1 0 2017-06-06 21:29:10.887
+!MESSAGE RelativityFileSystemStructureProvider.getContents() called. elemnt=C:\Users\Bruno\eclipse\javascript-neon\eclipse\configuration\org.eclipse.osgi\512\0\.cp\templates\common-templates\.settings\.jsdtscope
+
+!ENTRY org.nodeclipse.ui 1 0 2017-06-06 21:29:10.893
+!MESSAGE RelativityFileSystemStructureProvider.getContents() called. elemnt=C:\Users\Bruno\eclipse\javascript-neon\eclipse\configuration\org.eclipse.osgi\512\0\.cp\templates\common-templates\.settings\com.eclipsesource.jshint.ui.prefs
+
+!ENTRY org.nodeclipse.ui 1 0 2017-06-06 21:29:11.175
+!MESSAGE RelativityFileSystemStructureProvider.getContents() called. elemnt=C:\Users\Bruno\eclipse\javascript-neon\eclipse\configuration\org.eclipse.osgi\512\0\.cp\templates\common-templates\.settings\org.eclipse.wst.jsdt.core.prefs
+
+!ENTRY org.nodeclipse.ui 1 0 2017-06-06 21:29:11.181
+!MESSAGE RelativityFileSystemStructureProvider.getContents() called. elemnt=C:\Users\Bruno\eclipse\javascript-neon\eclipse\configuration\org.eclipse.osgi\512\0\.cp\templates\common-templates\.settings\org.eclipse.wst.jsdt.ui.superType.container
+
+!ENTRY org.nodeclipse.ui 1 0 2017-06-06 21:29:11.186
+!MESSAGE RelativityFileSystemStructureProvider.getContents() called. elemnt=C:\Users\Bruno\eclipse\javascript-neon\eclipse\configuration\org.eclipse.osgi\512\0\.cp\templates\common-templates\.settings\org.eclipse.wst.jsdt.ui.superType.name
+
+!ENTRY org.nodeclipse.ui 1 0 2017-06-06 21:29:11.191
+!MESSAGE RelativityFileSystemStructureProvider.getContents() called. elemnt=C:\Users\Bruno\eclipse\javascript-neon\eclipse\configuration\org.eclipse.osgi\512\0\.cp\templates\common-templates\.sublime-project
+
+!ENTRY org.nodeclipse.ui 1 0 2017-06-06 21:29:11.197
+!MESSAGE RelativityFileSystemStructureProvider.getContents() called. elemnt=C:\Users\Bruno\eclipse\javascript-neon\eclipse\configuration\org.eclipse.osgi\512\0\.cp\templates\common-templates\README.md
+
+!ENTRY org.nodeclipse.ui 1 0 2017-06-06 21:29:11.252
+!MESSAGE templateRoot: C:\Users\Bruno\eclipse\javascript-neon\eclipse\configuration\org.eclipse.osgi\512\0\.cp\templates\tern-node
+
+!ENTRY org.nodeclipse.ui 1 0 2017-06-06 21:29:11.256
+!MESSAGE RelativityFileSystemStructureProvider.getContents() called. elemnt=C:\Users\Bruno\eclipse\javascript-neon\eclipse\configuration\org.eclipse.osgi\512\0\.cp\templates\tern-node\.tern-project
+
+!ENTRY org.nodeclipse.ui 1 0 2017-06-06 21:35:18.086
+!MESSAGE templateRoot: C:\Users\Bruno\eclipse\javascript-neon\eclipse\configuration\org.eclipse.osgi\512\0\.cp\templates\common-templates
+
+!ENTRY org.nodeclipse.ui 1 0 2017-06-06 21:35:18.096
+!MESSAGE RelativityFileSystemStructureProvider.getContents() called. elemnt=C:\Users\Bruno\eclipse\javascript-neon\eclipse\configuration\org.eclipse.osgi\512\0\.cp\templates\common-templates\.jshintrc
+
+!ENTRY org.nodeclipse.ui 1 0 2017-06-06 21:35:18.103
+!MESSAGE RelativityFileSystemStructureProvider.getContents() called. elemnt=C:\Users\Bruno\eclipse\javascript-neon\eclipse\configuration\org.eclipse.osgi\512\0\.cp\templates\common-templates\.settings\.jsdtscope
+
+!ENTRY org.nodeclipse.ui 1 0 2017-06-06 21:35:18.116
+!MESSAGE RelativityFileSystemStructureProvider.getContents() called. elemnt=C:\Users\Bruno\eclipse\javascript-neon\eclipse\configuration\org.eclipse.osgi\512\0\.cp\templates\common-templates\.settings\com.eclipsesource.jshint.ui.prefs
+
+!ENTRY org.nodeclipse.ui 1 0 2017-06-06 21:35:18.124
+!MESSAGE RelativityFileSystemStructureProvider.getContents() called. elemnt=C:\Users\Bruno\eclipse\javascript-neon\eclipse\configuration\org.eclipse.osgi\512\0\.cp\templates\common-templates\.settings\org.eclipse.wst.jsdt.core.prefs
+
+!ENTRY org.nodeclipse.ui 1 0 2017-06-06 21:35:18.133
+!MESSAGE RelativityFileSystemStructureProvider.getContents() called. elemnt=C:\Users\Bruno\eclipse\javascript-neon\eclipse\configuration\org.eclipse.osgi\512\0\.cp\templates\common-templates\.settings\org.eclipse.wst.jsdt.ui.superType.container
+
+!ENTRY org.nodeclipse.ui 1 0 2017-06-06 21:35:18.139
+!MESSAGE RelativityFileSystemStructureProvider.getContents() called. elemnt=C:\Users\Bruno\eclipse\javascript-neon\eclipse\configuration\org.eclipse.osgi\512\0\.cp\templates\common-templates\.settings\org.eclipse.wst.jsdt.ui.superType.name
+
+!ENTRY org.nodeclipse.ui 1 0 2017-06-06 21:35:18.145
+!MESSAGE RelativityFileSystemStructureProvider.getContents() called. elemnt=C:\Users\Bruno\eclipse\javascript-neon\eclipse\configuration\org.eclipse.osgi\512\0\.cp\templates\common-templates\.sublime-project
+
+!ENTRY org.nodeclipse.ui 1 0 2017-06-06 21:35:18.150
+!MESSAGE RelativityFileSystemStructureProvider.getContents() called. elemnt=C:\Users\Bruno\eclipse\javascript-neon\eclipse\configuration\org.eclipse.osgi\512\0\.cp\templates\common-templates\README.md
+
+!ENTRY org.nodeclipse.ui 1 0 2017-06-06 21:35:18.168
+!MESSAGE templateRoot: C:\Users\Bruno\eclipse\javascript-neon\eclipse\configuration\org.eclipse.osgi\512\0\.cp\templates\hello-world
+
+!ENTRY org.nodeclipse.ui 1 0 2017-06-06 21:35:18.173
+!MESSAGE RelativityFileSystemStructureProvider.getContents() called. elemnt=C:\Users\Bruno\eclipse\javascript-neon\eclipse\configuration\org.eclipse.osgi\512\0\.cp\templates\hello-world\build.gradle
+
+!ENTRY org.nodeclipse.ui 1 0 2017-06-06 21:35:18.179
+!MESSAGE RelativityFileSystemStructureProvider.getContents() called. elemnt=C:\Users\Bruno\eclipse\javascript-neon\eclipse\configuration\org.eclipse.osgi\512\0\.cp\templates\hello-world\hello-world-server.js
+
+!ENTRY org.nodeclipse.ui 1 0 2017-06-06 21:35:18.184
+!MESSAGE RelativityFileSystemStructureProvider.getContents() called. elemnt=C:\Users\Bruno\eclipse\javascript-neon\eclipse\configuration\org.eclipse.osgi\512\0\.cp\templates\hello-world\package.json
+
+!ENTRY org.nodeclipse.ui 1 0 2017-06-06 21:35:18.212
+!MESSAGE templateRoot: C:\Users\Bruno\eclipse\javascript-neon\eclipse\configuration\org.eclipse.osgi\512\0\.cp\templates\tern-node
+
+!ENTRY org.nodeclipse.ui 1 0 2017-06-06 21:35:18.216
+!MESSAGE RelativityFileSystemStructureProvider.getContents() called. elemnt=C:\Users\Bruno\eclipse\javascript-neon\eclipse\configuration\org.eclipse.osgi\512\0\.cp\templates\tern-node\.tern-project
+
+!ENTRY tern.eclipse.ide.core 4 0 2017-06-06 21:35:27.074
+!MESSAGE java.io.IOException: Cannot run program "node" (in directory "D:\Java Workspace\Testat_Proggen_2"): CreateProcess error=2, Das System kann die angegebene Datei nicht finden
+!STACK 0
+tern.TernException: java.io.IOException: Cannot run program "node" (in directory "D:\Java Workspace\Testat_Proggen_2"): CreateProcess error=2, Das System kann die angegebene Datei nicht finden
+	at tern.eclipse.ide.internal.core.resources.IDETernFileUploader$1.onError(IDETernFileUploader.java:133)
+	at tern.server.nodejs.NodejsTernServer.request(NodejsTernServer.java:131)
+	at tern.eclipse.ide.internal.core.resources.IDETernFileUploader.run(IDETernFileUploader.java:124)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+Caused by: tern.server.nodejs.process.NodejsProcessException: java.io.IOException: Cannot run program "node" (in directory "D:\Java Workspace\Testat_Proggen_2"): CreateProcess error=2, Das System kann die angegebene Datei nicht finden
+	at tern.server.nodejs.process.internal.NodejsProcess.start(NodejsProcess.java:245)
+	at tern.server.nodejs.process.AbstractNodejsProcess.start(AbstractNodejsProcess.java:144)
+	at tern.server.nodejs.NodejsTernServer.getBaseURL(NodejsTernServer.java:202)
+	at tern.server.nodejs.NodejsTernServer.makeRequest(NodejsTernServer.java:139)
+	at tern.server.nodejs.NodejsTernServer.request(NodejsTernServer.java:127)
+	... 2 more
+Caused by: java.io.IOException: Cannot run program "node" (in directory "D:\Java Workspace\Testat_Proggen_2"): CreateProcess error=2, Das System kann die angegebene Datei nicht finden
+	at java.lang.ProcessBuilder.start(Unknown Source)
+	at tern.server.nodejs.process.internal.NodejsProcess.start(NodejsProcess.java:232)
+	... 6 more
+Caused by: java.io.IOException: CreateProcess error=2, Das System kann die angegebene Datei nicht finden
+	at java.lang.ProcessImpl.create(Native Method)
+	at java.lang.ProcessImpl.<init>(Unknown Source)
+	at java.lang.ProcessImpl.start(Unknown Source)
+	... 8 more
+
+!ENTRY org.eclipse.egit.ui 4 0 2017-06-06 21:35:47.724
+!MESSAGE Failed to initialize Git team provider.
+!STACK 1
+org.eclipse.core.internal.resources.ResourceException: Problems encountered while moving resources.
+	at org.eclipse.core.internal.resources.Project.move(Project.java:975)
+	at org.eclipse.ui.ide.undo.MoveProjectOperation.moveProject(MoveProjectOperation.java:142)
+	at org.eclipse.ui.ide.undo.MoveProjectOperation.doExecute(MoveProjectOperation.java:117)
+	at org.eclipse.ui.ide.undo.AbstractWorkspaceOperation.lambda$0(AbstractWorkspaceOperation.java:197)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2240)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2267)
+	at org.eclipse.ui.ide.undo.AbstractWorkspaceOperation.execute(AbstractWorkspaceOperation.java:197)
+	at org.eclipse.egit.ui.internal.sharing.SharingWizard$1.run(SharingWizard.java:112)
+	at org.eclipse.jface.operation.ModalContext$ModalContextThread.run(ModalContext.java:119)
+Contains: Could not move '/Testat_Proggen_2'.
+org.eclipse.core.runtime.CoreException: Could not move: D:\Java Workspace\Testat_Proggen_2.
+	at org.eclipse.core.internal.filesystem.Policy.error(Policy.java:49)
+	at org.eclipse.core.filesystem.provider.FileStore.move(FileStore.java:390)
+	at org.eclipse.core.internal.filesystem.local.LocalFile.move(LocalFile.java:371)
+	at org.eclipse.core.internal.localstore.FileSystemResourceManager.move(FileSystemResourceManager.java:823)
+	at org.eclipse.core.internal.resources.ResourceTree.moveProjectContent(ResourceTree.java:763)
+	at org.eclipse.core.internal.resources.ResourceTree.standardMoveProject(ResourceTree.java:1086)
+	at org.eclipse.core.internal.resources.Project.move(Project.java:968)
+	at org.eclipse.ui.ide.undo.MoveProjectOperation.moveProject(MoveProjectOperation.java:142)
+	at org.eclipse.ui.ide.undo.MoveProjectOperation.doExecute(MoveProjectOperation.java:117)
+	at org.eclipse.ui.ide.undo.AbstractWorkspaceOperation.lambda$0(AbstractWorkspaceOperation.java:197)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2240)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2267)
+	at org.eclipse.ui.ide.undo.AbstractWorkspaceOperation.execute(AbstractWorkspaceOperation.java:197)
+	at org.eclipse.egit.ui.internal.sharing.SharingWizard$1.run(SharingWizard.java:112)
+	at org.eclipse.jface.operation.ModalContext$ModalContextThread.run(ModalContext.java:119)
+Caused by: org.eclipse.core.runtime.CoreException: Problems encountered while deleting files.
+	at org.eclipse.core.internal.filesystem.local.LocalFile.delete(LocalFile.java:139)
+	at org.eclipse.core.filesystem.provider.FileStore.move(FileStore.java:386)
+	... 13 more
+!SUBENTRY 1 org.eclipse.core.resources 1 4 2017-06-06 21:35:47.724
+!MESSAGE Problems encountered while moving resources.
+!SUBENTRY 2 org.eclipse.core.resources 1 4 2017-06-06 21:35:47.724
+!MESSAGE Could not move '/Testat_Proggen_2'.
+!STACK 1
+org.eclipse.core.runtime.CoreException: Could not move: D:\Java Workspace\Testat_Proggen_2.
+	at org.eclipse.core.internal.filesystem.Policy.error(Policy.java:49)
+	at org.eclipse.core.filesystem.provider.FileStore.move(FileStore.java:390)
+	at org.eclipse.core.internal.filesystem.local.LocalFile.move(LocalFile.java:371)
+	at org.eclipse.core.internal.localstore.FileSystemResourceManager.move(FileSystemResourceManager.java:823)
+	at org.eclipse.core.internal.resources.ResourceTree.moveProjectContent(ResourceTree.java:763)
+	at org.eclipse.core.internal.resources.ResourceTree.standardMoveProject(ResourceTree.java:1086)
+	at org.eclipse.core.internal.resources.Project.move(Project.java:968)
+	at org.eclipse.ui.ide.undo.MoveProjectOperation.moveProject(MoveProjectOperation.java:142)
+	at org.eclipse.ui.ide.undo.MoveProjectOperation.doExecute(MoveProjectOperation.java:117)
+	at org.eclipse.ui.ide.undo.AbstractWorkspaceOperation.lambda$0(AbstractWorkspaceOperation.java:197)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2240)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2267)
+	at org.eclipse.ui.ide.undo.AbstractWorkspaceOperation.execute(AbstractWorkspaceOperation.java:197)
+	at org.eclipse.egit.ui.internal.sharing.SharingWizard$1.run(SharingWizard.java:112)
+	at org.eclipse.jface.operation.ModalContext$ModalContextThread.run(ModalContext.java:119)
+Caused by: org.eclipse.core.runtime.CoreException: Problems encountered while deleting files.
+	at org.eclipse.core.internal.filesystem.local.LocalFile.delete(LocalFile.java:139)
+	at org.eclipse.core.filesystem.provider.FileStore.move(FileStore.java:386)
+	... 13 more
+!SUBENTRY 3 org.eclipse.core.filesystem 4 272 2017-06-06 21:35:47.725
+!MESSAGE Could not move: D:\Java Workspace\Testat_Proggen_2.
+!STACK 1
+org.eclipse.core.runtime.CoreException: Problems encountered while deleting files.
+	at org.eclipse.core.internal.filesystem.local.LocalFile.delete(LocalFile.java:139)
+	at org.eclipse.core.filesystem.provider.FileStore.move(FileStore.java:386)
+	at org.eclipse.core.internal.filesystem.local.LocalFile.move(LocalFile.java:371)
+	at org.eclipse.core.internal.localstore.FileSystemResourceManager.move(FileSystemResourceManager.java:823)
+	at org.eclipse.core.internal.resources.ResourceTree.moveProjectContent(ResourceTree.java:763)
+	at org.eclipse.core.internal.resources.ResourceTree.standardMoveProject(ResourceTree.java:1086)
+	at org.eclipse.core.internal.resources.Project.move(Project.java:968)
+	at org.eclipse.ui.ide.undo.MoveProjectOperation.moveProject(MoveProjectOperation.java:142)
+	at org.eclipse.ui.ide.undo.MoveProjectOperation.doExecute(MoveProjectOperation.java:117)
+	at org.eclipse.ui.ide.undo.AbstractWorkspaceOperation.lambda$0(AbstractWorkspaceOperation.java:197)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2240)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2267)
+	at org.eclipse.ui.ide.undo.AbstractWorkspaceOperation.execute(AbstractWorkspaceOperation.java:197)
+	at org.eclipse.egit.ui.internal.sharing.SharingWizard$1.run(SharingWizard.java:112)
+	at org.eclipse.jface.operation.ModalContext$ModalContextThread.run(ModalContext.java:119)
+Contains: Could not delete: D:\Java Workspace\Testat_Proggen_2\.tern-project.
+java.nio.file.FileSystemException: D:\Java Workspace\Testat_Proggen_2\.tern-project: Der Prozess kann nicht auf die Datei zugreifen, da sie von einem anderen Prozess verwendet wird.
+
+	at sun.nio.fs.WindowsException.translateToIOException(Unknown Source)
+	at sun.nio.fs.WindowsException.rethrowAsIOException(Unknown Source)
+	at sun.nio.fs.WindowsException.rethrowAsIOException(Unknown Source)
+	at sun.nio.fs.WindowsFileSystemProvider.implDelete(Unknown Source)
+	at sun.nio.fs.AbstractFileSystemProvider.deleteIfExists(Unknown Source)
+	at java.nio.file.Files.deleteIfExists(Unknown Source)
+	at org.eclipse.core.internal.filesystem.local.LocalFile.internalDelete(LocalFile.java:220)
+	at org.eclipse.core.internal.filesystem.local.LocalFile.internalDelete(LocalFile.java:248)
+	at org.eclipse.core.internal.filesystem.local.LocalFile.delete(LocalFile.java:137)
+	at org.eclipse.core.filesystem.provider.FileStore.move(FileStore.java:386)
+	at org.eclipse.core.internal.filesystem.local.LocalFile.move(LocalFile.java:371)
+	at org.eclipse.core.internal.localstore.FileSystemResourceManager.move(FileSystemResourceManager.java:823)
+	at org.eclipse.core.internal.resources.ResourceTree.moveProjectContent(ResourceTree.java:763)
+	at org.eclipse.core.internal.resources.ResourceTree.standardMoveProject(ResourceTree.java:1086)
+	at org.eclipse.core.internal.resources.Project.move(Project.java:968)
+	at org.eclipse.ui.ide.undo.MoveProjectOperation.moveProject(MoveProjectOperation.java:142)
+	at org.eclipse.ui.ide.undo.MoveProjectOperation.doExecute(MoveProjectOperation.java:117)
+	at org.eclipse.ui.ide.undo.AbstractWorkspaceOperation.lambda$0(AbstractWorkspaceOperation.java:197)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2240)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2267)
+	at org.eclipse.ui.ide.undo.AbstractWorkspaceOperation.execute(AbstractWorkspaceOperation.java:197)
+	at org.eclipse.egit.ui.internal.sharing.SharingWizard$1.run(SharingWizard.java:112)
+	at org.eclipse.jface.operation.ModalContext$ModalContextThread.run(ModalContext.java:119)
+Contains: Could not delete: D:\Java Workspace\Testat_Proggen_2.
+!SUBENTRY 4 org.eclipse.core.filesystem 4 273 2017-06-06 21:35:47.725
+!MESSAGE Problems encountered while deleting files.
+!SUBENTRY 5 org.eclipse.core.filesystem 4 273 2017-06-06 21:35:47.725
+!MESSAGE Could not delete: D:\Java Workspace\Testat_Proggen_2\.tern-project.
+!STACK 0
+java.nio.file.FileSystemException: D:\Java Workspace\Testat_Proggen_2\.tern-project: Der Prozess kann nicht auf die Datei zugreifen, da sie von einem anderen Prozess verwendet wird.
+
+	at sun.nio.fs.WindowsException.translateToIOException(Unknown Source)
+	at sun.nio.fs.WindowsException.rethrowAsIOException(Unknown Source)
+	at sun.nio.fs.WindowsException.rethrowAsIOException(Unknown Source)
+	at sun.nio.fs.WindowsFileSystemProvider.implDelete(Unknown Source)
+	at sun.nio.fs.AbstractFileSystemProvider.deleteIfExists(Unknown Source)
+	at java.nio.file.Files.deleteIfExists(Unknown Source)
+	at org.eclipse.core.internal.filesystem.local.LocalFile.internalDelete(LocalFile.java:220)
+	at org.eclipse.core.internal.filesystem.local.LocalFile.internalDelete(LocalFile.java:248)
+	at org.eclipse.core.internal.filesystem.local.LocalFile.delete(LocalFile.java:137)
+	at org.eclipse.core.filesystem.provider.FileStore.move(FileStore.java:386)
+	at org.eclipse.core.internal.filesystem.local.LocalFile.move(LocalFile.java:371)
+	at org.eclipse.core.internal.localstore.FileSystemResourceManager.move(FileSystemResourceManager.java:823)
+	at org.eclipse.core.internal.resources.ResourceTree.moveProjectContent(ResourceTree.java:763)
+	at org.eclipse.core.internal.resources.ResourceTree.standardMoveProject(ResourceTree.java:1086)
+	at org.eclipse.core.internal.resources.Project.move(Project.java:968)
+	at org.eclipse.ui.ide.undo.MoveProjectOperation.moveProject(MoveProjectOperation.java:142)
+	at org.eclipse.ui.ide.undo.MoveProjectOperation.doExecute(MoveProjectOperation.java:117)
+	at org.eclipse.ui.ide.undo.AbstractWorkspaceOperation.lambda$0(AbstractWorkspaceOperation.java:197)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2240)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2267)
+	at org.eclipse.ui.ide.undo.AbstractWorkspaceOperation.execute(AbstractWorkspaceOperation.java:197)
+	at org.eclipse.egit.ui.internal.sharing.SharingWizard$1.run(SharingWizard.java:112)
+	at org.eclipse.jface.operation.ModalContext$ModalContextThread.run(ModalContext.java:119)
+!SUBENTRY 5 org.eclipse.core.filesystem 4 273 2017-06-06 21:35:47.725
+!MESSAGE Could not delete: D:\Java Workspace\Testat_Proggen_2.
+
+!ENTRY org.eclipse.egit.ui 4 0 2017-06-06 21:36:12.157
+!MESSAGE Failed to initialize Git team provider.
+!STACK 1
+org.eclipse.core.internal.resources.ResourceException: Problems encountered while moving resources.
+	at org.eclipse.core.internal.resources.Project.move(Project.java:975)
+	at org.eclipse.ui.ide.undo.MoveProjectOperation.moveProject(MoveProjectOperation.java:142)
+	at org.eclipse.ui.ide.undo.MoveProjectOperation.doExecute(MoveProjectOperation.java:117)
+	at org.eclipse.ui.ide.undo.AbstractWorkspaceOperation.lambda$0(AbstractWorkspaceOperation.java:197)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2240)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2267)
+	at org.eclipse.ui.ide.undo.AbstractWorkspaceOperation.execute(AbstractWorkspaceOperation.java:197)
+	at org.eclipse.egit.ui.internal.sharing.SharingWizard$1.run(SharingWizard.java:112)
+	at org.eclipse.jface.operation.ModalContext$ModalContextThread.run(ModalContext.java:119)
+Contains: Could not move '/Testat_Proggen_2'.
+org.eclipse.core.runtime.CoreException: Could not move: D:\Reposatory Java\Testat_Proggen_2.
+	at org.eclipse.core.internal.filesystem.Policy.error(Policy.java:49)
+	at org.eclipse.core.filesystem.provider.FileStore.move(FileStore.java:390)
+	at org.eclipse.core.internal.filesystem.local.LocalFile.move(LocalFile.java:371)
+	at org.eclipse.core.internal.localstore.FileSystemResourceManager.move(FileSystemResourceManager.java:823)
+	at org.eclipse.core.internal.resources.ResourceTree.moveProjectContent(ResourceTree.java:763)
+	at org.eclipse.core.internal.resources.ResourceTree.standardMoveProject(ResourceTree.java:1086)
+	at org.eclipse.core.internal.resources.Project.move(Project.java:968)
+	at org.eclipse.ui.ide.undo.MoveProjectOperation.moveProject(MoveProjectOperation.java:142)
+	at org.eclipse.ui.ide.undo.MoveProjectOperation.doExecute(MoveProjectOperation.java:117)
+	at org.eclipse.ui.ide.undo.AbstractWorkspaceOperation.lambda$0(AbstractWorkspaceOperation.java:197)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2240)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2267)
+	at org.eclipse.ui.ide.undo.AbstractWorkspaceOperation.execute(AbstractWorkspaceOperation.java:197)
+	at org.eclipse.egit.ui.internal.sharing.SharingWizard$1.run(SharingWizard.java:112)
+	at org.eclipse.jface.operation.ModalContext$ModalContextThread.run(ModalContext.java:119)
+Caused by: org.eclipse.core.runtime.CoreException: File not found: D:\Reposatory Java\Testat_Proggen_2.
+	at org.eclipse.core.internal.filesystem.Policy.error(Policy.java:49)
+	at org.eclipse.core.internal.filesystem.local.LocalFile.openInputStream(LocalFile.java:385)
+	at org.eclipse.core.filesystem.provider.FileStore.copyFile(FileStore.java:198)
+	at org.eclipse.core.filesystem.provider.FileStore.copy(FileStore.java:130)
+	at org.eclipse.core.internal.filesystem.local.LocalFile.copy(LocalFile.java:124)
+	at org.eclipse.core.filesystem.provider.FileStore.move(FileStore.java:385)
+	... 13 more
+Caused by: java.io.FileNotFoundException: D:\Reposatory Java\Testat_Proggen_2 (Das System kann den angegebenen Pfad nicht finden)
+	at java.io.FileInputStream.open0(Native Method)
+	at java.io.FileInputStream.open(Unknown Source)
+	at java.io.FileInputStream.<init>(Unknown Source)
+	at org.eclipse.core.internal.filesystem.local.LocalFile.openInputStream(LocalFile.java:380)
+	... 17 more
+!SUBENTRY 1 org.eclipse.core.resources 1 4 2017-06-06 21:36:12.158
+!MESSAGE Problems encountered while moving resources.
+!SUBENTRY 2 org.eclipse.core.resources 1 4 2017-06-06 21:36:12.158
+!MESSAGE Could not move '/Testat_Proggen_2'.
+!STACK 1
+org.eclipse.core.runtime.CoreException: Could not move: D:\Reposatory Java\Testat_Proggen_2.
+	at org.eclipse.core.internal.filesystem.Policy.error(Policy.java:49)
+	at org.eclipse.core.filesystem.provider.FileStore.move(FileStore.java:390)
+	at org.eclipse.core.internal.filesystem.local.LocalFile.move(LocalFile.java:371)
+	at org.eclipse.core.internal.localstore.FileSystemResourceManager.move(FileSystemResourceManager.java:823)
+	at org.eclipse.core.internal.resources.ResourceTree.moveProjectContent(ResourceTree.java:763)
+	at org.eclipse.core.internal.resources.ResourceTree.standardMoveProject(ResourceTree.java:1086)
+	at org.eclipse.core.internal.resources.Project.move(Project.java:968)
+	at org.eclipse.ui.ide.undo.MoveProjectOperation.moveProject(MoveProjectOperation.java:142)
+	at org.eclipse.ui.ide.undo.MoveProjectOperation.doExecute(MoveProjectOperation.java:117)
+	at org.eclipse.ui.ide.undo.AbstractWorkspaceOperation.lambda$0(AbstractWorkspaceOperation.java:197)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2240)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2267)
+	at org.eclipse.ui.ide.undo.AbstractWorkspaceOperation.execute(AbstractWorkspaceOperation.java:197)
+	at org.eclipse.egit.ui.internal.sharing.SharingWizard$1.run(SharingWizard.java:112)
+	at org.eclipse.jface.operation.ModalContext$ModalContextThread.run(ModalContext.java:119)
+Caused by: org.eclipse.core.runtime.CoreException: File not found: D:\Reposatory Java\Testat_Proggen_2.
+	at org.eclipse.core.internal.filesystem.Policy.error(Policy.java:49)
+	at org.eclipse.core.internal.filesystem.local.LocalFile.openInputStream(LocalFile.java:385)
+	at org.eclipse.core.filesystem.provider.FileStore.copyFile(FileStore.java:198)
+	at org.eclipse.core.filesystem.provider.FileStore.copy(FileStore.java:130)
+	at org.eclipse.core.internal.filesystem.local.LocalFile.copy(LocalFile.java:124)
+	at org.eclipse.core.filesystem.provider.FileStore.move(FileStore.java:385)
+	... 13 more
+Caused by: java.io.FileNotFoundException: D:\Reposatory Java\Testat_Proggen_2 (Das System kann den angegebenen Pfad nicht finden)
+	at java.io.FileInputStream.open0(Native Method)
+	at java.io.FileInputStream.open(Unknown Source)
+	at java.io.FileInputStream.<init>(Unknown Source)
+	at org.eclipse.core.internal.filesystem.local.LocalFile.openInputStream(LocalFile.java:380)
+	... 17 more
+!SUBENTRY 3 org.eclipse.core.filesystem 4 272 2017-06-06 21:36:12.158
+!MESSAGE Could not move: D:\Reposatory Java\Testat_Proggen_2.
+!STACK 1
+org.eclipse.core.runtime.CoreException: File not found: D:\Reposatory Java\Testat_Proggen_2.
+	at org.eclipse.core.internal.filesystem.Policy.error(Policy.java:49)
+	at org.eclipse.core.internal.filesystem.local.LocalFile.openInputStream(LocalFile.java:385)
+	at org.eclipse.core.filesystem.provider.FileStore.copyFile(FileStore.java:198)
+	at org.eclipse.core.filesystem.provider.FileStore.copy(FileStore.java:130)
+	at org.eclipse.core.internal.filesystem.local.LocalFile.copy(LocalFile.java:124)
+	at org.eclipse.core.filesystem.provider.FileStore.move(FileStore.java:385)
+	at org.eclipse.core.internal.filesystem.local.LocalFile.move(LocalFile.java:371)
+	at org.eclipse.core.internal.localstore.FileSystemResourceManager.move(FileSystemResourceManager.java:823)
+	at org.eclipse.core.internal.resources.ResourceTree.moveProjectContent(ResourceTree.java:763)
+	at org.eclipse.core.internal.resources.ResourceTree.standardMoveProject(ResourceTree.java:1086)
+	at org.eclipse.core.internal.resources.Project.move(Project.java:968)
+	at org.eclipse.ui.ide.undo.MoveProjectOperation.moveProject(MoveProjectOperation.java:142)
+	at org.eclipse.ui.ide.undo.MoveProjectOperation.doExecute(MoveProjectOperation.java:117)
+	at org.eclipse.ui.ide.undo.AbstractWorkspaceOperation.lambda$0(AbstractWorkspaceOperation.java:197)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2240)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2267)
+	at org.eclipse.ui.ide.undo.AbstractWorkspaceOperation.execute(AbstractWorkspaceOperation.java:197)
+	at org.eclipse.egit.ui.internal.sharing.SharingWizard$1.run(SharingWizard.java:112)
+	at org.eclipse.jface.operation.ModalContext$ModalContextThread.run(ModalContext.java:119)
+Caused by: java.io.FileNotFoundException: D:\Reposatory Java\Testat_Proggen_2 (Das System kann den angegebenen Pfad nicht finden)
+	at java.io.FileInputStream.open0(Native Method)
+	at java.io.FileInputStream.open(Unknown Source)
+	at java.io.FileInputStream.<init>(Unknown Source)
+	at org.eclipse.core.internal.filesystem.local.LocalFile.openInputStream(LocalFile.java:380)
+	... 17 more
+!SUBENTRY 4 org.eclipse.core.filesystem 4 269 2017-06-06 21:36:12.158
+!MESSAGE File not found: D:\Reposatory Java\Testat_Proggen_2.
+!STACK 0
+java.io.FileNotFoundException: D:\Reposatory Java\Testat_Proggen_2 (Das System kann den angegebenen Pfad nicht finden)
+	at java.io.FileInputStream.open0(Native Method)
+	at java.io.FileInputStream.open(Unknown Source)
+	at java.io.FileInputStream.<init>(Unknown Source)
+	at org.eclipse.core.internal.filesystem.local.LocalFile.openInputStream(LocalFile.java:380)
+	at org.eclipse.core.filesystem.provider.FileStore.copyFile(FileStore.java:198)
+	at org.eclipse.core.filesystem.provider.FileStore.copy(FileStore.java:130)
+	at org.eclipse.core.internal.filesystem.local.LocalFile.copy(LocalFile.java:124)
+	at org.eclipse.core.filesystem.provider.FileStore.move(FileStore.java:385)
+	at org.eclipse.core.internal.filesystem.local.LocalFile.move(LocalFile.java:371)
+	at org.eclipse.core.internal.localstore.FileSystemResourceManager.move(FileSystemResourceManager.java:823)
+	at org.eclipse.core.internal.resources.ResourceTree.moveProjectContent(ResourceTree.java:763)
+	at org.eclipse.core.internal.resources.ResourceTree.standardMoveProject(ResourceTree.java:1086)
+	at org.eclipse.core.internal.resources.Project.move(Project.java:968)
+	at org.eclipse.ui.ide.undo.MoveProjectOperation.moveProject(MoveProjectOperation.java:142)
+	at org.eclipse.ui.ide.undo.MoveProjectOperation.doExecute(MoveProjectOperation.java:117)
+	at org.eclipse.ui.ide.undo.AbstractWorkspaceOperation.lambda$0(AbstractWorkspaceOperation.java:197)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2240)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2267)
+	at org.eclipse.ui.ide.undo.AbstractWorkspaceOperation.execute(AbstractWorkspaceOperation.java:197)
+	at org.eclipse.egit.ui.internal.sharing.SharingWizard$1.run(SharingWizard.java:112)
+	at org.eclipse.jface.operation.ModalContext$ModalContextThread.run(ModalContext.java:119)
+
+!ENTRY org.eclipse.jface 4 0 2017-06-06 21:36:21.190
+!MESSAGE Unhandled event loop exception during blocked modal context.
+!STACK 0
+org.eclipse.swt.SWTException: Failed to execute runnable (org.eclipse.swt.SWTException: Widget is disposed)
+	at org.eclipse.swt.SWT.error(SWT.java:4533)
+	at org.eclipse.swt.SWT.error(SWT.java:4448)
+	at org.eclipse.swt.widgets.Synchronizer.runAsyncMessages(Synchronizer.java:185)
+	at org.eclipse.swt.widgets.Display.runAsyncMessages(Display.java:4211)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3827)
+	at org.eclipse.jface.operation.ModalContext$ModalContextThread.block(ModalContext.java:165)
+	at org.eclipse.jface.operation.ModalContext.run(ModalContext.java:369)
+	at org.eclipse.jface.dialogs.ProgressMonitorDialog.run(ProgressMonitorDialog.java:481)
+	at org.eclipse.ui.internal.progress.ProgressMonitorJobsDialog.run(ProgressMonitorJobsDialog.java:242)
+	at org.eclipse.ui.internal.ide.application.IDEWorkbenchAdvisor.disconnectFromWorkspace(IDEWorkbenchAdvisor.java:463)
+	at org.eclipse.ui.internal.ide.application.IDEWorkbenchAdvisor.postShutdown(IDEWorkbenchAdvisor.java:309)
+	at org.eclipse.ui.internal.Workbench.shutdown(Workbench.java:3117)
+	at org.eclipse.ui.internal.Workbench.busyClose(Workbench.java:1206)
+	at org.eclipse.ui.internal.Workbench.access$22(Workbench.java:1118)
+	at org.eclipse.ui.internal.Workbench$19.run(Workbench.java:1459)
+	at org.eclipse.swt.custom.BusyIndicator.showWhile(BusyIndicator.java:70)
+	at org.eclipse.ui.internal.Workbench.close(Workbench.java:1456)
+	at org.eclipse.ui.internal.Workbench.close(Workbench.java:1429)
+	at org.eclipse.ui.internal.WorkbenchWindow.busyClose(WorkbenchWindow.java:1594)
+	at org.eclipse.ui.internal.WorkbenchWindow.access$16(WorkbenchWindow.java:1540)
+	at org.eclipse.ui.internal.WorkbenchWindow$11.run(WorkbenchWindow.java:1626)
+	at org.eclipse.swt.custom.BusyIndicator.showWhile(BusyIndicator.java:70)
+	at org.eclipse.ui.internal.WorkbenchWindow.close(WorkbenchWindow.java:1623)
+	at org.eclipse.ui.internal.WorkbenchWindow.close(WorkbenchWindow.java:1637)
+	at org.eclipse.ui.internal.WorkbenchWindow$6.close(WorkbenchWindow.java:524)
+	at org.eclipse.e4.ui.workbench.renderers.swt.WBWRenderer$7.shellClosed(WBWRenderer.java:629)
+	at org.eclipse.swt.widgets.TypedListener.handleEvent(TypedListener.java:99)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:84)
+	at org.eclipse.swt.widgets.Display.sendEvent(Display.java:4418)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1079)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1103)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1088)
+	at org.eclipse.swt.widgets.Decorations.closeWidget(Decorations.java:315)
+	at org.eclipse.swt.widgets.Decorations.WM_CLOSE(Decorations.java:1728)
+	at org.eclipse.swt.widgets.Control.windowProc(Control.java:4801)
+	at org.eclipse.swt.widgets.Canvas.windowProc(Canvas.java:359)
+	at org.eclipse.swt.widgets.Decorations.windowProc(Decorations.java:1656)
+	at org.eclipse.swt.widgets.Shell.windowProc(Shell.java:2199)
+	at org.eclipse.swt.widgets.Display.windowProc(Display.java:5110)
+	at org.eclipse.swt.internal.win32.OS.DefWindowProcW(Native Method)
+	at org.eclipse.swt.internal.win32.OS.DefWindowProc(OS.java:2547)
+	at org.eclipse.swt.widgets.Shell.callWindowProc(Shell.java:506)
+	at org.eclipse.swt.widgets.Control.windowProc(Control.java:4897)
+	at org.eclipse.swt.widgets.Canvas.windowProc(Canvas.java:359)
+	at org.eclipse.swt.widgets.Decorations.windowProc(Decorations.java:1656)
+	at org.eclipse.swt.widgets.Shell.windowProc(Shell.java:2199)
+	at org.eclipse.swt.widgets.Display.windowProc(Display.java:5110)
+	at org.eclipse.swt.internal.win32.OS.DefWindowProcW(Native Method)
+	at org.eclipse.swt.internal.win32.OS.DefWindowProc(OS.java:2547)
+	at org.eclipse.swt.widgets.Shell.callWindowProc(Shell.java:506)
+	at org.eclipse.swt.widgets.Control.windowProc(Control.java:4897)
+	at org.eclipse.swt.widgets.Canvas.windowProc(Canvas.java:359)
+	at org.eclipse.swt.widgets.Decorations.windowProc(Decorations.java:1656)
+	at org.eclipse.swt.widgets.Shell.windowProc(Shell.java:2199)
+	at org.eclipse.swt.widgets.Display.windowProc(Display.java:5110)
+	at org.eclipse.swt.internal.win32.OS.DispatchMessageW(Native Method)
+	at org.eclipse.swt.internal.win32.OS.DispatchMessage(OS.java:2552)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3822)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$4.run(PartRenderingEngine.java:1121)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:336)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1022)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:150)
+	at org.eclipse.ui.internal.Workbench$5.run(Workbench.java:693)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:336)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:610)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:148)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:138)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:196)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:134)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:104)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:388)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:243)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:673)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:610)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1519)
+Caused by: org.eclipse.swt.SWTException: Widget is disposed
+	at org.eclipse.swt.SWT.error(SWT.java:4533)
+	at org.eclipse.swt.SWT.error(SWT.java:4448)
+	at org.eclipse.swt.SWT.error(SWT.java:4419)
+	at org.eclipse.swt.widgets.Widget.error(Widget.java:482)
+	at org.eclipse.swt.widgets.Widget.checkWidget(Widget.java:354)
+	at org.eclipse.swt.widgets.Tree.getSelection(Tree.java:3472)
+	at org.eclipse.jface.viewers.TreeViewer.getSelection(TreeViewer.java:228)
+	at org.eclipse.jface.viewers.TreeViewer.setSelection(TreeViewer.java:299)
+	at org.eclipse.jface.viewers.AbstractTreeViewer.setSelectionToWidget(AbstractTreeViewer.java:2533)
+	at org.eclipse.ui.navigator.CommonViewer.setSelectionToWidget(CommonViewer.java:439)
+	at org.eclipse.jface.viewers.AbstractTreeViewer.setSelectionToWidget(AbstractTreeViewer.java:2989)
+	at org.eclipse.jface.viewers.StructuredViewer.preservingSelection(StructuredViewer.java:1465)
+	at org.eclipse.jface.viewers.TreeViewer.preservingSelection(TreeViewer.java:354)
+	at org.eclipse.jface.viewers.StructuredViewer.preservingSelection(StructuredViewer.java:1419)
+	at org.eclipse.jface.viewers.StructuredViewer.refresh(StructuredViewer.java:1542)
+	at org.eclipse.jface.viewers.ColumnViewer.refresh(ColumnViewer.java:535)
+	at org.eclipse.ui.navigator.CommonViewer.refresh(CommonViewer.java:349)
+	at org.eclipse.ui.navigator.CommonViewer.refresh(CommonViewer.java:492)
+	at org.eclipse.jface.viewers.StructuredViewer.refresh(StructuredViewer.java:1478)
+	at org.eclipse.wst.jsdt.js.npm.internal.ui.NpmScriptContentProvider$1.run(NpmScriptContentProvider.java:144)
+	at org.eclipse.swt.widgets.RunnableLock.run(RunnableLock.java:35)
+	at org.eclipse.swt.widgets.Synchronizer.runAsyncMessages(Synchronizer.java:182)
+	... 76 more
+
+!ENTRY org.eclipse.jface 4 0 2017-06-06 21:36:21.195
+!MESSAGE Unhandled event loop exception during blocked modal context.
+!STACK 0
+org.eclipse.swt.SWTException: Failed to execute runnable (org.eclipse.swt.SWTException: Widget is disposed)
+	at org.eclipse.swt.SWT.error(SWT.java:4533)
+	at org.eclipse.swt.SWT.error(SWT.java:4448)
+	at org.eclipse.swt.widgets.Synchronizer.runAsyncMessages(Synchronizer.java:185)
+	at org.eclipse.swt.widgets.Display.runAsyncMessages(Display.java:4211)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3827)
+	at org.eclipse.jface.operation.ModalContext$ModalContextThread.block(ModalContext.java:165)
+	at org.eclipse.jface.operation.ModalContext.run(ModalContext.java:369)
+	at org.eclipse.jface.dialogs.ProgressMonitorDialog.run(ProgressMonitorDialog.java:481)
+	at org.eclipse.ui.internal.progress.ProgressMonitorJobsDialog.run(ProgressMonitorJobsDialog.java:242)
+	at org.eclipse.ui.internal.ide.application.IDEWorkbenchAdvisor.disconnectFromWorkspace(IDEWorkbenchAdvisor.java:463)
+	at org.eclipse.ui.internal.ide.application.IDEWorkbenchAdvisor.postShutdown(IDEWorkbenchAdvisor.java:309)
+	at org.eclipse.ui.internal.Workbench.shutdown(Workbench.java:3117)
+	at org.eclipse.ui.internal.Workbench.busyClose(Workbench.java:1206)
+	at org.eclipse.ui.internal.Workbench.access$22(Workbench.java:1118)
+	at org.eclipse.ui.internal.Workbench$19.run(Workbench.java:1459)
+	at org.eclipse.swt.custom.BusyIndicator.showWhile(BusyIndicator.java:70)
+	at org.eclipse.ui.internal.Workbench.close(Workbench.java:1456)
+	at org.eclipse.ui.internal.Workbench.close(Workbench.java:1429)
+	at org.eclipse.ui.internal.WorkbenchWindow.busyClose(WorkbenchWindow.java:1594)
+	at org.eclipse.ui.internal.WorkbenchWindow.access$16(WorkbenchWindow.java:1540)
+	at org.eclipse.ui.internal.WorkbenchWindow$11.run(WorkbenchWindow.java:1626)
+	at org.eclipse.swt.custom.BusyIndicator.showWhile(BusyIndicator.java:70)
+	at org.eclipse.ui.internal.WorkbenchWindow.close(WorkbenchWindow.java:1623)
+	at org.eclipse.ui.internal.WorkbenchWindow.close(WorkbenchWindow.java:1637)
+	at org.eclipse.ui.internal.WorkbenchWindow$6.close(WorkbenchWindow.java:524)
+	at org.eclipse.e4.ui.workbench.renderers.swt.WBWRenderer$7.shellClosed(WBWRenderer.java:629)
+	at org.eclipse.swt.widgets.TypedListener.handleEvent(TypedListener.java:99)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:84)
+	at org.eclipse.swt.widgets.Display.sendEvent(Display.java:4418)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1079)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1103)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1088)
+	at org.eclipse.swt.widgets.Decorations.closeWidget(Decorations.java:315)
+	at org.eclipse.swt.widgets.Decorations.WM_CLOSE(Decorations.java:1728)
+	at org.eclipse.swt.widgets.Control.windowProc(Control.java:4801)
+	at org.eclipse.swt.widgets.Canvas.windowProc(Canvas.java:359)
+	at org.eclipse.swt.widgets.Decorations.windowProc(Decorations.java:1656)
+	at org.eclipse.swt.widgets.Shell.windowProc(Shell.java:2199)
+	at org.eclipse.swt.widgets.Display.windowProc(Display.java:5110)
+	at org.eclipse.swt.internal.win32.OS.DefWindowProcW(Native Method)
+	at org.eclipse.swt.internal.win32.OS.DefWindowProc(OS.java:2547)
+	at org.eclipse.swt.widgets.Shell.callWindowProc(Shell.java:506)
+	at org.eclipse.swt.widgets.Control.windowProc(Control.java:4897)
+	at org.eclipse.swt.widgets.Canvas.windowProc(Canvas.java:359)
+	at org.eclipse.swt.widgets.Decorations.windowProc(Decorations.java:1656)
+	at org.eclipse.swt.widgets.Shell.windowProc(Shell.java:2199)
+	at org.eclipse.swt.widgets.Display.windowProc(Display.java:5110)
+	at org.eclipse.swt.internal.win32.OS.DefWindowProcW(Native Method)
+	at org.eclipse.swt.internal.win32.OS.DefWindowProc(OS.java:2547)
+	at org.eclipse.swt.widgets.Shell.callWindowProc(Shell.java:506)
+	at org.eclipse.swt.widgets.Control.windowProc(Control.java:4897)
+	at org.eclipse.swt.widgets.Canvas.windowProc(Canvas.java:359)
+	at org.eclipse.swt.widgets.Decorations.windowProc(Decorations.java:1656)
+	at org.eclipse.swt.widgets.Shell.windowProc(Shell.java:2199)
+	at org.eclipse.swt.widgets.Display.windowProc(Display.java:5110)
+	at org.eclipse.swt.internal.win32.OS.DispatchMessageW(Native Method)
+	at org.eclipse.swt.internal.win32.OS.DispatchMessage(OS.java:2552)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3822)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$4.run(PartRenderingEngine.java:1121)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:336)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1022)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:150)
+	at org.eclipse.ui.internal.Workbench$5.run(Workbench.java:693)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:336)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:610)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:148)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:138)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:196)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:134)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:104)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:388)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:243)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:673)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:610)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1519)
+Caused by: org.eclipse.swt.SWTException: Widget is disposed
+	at org.eclipse.swt.SWT.error(SWT.java:4533)
+	at org.eclipse.swt.SWT.error(SWT.java:4448)
+	at org.eclipse.swt.SWT.error(SWT.java:4419)
+	at org.eclipse.swt.widgets.Widget.error(Widget.java:482)
+	at org.eclipse.swt.widgets.Widget.checkWidget(Widget.java:354)
+	at org.eclipse.swt.widgets.Tree.getSelection(Tree.java:3472)
+	at org.eclipse.jface.viewers.TreeViewer.getSelection(TreeViewer.java:228)
+	at org.eclipse.jface.viewers.TreeViewer.setSelection(TreeViewer.java:299)
+	at org.eclipse.jface.viewers.AbstractTreeViewer.setSelectionToWidget(AbstractTreeViewer.java:2533)
+	at org.eclipse.ui.navigator.CommonViewer.setSelectionToWidget(CommonViewer.java:439)
+	at org.eclipse.jface.viewers.AbstractTreeViewer.setSelectionToWidget(AbstractTreeViewer.java:2989)
+	at org.eclipse.jface.viewers.StructuredViewer.preservingSelection(StructuredViewer.java:1465)
+	at org.eclipse.jface.viewers.TreeViewer.preservingSelection(TreeViewer.java:354)
+	at org.eclipse.jface.viewers.StructuredViewer.preservingSelection(StructuredViewer.java:1419)
+	at org.eclipse.jface.viewers.StructuredViewer.refresh(StructuredViewer.java:1542)
+	at org.eclipse.jface.viewers.ColumnViewer.refresh(ColumnViewer.java:535)
+	at org.eclipse.ui.navigator.CommonViewer.refresh(CommonViewer.java:349)
+	at org.eclipse.ui.navigator.CommonViewer.refresh(CommonViewer.java:492)
+	at org.eclipse.jface.viewers.StructuredViewer.refresh(StructuredViewer.java:1478)
+	at org.eclipse.wst.jsdt.js.npm.internal.ui.NpmScriptContentProvider$1.run(NpmScriptContentProvider.java:144)
+	at org.eclipse.swt.widgets.RunnableLock.run(RunnableLock.java:35)
+	at org.eclipse.swt.widgets.Synchronizer.runAsyncMessages(Synchronizer.java:182)
+	... 76 more
+!SESSION 2017-06-06 21:36:26.251 -----------------------------------------------
+eclipse.buildId=4.6.3.M20170301-0400
+java.version=1.8.0_121
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=de_DE
+Framework arguments:  -product org.eclipse.epp.package.javascript.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.javascript.product
+
+!ENTRY org.eclipse.egit.ui 2 0 2017-06-06 21:36:31.918
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\Bruno'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY org.nodeclipse.ui 4 4 2017-06-06 21:41:12.737
+!MESSAGE Node.js executable can't be found!
+
+!ENTRY org.nodeclipse.ui 1 0 2017-06-06 21:41:12.855
+!MESSAGE templateRoot: C:\Users\Bruno\eclipse\javascript-neon\eclipse\configuration\org.eclipse.osgi\512\0\.cp\templates\common-templates
+
+!ENTRY org.nodeclipse.ui 1 0 2017-06-06 21:41:12.877
+!MESSAGE RelativityFileSystemStructureProvider.getContents() called. elemnt=C:\Users\Bruno\eclipse\javascript-neon\eclipse\configuration\org.eclipse.osgi\512\0\.cp\templates\common-templates\.jshintrc
+
+!ENTRY org.nodeclipse.ui 1 0 2017-06-06 21:41:12.895
+!MESSAGE RelativityFileSystemStructureProvider.getContents() called. elemnt=C:\Users\Bruno\eclipse\javascript-neon\eclipse\configuration\org.eclipse.osgi\512\0\.cp\templates\common-templates\.settings\.jsdtscope
+
+!ENTRY org.nodeclipse.ui 1 0 2017-06-06 21:41:12.908
+!MESSAGE RelativityFileSystemStructureProvider.getContents() called. elemnt=C:\Users\Bruno\eclipse\javascript-neon\eclipse\configuration\org.eclipse.osgi\512\0\.cp\templates\common-templates\.settings\com.eclipsesource.jshint.ui.prefs
+
+!ENTRY org.nodeclipse.ui 1 0 2017-06-06 21:41:12.964
+!MESSAGE RelativityFileSystemStructureProvider.getContents() called. elemnt=C:\Users\Bruno\eclipse\javascript-neon\eclipse\configuration\org.eclipse.osgi\512\0\.cp\templates\common-templates\.settings\org.eclipse.wst.jsdt.core.prefs
+
+!ENTRY org.nodeclipse.ui 1 0 2017-06-06 21:41:12.989
+!MESSAGE RelativityFileSystemStructureProvider.getContents() called. elemnt=C:\Users\Bruno\eclipse\javascript-neon\eclipse\configuration\org.eclipse.osgi\512\0\.cp\templates\common-templates\.settings\org.eclipse.wst.jsdt.ui.superType.container
+
+!ENTRY org.nodeclipse.ui 1 0 2017-06-06 21:41:12.996
+!MESSAGE RelativityFileSystemStructureProvider.getContents() called. elemnt=C:\Users\Bruno\eclipse\javascript-neon\eclipse\configuration\org.eclipse.osgi\512\0\.cp\templates\common-templates\.settings\org.eclipse.wst.jsdt.ui.superType.name
+
+!ENTRY org.nodeclipse.ui 1 0 2017-06-06 21:41:13.005
+!MESSAGE RelativityFileSystemStructureProvider.getContents() called. elemnt=C:\Users\Bruno\eclipse\javascript-neon\eclipse\configuration\org.eclipse.osgi\512\0\.cp\templates\common-templates\.sublime-project
+
+!ENTRY org.nodeclipse.ui 1 0 2017-06-06 21:41:13.011
+!MESSAGE RelativityFileSystemStructureProvider.getContents() called. elemnt=C:\Users\Bruno\eclipse\javascript-neon\eclipse\configuration\org.eclipse.osgi\512\0\.cp\templates\common-templates\README.md
+
+!ENTRY org.nodeclipse.ui 1 0 2017-06-06 21:41:13.041
+!MESSAGE templateRoot: C:\Users\Bruno\eclipse\javascript-neon\eclipse\configuration\org.eclipse.osgi\512\0\.cp\templates\hello-world
+
+!ENTRY org.nodeclipse.ui 1 0 2017-06-06 21:41:13.048
+!MESSAGE RelativityFileSystemStructureProvider.getContents() called. elemnt=C:\Users\Bruno\eclipse\javascript-neon\eclipse\configuration\org.eclipse.osgi\512\0\.cp\templates\hello-world\build.gradle
+
+!ENTRY org.nodeclipse.ui 1 0 2017-06-06 21:41:13.055
+!MESSAGE RelativityFileSystemStructureProvider.getContents() called. elemnt=C:\Users\Bruno\eclipse\javascript-neon\eclipse\configuration\org.eclipse.osgi\512\0\.cp\templates\hello-world\hello-world-server.js
+
+!ENTRY org.nodeclipse.ui 1 0 2017-06-06 21:41:13.061
+!MESSAGE RelativityFileSystemStructureProvider.getContents() called. elemnt=C:\Users\Bruno\eclipse\javascript-neon\eclipse\configuration\org.eclipse.osgi\512\0\.cp\templates\hello-world\package.json
+
+!ENTRY org.nodeclipse.ui 1 0 2017-06-06 21:41:13.098
+!MESSAGE templateRoot: C:\Users\Bruno\eclipse\javascript-neon\eclipse\configuration\org.eclipse.osgi\512\0\.cp\templates\tern-node
+
+!ENTRY org.nodeclipse.ui 1 0 2017-06-06 21:41:13.102
+!MESSAGE RelativityFileSystemStructureProvider.getContents() called. elemnt=C:\Users\Bruno\eclipse\javascript-neon\eclipse\configuration\org.eclipse.osgi\512\0\.cp\templates\tern-node\.tern-project
+!SESSION 2017-06-06 21:46:30.434 -----------------------------------------------
+eclipse.buildId=4.6.3.M20170301-0400
+java.version=1.8.0_121
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=de_DE
+Framework arguments:  -product org.eclipse.epp.package.javascript.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.javascript.product
+
+!ENTRY org.eclipse.egit.ui 2 0 2017-06-06 21:46:40.515
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\Bruno'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
