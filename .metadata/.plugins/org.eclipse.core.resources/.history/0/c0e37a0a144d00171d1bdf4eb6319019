@@ -61,8 +61,7 @@
 </HEAD>
 
 <BODY>
-<div> Spieler 1: </div> <div> Spieler 2: </div>
-
+<p> Spieler 1: </p>
 
 
 	<table id="table">

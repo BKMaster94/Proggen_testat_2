@@ -61,9 +61,6 @@
 </HEAD>
 
 <BODY>
-<div> Spieler 1: </div> <div> Spieler 2: </div>
-
-
 
 	<table id="table">
 		<tr id="S_Eins">

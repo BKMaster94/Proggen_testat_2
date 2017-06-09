@@ -47,6 +47,7 @@
 	#S3Z_Eins{
 		border-right: 4px solid black;
 		border-top: 4px solid black;
+
 	}
 	#S3Z_Zwei
 	{
@@ -61,9 +62,6 @@
 </HEAD>
 
 <BODY>
-<div> Spieler 1: </div> <div> Spieler 2: </div>
-
-
 
 	<table id="table">
 		<tr id="S_Eins">
