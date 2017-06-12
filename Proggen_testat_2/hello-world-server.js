@@ -1,7 +1,9 @@
-var http = require('http');
+/*var http = require('http');
 var fs = require('fs');
 var url = require('url');
+var querystring = require('querystring');
 var test = "Hallo Response";
+var name = "";
 http.createServer(function (req, res) {
 	var path = url.parse(req.url).pathname;
 	console.log(path);
@@ -9,6 +11,7 @@ http.createServer(function (req, res) {
 	if(path === "/getstring")
 	{
 		console.log("request ist da");
+		console.log(req.body);
 	}
 	
 		if(path === "/getResponse")
@@ -28,3 +31,4 @@ http.createServer(function (req, res) {
 }).listen(8080);
 
 console.log("Server Start");
+*/
