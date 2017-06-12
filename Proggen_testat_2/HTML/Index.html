@@ -63,6 +63,8 @@
 <BODY>
 <div> Spieler 1: </div> <div> Spieler 2: </div>
 
+<div onclick="sendRequest()"> test </div>
+
 
 
 	<table id="table">
@@ -99,6 +101,17 @@ function WerlcherDarfClicken(el){
 		player1 = false;
 		document.getElementById(el).innerHTML='o';
 	}
+}
+
+function sendRequest(){
+	
+	   xmlhttp = new XMLHttpRequest();
+
+	   xmlhttp.open("POST","http://localhost:8080/getstring", true);
+	   xmlhttp.send();
+
+	   string=xmlhttp.responseText;
+	
 }
 
 </script>

@@ -1,0 +1,13 @@
+<script>
+
+function server()
+{
+   xmlhttp = new XMLHttpRequest();
+
+   xmlhttp.open("GET","server.js", true);
+   xmlhttp.send();
+
+   string=xmlhttp.responseText;
+}
+
+</script>
