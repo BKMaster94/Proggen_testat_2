@@ -61,11 +61,8 @@
 </HEAD>
 
 <BODY>
-<input type="text" id="name" name="name" value="Namen eintragen"/>
-
-
-
 <div> Spieler 1: </div>
+<input type="text" id="name" name="name" />
 <div> Spieler 2: </div>
 <div id="test"></div>
 

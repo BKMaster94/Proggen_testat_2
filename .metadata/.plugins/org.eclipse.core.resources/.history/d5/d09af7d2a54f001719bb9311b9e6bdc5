@@ -61,6 +61,7 @@
 </HEAD>
 
 <BODY>
+<form method="POST" action=""></form>
 <input type="text" id="name" name="name" value="Namen eintragen"/>
 
 

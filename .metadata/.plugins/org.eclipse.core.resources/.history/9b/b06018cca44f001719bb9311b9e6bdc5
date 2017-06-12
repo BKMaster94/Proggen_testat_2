@@ -61,10 +61,6 @@
 </HEAD>
 
 <BODY>
-<input type="text" id="name" name="name" value="Namen eintragen"/>
-
-
-
 <div> Spieler 1: </div>
 <div> Spieler 2: </div>
 <div id="test"></div>
@@ -97,7 +93,6 @@
 </BODY>
 
 <script type="text/javascript">
-var playername1= "";
 var player1 = true;
 var player2 = false;
 
@@ -112,8 +107,6 @@ function WerlcherDarfClicken(el){
 	}
 }
 
-var textname = document.getElementById("name").value;
-alert(textname);
 function sendRequest(){
 	
 	   xmlhttp = new XMLHttpRequest();

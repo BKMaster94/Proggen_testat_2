@@ -61,7 +61,8 @@
 </HEAD>
 
 <BODY>
-<input type="text" id="name" name="name" value="Namen eintragen"/>
+<form 
+<input type="text" id="name" name="name" value="Namen eintrage"/>
 
 
 
@@ -113,7 +114,7 @@ function WerlcherDarfClicken(el){
 }
 
 var textname = document.getElementById("name").value;
-alert(textname);
+
 function sendRequest(){
 	
 	   xmlhttp = new XMLHttpRequest();
