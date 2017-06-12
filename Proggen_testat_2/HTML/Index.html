@@ -61,9 +61,13 @@
 </HEAD>
 
 <BODY>
-<div> Spieler 1: </div> <div> Spieler 2: </div>
+<div> Spieler 1: </div>
+<div> Spieler 2: </div>
+<div id="test"></div>
 
-<div onclick="sendRequest()"> test </div>
+
+<button onclick="sendRequest()"> Senden </button>
+<button onclick="getResponse()"> response </button>
 
 
 
@@ -114,5 +118,18 @@ function sendRequest(){
 	
 }
 
+function getResponse(){
+	
+		xhr = new XMLHttpRequest();
+
+		xhr.open("GET","http://localhost:8080/getResponse", true);
+		xhr.send('');
+	 	xhr.onreadystatechange = function() {
+		   if (xhr.readyState == 4) {
+		     document.getElementById("test").innerHTML = this.responseText;
+		   }	
+
+	 	}
+}
 </script>
 </HTML>
