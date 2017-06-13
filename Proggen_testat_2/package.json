@@ -14,5 +14,9 @@
   ],
   "author": "",
   "license": "MIT",
-  "readmeFilename": "README.md"
+  "readmeFilename": "README.md",
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "jquery": "^3.2.1"
+  }
 }

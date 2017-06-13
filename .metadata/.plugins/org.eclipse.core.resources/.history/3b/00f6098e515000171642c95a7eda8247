@@ -1,0 +1,30 @@
+<html>
+<head>
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script>
+
+$("#target").click(function(){
+	alert("clickd")
+	$.ajax({
+		type:'POST',
+		url: "/test",
+		success: function(result){
+			alert(result);
+		});
+	});
+
+});
+
+
+
+</script>
+
+</head>
+<body>
+<button id="target">Senden</button>
+
+
+
+
+</body>
+</html>

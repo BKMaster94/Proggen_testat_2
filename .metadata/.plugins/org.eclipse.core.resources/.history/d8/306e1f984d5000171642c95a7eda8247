@@ -1,0 +1,28 @@
+<html>
+<head>
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script>
+
+$("button").click(function(){
+	$.ajax({
+		url: "http://localhost:8081/test",
+		success: function(result){
+			alert(result);
+		}
+	});
+
+});
+
+
+
+</script>
+
+</head>
+<body>
+<button>Senden</button>
+
+
+
+
+</body>
+</html>

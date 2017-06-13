@@ -1,0 +1,28 @@
+<html>
+
+
+<head>
+<script src="jquery-3.2.1.min.js"></script>
+</head>
+<body>
+
+<form method="post" action="http://localhost:8081/">
+    <input type="text" name="user[name]">
+    <input type="text" name="user[email]">
+    <input type="submit" value="Submit">
+</form>
+<button onclick="test()"> Senden </button>
+
+<script>
+
+var data = "Hallo";
+function test{
+$.ajax({
+	  type: 'POST',
+	  url: 'http://localhost:8081/test',
+	  data: "hallo welt"
+	});
+}
+</script>
+</body>
+</html>

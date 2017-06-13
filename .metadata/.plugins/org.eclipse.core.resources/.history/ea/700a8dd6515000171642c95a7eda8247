@@ -1,0 +1,28 @@
+<html>
+<head>
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+
+
+</head>
+<body>
+<div id="target">
+hier klicken
+</div>
+
+
+
+
+</body>
+
+
+
+<script>
+
+$("#target").click(function(){
+	alert("clickd");
+});
+
+
+
+</script>
+</html>

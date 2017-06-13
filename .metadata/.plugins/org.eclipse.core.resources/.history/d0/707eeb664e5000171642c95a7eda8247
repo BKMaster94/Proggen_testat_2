@@ -1,0 +1,16 @@
+var express = require('express');
+var appServer = express();
+var bodyParser = require('body-parser')
+
+appServer.post('/test', function (req,res){
+	
+	console.log("Request bekommen");
+	
+});
+
+
+
+console.log("Server Start");
+appServer.listen(8081, function(){
+	console.log("Server Start on PORT 8081");
+});

@@ -1,0 +1,5 @@
+var express = require('express');
+var appServer = express.createServer();
+var bodyParser = require('body-parser');
+
+appServer.use(express.bodyParser());

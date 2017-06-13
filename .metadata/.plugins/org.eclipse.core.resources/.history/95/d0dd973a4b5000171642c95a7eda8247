@@ -1,0 +1,11 @@
+var express = require('express');
+var appServer = express();
+
+app.post('/test', function (req,res){
+	
+});
+
+
+
+console.log("Server STart");
+appServer.listen(8081);

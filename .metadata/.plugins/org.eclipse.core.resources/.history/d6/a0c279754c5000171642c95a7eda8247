@@ -1,0 +1,30 @@
+<html>
+<head>
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script>
+$(document).ready(function(){
+	$("button").click(function){
+		$.post("http://localhost:8081/test",
+			{
+				name:	"Manfred"
+				stadt:	"dossel"
+			},
+			function(data,status){
+				alert("Data:" +data+ "\nStatus: " + status);
+			});
+			});
+});
+	}
+}
+
+</script>
+
+</head>
+<body>
+<button>Senden</button>
+
+
+
+
+</body>
+</html>

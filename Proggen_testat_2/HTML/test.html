@@ -1,0 +1,23 @@
+<html>
+<head>
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+</head>
+<body>
+	<div id="target">
+	hier klicken
+	</div>
+</body>
+</html>
+
+<script>
+$("#target").click(function(){
+	alert("clickd");
+	$.ajax({
+		url: "/test",
+		type: "POST",
+		success: function(result){
+			alert("success: " + result);
+		}
+	})
+});
+</script>
