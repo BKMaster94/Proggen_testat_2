@@ -1,0 +1,15 @@
+<html>
+<head>
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script src="testAuslagerung.js"></script>
+</head>
+<body>
+	<div id="target">
+	hier klicken
+	</div>
+	<button id="butt">Daten Bekommen</button>
+	<div id="ziel">daten: </div>
+</body>
+</html>
+
+<script src="/testAuslagerung.js"></script>
