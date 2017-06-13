@@ -1,0 +1,25 @@
+$("#target").click(function(){ // #Target == ID von HTML || .click == Auf click || Funktion in funktion
+	alert("clickd"); // Alert == Dialogfenster
+	$.ajax({ // Jquery Ajax Funktion
+		url: "/test", // geben die Url weiter
+		type: "POST", // Mehtode auswählen
+		data: "test",
+		success: function(result){
+			alert("success: " + result);
+		}
+	})
+});
+
+
+
+$("#butt").click(function(){
+	alert("ziel");
+	$.ajax({
+		url: "/get",
+		type: "GET",
+		success: function(result){
+			alert("success: " + result);
+			$("#ziel").html(result);
+		}
+	})
+});

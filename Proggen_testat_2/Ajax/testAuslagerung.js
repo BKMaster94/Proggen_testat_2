@@ -1,11 +1,11 @@
-$("#target").click(function(){
-	alert("clickd");
-	$.ajax({
-		url: "/test",
-		type: "POST",
-		data: "test",
-		success: function(result){
-			alert("success: " + result);
+$("#target").click(function(){ // #Target == ID von HTML || .click == Auf click || Funktion in funktion
+	alert("clickd"); // Alert == Dialogfenster
+	$.ajax({ // Jquery Ajax Funktion
+		url: "/test", // geben die Url weiter
+		type: "POST", // Mehtode auswählen
+		data: "test", // Daten übersenden 
+		success: function(result){ // Bei erfolg
+			alert("success: " + result); // Gebe ein dialogfenster aus mit dem text aus dem Success
 		}
 	})
 });
@@ -20,4 +20,18 @@ $("#butt").click(function(){
 			$("#ziel").html(result);
 		}
 	})
+});
+
+var $ziel = $('#JsonZiel');
+
+
+$("#jsonClick").click(function(){
+	alert("JSON Objekt kommt");
+	$.ajax({
+		type: 	"GET",
+		url: 	"/Json",
+		success: function(data){
+				$ziel.append('<li>Spieler1: '+data.player1+' Spieler2: '+data.player2 +'</li>' );
+		}
+	});
 });

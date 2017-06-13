@@ -1,0 +1,53 @@
+var express = require('express');
+var appServer = express();
+var fs = require("fs");
+var bodyParser = require('body-parser')
+var path = require('path');
+var test = "Server Daten";
+
+var abfangen = "";
+
+var playerName = {
+		player1: "",
+		player2: ""
+			};
+
+fs.writeFile("/JSON/spielerName.json", JSON.stringify(playerName), "utf8");
+console.log(playerName);
+
+
+fs.writeFile('message.txt', 'Hello Node.js', (err) => {
+	  if (err) throw err;
+	  console.log('The file has been saved!');
+	});
+
+appServer.use(bodyParser.urlencoded( // brauchen wir für das parsen vom Post body block
+		{
+			extended: true 
+			}));
+
+
+appServer.get('/', function(req,res){ // Url Abfangen
+	res.sendFile(path.resolve('HTML/test.html')); // Nimm die HTML Datei aus dem Ordner
+});
+
+appServer.get('/Ajax/testAuslagerung.js', function(req,res){ // URL Abfangen
+	res.sendFile(path.resolve('Ajax/testAuslagerung.js')); // Lade die Javascript datei ein.
+});
+
+appServer.post('/test', function (req,res){ // Post methode.
+	console.log(req.body);
+	abfangen = req.body; // Nehme das Object aus der Request und packe sie in eine Variable.
+	console.log(abfangen);
+	console.log("Request bekommen");
+	res.send("WUHU");
+});
+
+appServer.get('/get', function(req,res){ // Get Methode
+	res.send(test); // Sende dem Client informationen
+	console.log("Daten gesendet" + test);
+});
+
+appServer.listen(8081, function(){ // Höre auf den Port 8081
+	console.log("Server Start on PORT 8081"); // Server console Ausgabe
+});
