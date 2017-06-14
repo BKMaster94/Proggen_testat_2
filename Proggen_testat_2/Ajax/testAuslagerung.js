@@ -61,6 +61,7 @@ $("#testSpielerNameetc").click(function(){
 		}
 	});
 });
+
 $(document).ready(function(){
 	if(readytestvar === 0){
 		readytestvar++;
