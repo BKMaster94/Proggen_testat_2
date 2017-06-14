@@ -1,3 +1,5 @@
+var readytestvar = 0;
+
 $("#target").click(function(){ // #Target == ID von HTML || .click == Auf click || Funktion in funktion
 	alert("clickd"); // Alert == Dialogfenster
 	$.ajax({ // Jquery Ajax Funktion
@@ -22,7 +24,7 @@ $("#butt").click(function(){
 	})
 });
 
-var $ziel = $('#JsonZiel');
+var $ziel = $('#testSpielerNameetc');
 
 
 $("#jsonClick").click(function(){
@@ -34,4 +36,44 @@ $("#jsonClick").click(function(){
 				$ziel.append('<li>Spieler1: '+data.player1+' Spieler2: '+data.player2 +'</li>' );
 		}
 	});
+});
+
+$("#AnmeldeButton").click(function(){
+	alert("JSON Objekt kommt");	
+	$.ajax({
+		type: 	"GET",
+		url: 	"/GetSpielerName",
+		success: function(data){
+			alert("succsess1");
+			window.location = "/SeiteWechseln";
+		}
+	});
+});
+
+$("#testSpielerNameetc").click(function(){
+	alert("wir sind am laden");
+	$.ajax({
+		type: "GET",
+		url:  "/Json",
+		success: function(data){
+			alert("hat geklappt diggaaaa");
+			$ziel.append('<li>Spieler1: '+data.player1+' Spieler2: '+data.player2 +'</li>' );
+		}
+	});
+});
+$(document).ready(function(){
+	if(readytestvar === 0){
+		readytestvar++;
+		alert("wir sind am laden");
+		$.ajax({
+			type: "GET",
+			url:  "/Json",
+			success: function(data){
+				alert("hat geklappt diggaaaa");
+				$ziel.append('<li>Spieler1: '+data.player1+' Spieler2: '+data.player2 +'</li>' );
+			}
+		});
+	}else{
+		console.log("ready geladen");
+	}
 });

@@ -7,7 +7,7 @@ var test = "Server Daten";
 
 var abfangen = "";
 
-meinJSONObjekt = require(path.resolve('JSON/spielerName.json'));
+var meinJSONObjekt = require(path.resolve('JSON/spielerName.json'));
 console.log(meinJSONObjekt);
 
 
@@ -21,7 +21,13 @@ appServer.get('/Json' , function(req,res){
 	res.send(meinJSONObjekt);
 });
 
+appServer.get('/GetSpielerName', function(req,res){
+	res.send(meinJSONObjekt);
+});
 
+appServer.get('/SeiteWechseln', function(req,res){
+	res.sendFile(path.resolve('HTML/Index.html'));
+});
 
 appServer.use(bodyParser.urlencoded( // brauchen wir für das parsen vom Post body block
 		{
@@ -30,7 +36,7 @@ appServer.use(bodyParser.urlencoded( // brauchen wir für das parsen vom Post bo
 
 
 appServer.get('/', function(req,res){ // Url Abfangen
-	res.sendFile(path.resolve('HTML/test.html')); // Nimm die HTML Datei aus dem Ordner
+	res.sendFile(path.resolve('HTML/Anmeldung.html')); // Nimm die HTML Datei aus dem Ordner
 });
 
 appServer.get('/Ajax/testAuslagerung.js', function(req,res){ // URL Abfangen
