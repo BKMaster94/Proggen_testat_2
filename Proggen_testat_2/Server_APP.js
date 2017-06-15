@@ -51,15 +51,16 @@ appServer.get('/Ajax/testAuslagerung.js', function(req,res){ // URL Abfangen
 });
 
 appServer.post('/SeiteWechseln', function (req,res){
-	console.log(req.body);
 	abfangen = req.body; // Nehme das Object aus der Request und packe sie in eine Variable.
 	console.log(abfangen);
 	console.log("Request bekommen");
+	res.status(200).json(req.body);
 });
 
-appServer.get('/SeiteWechselnIndex', function (req,res){
+appServer.get('/SeiteWechseln2', function (req,res){
 	res.sendFile(path.resolve('HTML/Index.html'));
 });
+
 appServer.get('/get', function(req,res){ // Get Methode
 	res.send(test); // Sende dem Client informationen
 	console.log("Daten gesendet" + test);

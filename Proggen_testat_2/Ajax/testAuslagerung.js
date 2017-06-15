@@ -41,22 +41,24 @@ $("#AnmeldeButton").click(function(){
 	$.ajax({
 		type: 	"POST",
 		url: 	"/SeiteWechseln",
-		dataType: "JSON",
-		data: ({"player1": SpielernameInput.value,"player2": SpielernameInput.value}),
+		dataType: "json",
+		data: {"player1": SpielernameInput.value,"player2": SpielernameInput.value},
 		success: function(data){
-			window.location = "/SeitenWechselIndex";
-		}
+			console.log("suxes");
+			window.location.href = "/SeiteWechseln2";
+		},
+
 	});
 });
 
-$(document).ready(function(){
-		alert("wir sind am laden");
-		$.ajax({
-			type: "GET",
-			url:  "/Json",
-			success: function(data){
-				alert("hat geklappt diggaaaa");
-				$ziel.append('<li>Spieler1: '+data.player1+' Spieler2: '+data.player2 +'</li>' );
-			}
-		});
-});
+//$(document).ready(function(){
+//		alert("wir sind am laden");
+//		$.ajax({
+//			type: "GET",
+//			url:  "/Json",
+//			success: function(data){
+//				alert("hat geklappt diggaaaa");
+//				$ziel.append('<li>Spieler1: '+data.player1+' Spieler2: '+data.player2 +'</li>' );
+//			}
+//		});
+//});
