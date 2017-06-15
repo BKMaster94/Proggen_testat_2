@@ -48,14 +48,17 @@ appServer.use(bodyParser.urlencoded({ // brauchen wir für das parsen vom Post b
 				if(clientCount === 2){
 					spieler2 = client.username;
 					console.log(spieler2);
+					io.to('SpielRaum').emit('SpielerName1', spieler1);
+					io.to('SpielRaum').emit('SpielerName2', spieler2);
 				}
 				io.to('SpielRaum').emit('gameReady', clientCount);
+
 			}
-			console.log('A user is Connectet: ' + client.username);
+			console.log('A user is Connectet: ' + client.username + " | ID: " + client.id);
 			client.emit('message', 'You are Connected');
 			client.on('disconnect', function(){
 				clientCount--;
-				console.log("Client disconnected: " + client.username);
+				console.log("Client disconnected: " + client.username + " | ID: " + client.id);
 			});
 			console.log("Momentane user: " + clientCount);
 	    });
