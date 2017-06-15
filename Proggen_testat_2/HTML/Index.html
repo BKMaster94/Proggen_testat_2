@@ -121,6 +121,13 @@ socket.emit('username'); // Wird in die Username Funktion eingesprungen um den B
 socket.on('message', function(message){
 	alert('The Server has a massage for you: ' + message);
 });
+socket.on('gameReady', function(message){
+	alert("momentane spielerzahl: " + message);
+	
+	if(message === 2){
+				window.location.href = '/loadGame';
+	}
+});
 
 
 </script>

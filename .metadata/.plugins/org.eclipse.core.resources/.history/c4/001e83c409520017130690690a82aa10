@@ -10,19 +10,6 @@ $("#target").click(function(){ // #Target == ID von HTML || .click == Auf click 
 	})
 });
 
-$(document).ready(function(){
-	alert("wir sind am laden");
-	$.ajax({
-		type: "GET",
-		url:  "/Json",
-		success: function(data){
-			alert("hat geklappt diggaaaa");
-			$ziel.append('<li>Spieler1: '+data.player1+' Spieler2: '+data.player2 +'</li>' );
-		}
-	});
-
-
-
 $("#butt").click(function(){
 	alert("ziel");
 	$.ajax({
@@ -61,6 +48,10 @@ $("#AnmeldeButton").click(function(){ //Wenn der Button wird geklickt und die Fu
 //	});
 //});
 
+
+if(window.location.href === '')
+
+
 //$(document).ready(function(){
 //		alert("wir sind am laden");
 //		$.ajax({
@@ -72,3 +63,8 @@ $("#AnmeldeButton").click(function(){ //Wenn der Button wird geklickt und die Fu
 //			}
 //		});
 //});
+
+
+
+
+

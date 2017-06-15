@@ -49,6 +49,7 @@ appServer.use(bodyParser.urlencoded({ // brauchen wir für das parsen vom Post b
 					spieler2 = client.username;
 					console.log(spieler2);
 				}
+				io.to('SpielRaum').emit('gameReady', clientCount);
 			}
 			console.log('A user is Connectet: ' + client.username);
 			client.emit('message', 'You are Connected');
@@ -64,6 +65,11 @@ appServer.use(bodyParser.urlencoded({ // brauchen wir für das parsen vom Post b
 
 appServer.get('/', function(req,res){ // Url Abfangen
 	res.sendFile(path.resolve('HTML/Anmeldung.html')); // Nimm die HTML Datei aus dem Ordner
+});
+
+
+appServer.get ('/loadGame', function(req,res){
+	res.sendFile(path.resolve('HTML/test.html'));
 });
 
 appServer.get('/Json' , function(req,res){

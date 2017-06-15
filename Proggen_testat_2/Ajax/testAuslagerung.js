@@ -48,6 +48,10 @@ $("#AnmeldeButton").click(function(){ //Wenn der Button wird geklickt und die Fu
 //	});
 //});
 
+
+//if(window.location.href === '')
+
+
 //$(document).ready(function(){
 //		alert("wir sind am laden");
 //		$.ajax({
