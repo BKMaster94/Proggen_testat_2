@@ -1,9 +1,0 @@
-var express = require('express');
-var appServer = express();
-
-
-
-
-
-console.log("Server STart");
-appServer.listen(8081);

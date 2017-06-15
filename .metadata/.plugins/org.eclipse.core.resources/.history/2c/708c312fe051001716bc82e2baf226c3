@@ -23,9 +23,7 @@ console.log(meinJSONObjekt);
 
 	io.on('connection', function(client){
 		console.log('A user is Connectet');
-		client.on('disconnect', function(){
-			console.log("Client disconnected");
-		});
+		client.on('disconnect');
 		
 	});
 

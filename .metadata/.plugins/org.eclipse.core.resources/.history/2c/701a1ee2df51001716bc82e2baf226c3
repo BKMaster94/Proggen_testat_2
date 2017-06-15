@@ -1,9 +1,5 @@
 var express = require('express');
 var appServer = express();
-var server = appServer.listen(8081, function(){
-	console.log("Server gestartet auf Port: 8081");	
-});
-var io = require('socket.io').listen(server);
 var fs= require('fs');
 var bodyParser = require('body-parser');
 var path = require('path');
@@ -19,22 +15,6 @@ console.log(meinJSONObjekt);
 	  console.log('The file has been saved!');
 	});*/
 
-// Hier fängt socket.io an
-
-	io.on('connection', function(client){
-		console.log('A user is Connectet');
-		client.on('disconnect', function(){
-			console.log("Client disconnected");
-		});
-		
-	});
-
-//
-
-
-appServer.get('/', function(req,res){ // Url Abfangen
-	res.sendFile(path.resolve('HTML/Anmeldung.html')); // Nimm die HTML Datei aus dem Ordner
-});
 
 appServer.get('/Json' , function(req,res){
 	res.send(meinJSONObjekt);
@@ -45,6 +25,10 @@ appServer.use(bodyParser.urlencoded( // brauchen wir für das parsen vom Post bo
 			extended: true 
 			}));
 
+
+appServer.get('/', function(req,res){ // Url Abfangen
+	res.sendFile(path.resolve('HTML/Anmeldung.html')); // Nimm die HTML Datei aus dem Ordner
+});
 
 appServer.get('/Ajax/testAuslagerung.js', function(req,res){ // URL Abfangen
 	res.sendFile(path.resolve('Ajax/testAuslagerung.js')); // Lade die Javascript datei ein.

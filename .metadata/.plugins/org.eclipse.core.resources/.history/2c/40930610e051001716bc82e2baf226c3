@@ -19,17 +19,7 @@ console.log(meinJSONObjekt);
 	  console.log('The file has been saved!');
 	});*/
 
-// Hier fängt socket.io an
 
-	io.on('connection', function(client){
-		console.log('A user is Connectet');
-		client.on('disconnect', function(){
-			console.log("Client disconnected");
-		});
-		
-	});
-
-//
 
 
 appServer.get('/', function(req,res){ // Url Abfangen

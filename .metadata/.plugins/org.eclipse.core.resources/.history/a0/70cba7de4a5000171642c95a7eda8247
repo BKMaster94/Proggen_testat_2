@@ -1,9 +1,0 @@
-var express = require('express');
-var app = express.createServer();
-var bodyParser = require('body-parser');
-
-appServer.use(express.bodyParser());
-
-
-console.log("Server STart");
-app.listen(8081);
