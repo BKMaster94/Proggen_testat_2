@@ -40,14 +40,13 @@ appServer.use(bodyParser.urlencoded({ // brauchen wir für das parsen vom Post b
 			clientCount++;
 			if(clientCount <= 2 ){
 				client.join('SpielRaum');
-				//console.log("Client: " + client.username + " ist nun im SpieleRaum");
+				console.log("Client: " + client.username + " ist nun im SpieleRaum");
 				if (clientCount === 1){
 					spieler1 = client.username; 
 					console.log (spieler1);
 				}
 				if(clientCount === 2){
 					spieler2 = client.username;
-					console.log(spieler2);
 				}
 			}
 			console.log('A user is Connectet: ' + client.username);

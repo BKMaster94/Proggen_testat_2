@@ -13,9 +13,7 @@ var abfangen = "";
 var meinJSONObjekt = require(path.resolve('JSON/spielerName.json'));
 var clientCount = 0;
 var usernameForGame1 = "empty";
-
-var spieler1= "";
-var spieler2= "";
+var usernameForGame2 = "";
 
 /*fs.writeFile(path.resolve('JSON/spielerName.json'), JSON.stringify(playerName), (err) => { // Test zum erstellen von datein.
 	  if (err) throw err;
@@ -32,24 +30,12 @@ appServer.use(bodyParser.urlencoded({ // brauchen wir für das parsen vom Post b
 
 
 // Hier fängt socket.io an
-
+if(clientCount < 2){
 	io.on('connection', function(client){
 		client.on('username', function() {
 			client.username = usernameForGame1;
 			
 			clientCount++;
-			if(clientCount <= 2 ){
-				client.join('SpielRaum');
-				//console.log("Client: " + client.username + " ist nun im SpieleRaum");
-				if (clientCount === 1){
-					spieler1 = client.username; 
-					console.log (spieler1);
-				}
-				if(clientCount === 2){
-					spieler2 = client.username;
-					console.log(spieler2);
-				}
-			}
 			console.log('A user is Connectet: ' + client.username);
 			client.emit('message', 'You are Connected');
 			client.on('disconnect', function(){
@@ -59,7 +45,7 @@ appServer.use(bodyParser.urlencoded({ // brauchen wir für das parsen vom Post b
 			console.log("Momentane user: " + clientCount);
 	    });
 	});
-
+}
 // Hier endet Socket.io
 
 appServer.get('/', function(req,res){ // Url Abfangen

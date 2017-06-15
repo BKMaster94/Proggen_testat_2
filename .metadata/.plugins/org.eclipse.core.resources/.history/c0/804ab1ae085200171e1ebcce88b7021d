@@ -47,7 +47,6 @@ appServer.use(bodyParser.urlencoded({ // brauchen wir für das parsen vom Post b
 				}
 				if(clientCount === 2){
 					spieler2 = client.username;
-					console.log(spieler2);
 				}
 			}
 			console.log('A user is Connectet: ' + client.username);
