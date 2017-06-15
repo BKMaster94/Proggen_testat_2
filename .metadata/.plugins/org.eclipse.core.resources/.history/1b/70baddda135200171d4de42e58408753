@@ -63,19 +63,12 @@
 </HEAD>
 
 <BODY>
-<input type="text" id="name" name="name" value="Namen eintragen"/>
+<div id="spieler1"> Spieler 1: </div>
+<div id="spieler2"> Spieler 2: </div>
 
 
 
-<div> Spieler 1: </div>
-<div> Spieler 2: </div>
-<div id="testSpielerNameetc"></div>
-
-
-<button onclick="sendRequest()"> Senden </button>
-<button onclick="getResponse()"> response </button>
-
-
+<div id="TicTacToe">
 
 	<table id="table">
 		<tr id="S_Eins">
@@ -94,13 +87,16 @@
 			<th id="S3Z_Drei" onclick="WerlcherDarfClicken(this.id);"></th>
 		</tr>
 	</table>
+</div>
 </BODY>
 <script src="/Ajax/testAuslagerung.js"></script>
 <script type="text/javascript">
 
 
 
-var playername1= "";
+var $playername1= $('#spieler1');
+var $playername2= $('#spieler2');
+var player= "";
 var player1 = true;
 var player2 = false;
 
@@ -120,19 +116,29 @@ var socket = io();
 socket.emit('username'); // Wird in die Username Funktion eingesprungen um den Benutzernamen festzulegen.
 socket.on('message', function(message){
 	alert('The Server has a massage for you: ' + message);
+	
 });
+
+
 socket.on('gameReady', function(message){
 	alert("momentane spielerzahl: " + message);
 	
 	if(message === 2){
-				window.location.href = '/loadGame';
+				$('#TicTacToe').show();
 	}
 });
-socket.on('gameLoad' function(data){
-	
-	
-});
 
+socket.on('SpielerName1', function(name){
+		alert(name);
+		$playername1.append(name);
+	});
+
+socket.on('SpielerName2', function(name){
+		alert(name);
+		$playername2.append(name);
+	});
+	
+$('#TicTacToe').hide();
 
 </script>
 

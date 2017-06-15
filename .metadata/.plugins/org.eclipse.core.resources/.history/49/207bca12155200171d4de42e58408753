@@ -40,16 +40,25 @@ appServer.use(bodyParser.urlencoded({ // brauchen wir für das parsen vom Post b
 			clientCount++;
 			if(clientCount <= 2 ){
 				client.join('SpielRaum');
-				console.log("Client: " + client.username + " ist nun im SpieleRaum");
+				//console.log("Client: " + client.username + " ist nun im SpieleRaum");
 				if (clientCount === 1){
-					spieler1 = client.username  
+					spieler1 = client.username; 
+					console.log (spieler1);
 				}
+				if(clientCount === 2){
+					spieler2 = client.username;
+					console.log(spieler2);
+					io.to('SpielRaum').emit('SpielerName1', spieler1);
+					io.to('SpielRaum').emit('SpielerName2', spieler2);
+				}
+				io.to('SpielRaum').emit('gameReady', clientCount);
+
 			}
-			console.log('A user is Connectet: ' + client.username);
+			console.log('A user is Connectet: ' + client.username + " | ID: " + client.id);
 			client.emit('message', 'You are Connected');
 			client.on('disconnect', function(){
 				clientCount--;
-				console.log("Client disconnected: " + client.username);
+				console.log("Client disconnected: " + client.username + " | ID: " + client.id);
 			});
 			console.log("Momentane user: " + clientCount);
 	    });
@@ -59,6 +68,11 @@ appServer.use(bodyParser.urlencoded({ // brauchen wir für das parsen vom Post b
 
 appServer.get('/', function(req,res){ // Url Abfangen
 	res.sendFile(path.resolve('HTML/Anmeldung.html')); // Nimm die HTML Datei aus dem Ordner
+});
+
+
+appServer.get ('/loadGame', function(req,res){
+	res.sendFile(path.resolve('HTML/test.html'));
 });
 
 appServer.get('/Json' , function(req,res){

@@ -59,6 +59,7 @@ appServer.use(bodyParser.urlencoded({ // brauchen wir für das parsen vom Post b
 			client.on('disconnect', function(){
 				clientCount--;
 				console.log("Client disconnected: " + client.username + " | ID: " + client.id);
+				console.log("Momentane user: " + clientCount);
 			});
 			console.log("Momentane user: " + clientCount);
 	    });
