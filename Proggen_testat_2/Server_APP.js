@@ -29,7 +29,7 @@ console.log(meinJSONObjekt);
 		
 	});
 
-//
+/////////////////////////
 
 
 appServer.get('/', function(req,res){ // Url Abfangen
@@ -40,25 +40,23 @@ appServer.get('/Json' , function(req,res){
 	res.send(meinJSONObjekt);
 });
 
-appServer.use(bodyParser.urlencoded( // brauchen wir für das parsen vom Post body block
-		{
+appServer.use(bodyParser.urlencoded({ // brauchen wir für das parsen vom Post body block
 			extended: true 
-			}));
-
+}));
 
 appServer.get('/Ajax/testAuslagerung.js', function(req,res){ // URL Abfangen
 	res.sendFile(path.resolve('Ajax/testAuslagerung.js')); // Lade die Javascript datei ein.
 });
 
-appServer.post('/SeiteWechseln', function (req,res){
+appServer.post('/JsonPlayerNameBekommen', function (req,res){ //der SpielerName wird durch ein JSON an den server geschickt
 	abfangen = req.body; // Nehme das Object aus der Request und packe sie in eine Variable.
-	console.log(abfangen);
+	console.log(abfangen); //In der Console sehen wir die variable, welche das Object enthält
 	console.log("Request bekommen");
-	res.status(200).json(req.body);
+	res.status(200).json(req.body);//Der Status "Success" wird übergeben und ein json Obj wird zurückgeschickt
 });
 
-appServer.get('/SeiteWechseln2', function (req,res){
-	res.sendFile(path.resolve('HTML/Index.html'));
+appServer.get('/SeiteWechseln', function (req,res){ // Die Momentane Seite soll gewaechselt werden
+	res.sendFile(path.resolve('HTML/Index.html')); // Die Datei HTML/Index.html wird an den client geschickt
 });
 
 appServer.get('/get', function(req,res){ // Get Methode

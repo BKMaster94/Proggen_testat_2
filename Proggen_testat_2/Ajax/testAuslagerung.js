@@ -24,32 +24,29 @@ $("#butt").click(function(){
 
 var $ziel = $('#testSpielerNameetc');
 
-
-$("#jsonClick").click(function(){
-	alert("JSON Objekt kommt");
+$("#AnmeldeButton").click(function(){ //Wenn der Button wird geklickt und die Funktion funktion wird ausgeführt
+	//alert("JSON Objekt kommt"); 	
 	$.ajax({
-		type: 	"GET",
-		url: 	"/Json",
+		type: 	"POST",
+		url: 	"/JsonPlayerNameBekommen",
+		dataType: "json",
+		data: {"player1": SpielernameInput.value,"player2": SpielernameInput.value},
 		success: function(data){
-				$ziel.append('<li>Spieler1: '+data.player1+' Spieler2: '+data.player2 +'</li>' );
+			window.location.href = "/SeiteWechseln";
 		}
 	});
 });
 
-$("#AnmeldeButton").click(function(){
-	alert("JSON Objekt kommt");	
-	$.ajax({
-		type: 	"POST",
-		url: 	"/SeiteWechseln",
-		dataType: "json",
-		data: {"player1": SpielernameInput.value,"player2": SpielernameInput.value},
-		success: function(data){
-			console.log("suxes");
-			window.location.href = "/SeiteWechseln2";
-		},
-
-	});
-});
+//$("#jsonClick").click(function(){
+//	alert("JSON Objekt kommt");
+//	$.ajax({
+//		type: 	"GET",
+//		url: 	"/Json",
+//		success: function(data){
+//				$ziel.append('<li>Spieler1: '+data.player1+' Spieler2: '+data.player2 +'</li>' );
+//		}
+//	});
+//});
 
 //$(document).ready(function(){
 //		alert("wir sind am laden");
