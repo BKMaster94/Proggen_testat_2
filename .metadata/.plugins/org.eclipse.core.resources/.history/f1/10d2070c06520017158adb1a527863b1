@@ -100,6 +100,7 @@
 
 
 
+
 var playername1= "";
 var player1 = true;
 var player2 = false;
@@ -117,12 +118,9 @@ function WerlcherDarfClicken(el){
 
 var socket = io();
 
-socket.emit('username'); // Wird in die Username Funktion eingesprungen um den Benutzernamen festzulegen.
 socket.on('message', function(message){
 	alert('The Server has a massage for you: ' + message);
 });
-
-
 </script>
 
 </HTML>

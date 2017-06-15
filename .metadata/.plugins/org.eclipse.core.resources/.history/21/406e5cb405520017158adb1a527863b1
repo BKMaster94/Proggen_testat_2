@@ -12,8 +12,8 @@ var test = "Server Daten";
 var abfangen = "";
 var meinJSONObjekt = require(path.resolve('JSON/spielerName.json'));
 var clientCount = 0;
-var usernameForGame1 = "empty";
-var usernameForGame2 = "";
+var usernameForGame = "empty";
+var usernameForGame2 = "empty";
 /*fs.writeFile(path.resolve('JSON/spielerName.json'), JSON.stringify(playerName), (err) => { // Test zum erstellen von datein.
 	  if (err) throw err;
 	  console.log('The file has been saved!');
@@ -32,16 +32,20 @@ appServer.use(bodyParser.urlencoded({ // brauchen wir für das parsen vom Post b
 // Hier fängt socket.io an
 
 	io.on('connection', function(client){
-		client.on('username', function() {
-			client.username = usernameForGame1;
+		client.on('little_newbie', function(username) {
+			client.username = usernameForGame;
+			
 			
 			clientCount++;
 			console.log('A user is Connectet: ' + client.username);
 			client.emit('message', 'You are Connected');
+			
 			client.on('disconnect', function(){
 				clientCount--;
 				console.log("Client disconnected: " + client.username);
 			});
+			
+			console.log("Momentane Clients: "+ clientCount);
 	    });
 		
 		
@@ -68,8 +72,8 @@ appServer.post('/JsonPlayerNameBekommen', function (req,res){ //der SpielerName 
 	console.log(abfangen); //In der Console sehen wir die variable, welche das Object enthält
 	console.log("Request bekommen");
 	res.status(200).json(abfangen);//Der Status "Success" wird übergeben und ein json Obj wird zurückgeschickt
-	usernameForGame1 = abfangen.player;
-	console.log(usernameForGame1);
+	usernameForGame = abfangen.player;
+	console.log(usernameForGame);
 });
 
 appServer.get('/SeiteWechseln', function (req,res){ // Die Momentane Seite soll gewaechselt werden

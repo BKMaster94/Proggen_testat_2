@@ -117,7 +117,7 @@ function WerlcherDarfClicken(el){
 
 var socket = io();
 
-socket.emit('username'); // Wird in die Username Funktion eingesprungen um den Benutzernamen festzulegen.
+socket.emit('username');
 socket.on('message', function(message){
 	alert('The Server has a massage for you: ' + message);
 });

@@ -32,19 +32,20 @@ appServer.use(bodyParser.urlencoded({ // brauchen wir für das parsen vom Post b
 // Hier fängt socket.io an
 
 	io.on('connection', function(client){
-		client.on('username', function() {
+		client.on('little_newbie', function(username) {
 			client.username = usernameForGame1;
 			
-			clientCount++;
-			console.log('A user is Connectet: ' + client.username);
-			client.emit('message', 'You are Connected');
-			client.on('disconnect', function(){
-				clientCount--;
-				console.log("Client disconnected: " + client.username);
-			});
+			
+
 	    });
 		
-		
+		clientCount++;
+		console.log('A user is Connectet: ' + client.username);
+		client.emit('message', 'You are Connected');
+		client.on('disconnect', function(){
+			clientCount--;
+			console.log("Client disconnected: " + client.username);
+		});
 
 	});
 	

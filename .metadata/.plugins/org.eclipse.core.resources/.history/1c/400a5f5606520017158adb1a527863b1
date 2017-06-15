@@ -32,7 +32,7 @@ appServer.use(bodyParser.urlencoded({ // brauchen wir für das parsen vom Post b
 // Hier fängt socket.io an
 
 	io.on('connection', function(client){
-		client.on('username', function() {
+		client.on('username', function(username) {
 			client.username = usernameForGame1;
 			
 			clientCount++;
