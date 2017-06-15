@@ -1,3 +1,4 @@
+// Hier werden die Variablen initalisiert
 var express = require('express');
 var appServer = express();
 var server = appServer.listen(8081, function(){
@@ -9,28 +10,46 @@ var bodyParser = require('body-parser');
 var path = require('path');
 var test = "Server Daten";
 var abfangen = "";
-
 var meinJSONObjekt = require(path.resolve('JSON/spielerName.json'));
-console.log(meinJSONObjekt);
-
-
+var clientCount = 0;
+var usernameForGame1 = "empty";
+var usernameForGame2 = "";
 /*fs.writeFile(path.resolve('JSON/spielerName.json'), JSON.stringify(playerName), (err) => { // Test zum erstellen von datein.
 	  if (err) throw err;
 	  console.log('The file has been saved!');
 	});*/
 
+
+// Hier ist der Body-Parser
+
+appServer.use(bodyParser.urlencoded({ // brauchen wir für das parsen vom Post body block
+	extended: true 
+}));
+
+// Ende Body-Parser
+
+
 // Hier fängt socket.io an
 
 	io.on('connection', function(client){
-		console.log('A user is Connectet');
-		client.on('disconnect', function(){
-			console.log("Client disconnected");
-		});
+		client.on('little_newbie', function(username) {
+			client.username = usernameForGame1;
+			
+			
+			clientCount++;
+			console.log('A user is Connectet: ' + client.username);
+			client.emit('message', 'You are Connected');
+			client.on('disconnect', function(){
+				clientCount--;
+				console.log("Client disconnected: " + client.username);
+			});
+	    });
 		
+		
+
 	});
-
-/////////////////////////
-
+	
+// Hier endet Socket.io
 
 appServer.get('/', function(req,res){ // Url Abfangen
 	res.sendFile(path.resolve('HTML/Anmeldung.html')); // Nimm die HTML Datei aus dem Ordner
@@ -40,9 +59,6 @@ appServer.get('/Json' , function(req,res){
 	res.send(meinJSONObjekt);
 });
 
-appServer.use(bodyParser.urlencoded({ // brauchen wir für das parsen vom Post body block
-			extended: true 
-}));
 
 appServer.get('/Ajax/testAuslagerung.js', function(req,res){ // URL Abfangen
 	res.sendFile(path.resolve('Ajax/testAuslagerung.js')); // Lade die Javascript datei ein.
@@ -52,7 +68,9 @@ appServer.post('/JsonPlayerNameBekommen', function (req,res){ //der SpielerName 
 	abfangen = req.body; // Nehme das Object aus der Request und packe sie in eine Variable.
 	console.log(abfangen); //In der Console sehen wir die variable, welche das Object enthält
 	console.log("Request bekommen");
-	res.status(200).json(req.body);//Der Status "Success" wird übergeben und ein json Obj wird zurückgeschickt
+	res.status(200).json(abfangen);//Der Status "Success" wird übergeben und ein json Obj wird zurückgeschickt
+	usernameForGame1 = abfangen.player;
+	console.log(usernameForGame1);
 });
 
 appServer.get('/SeiteWechseln', function (req,res){ // Die Momentane Seite soll gewaechselt werden

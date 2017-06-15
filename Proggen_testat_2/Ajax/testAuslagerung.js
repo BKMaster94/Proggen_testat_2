@@ -30,7 +30,7 @@ $("#AnmeldeButton").click(function(){ //Wenn der Button wird geklickt und die Fu
 		type: 	"POST",
 		url: 	"/JsonPlayerNameBekommen",
 		dataType: "json",
-		data: {"player1": SpielernameInput.value,"player2": SpielernameInput.value},
+		data: {"player": SpielernameInput.value},
 		success: function(data){
 			window.location.href = "/SeiteWechseln";
 		}
@@ -59,3 +59,8 @@ $("#AnmeldeButton").click(function(){ //Wenn der Button wird geklickt und die Fu
 //			}
 //		});
 //});
+
+
+
+
+

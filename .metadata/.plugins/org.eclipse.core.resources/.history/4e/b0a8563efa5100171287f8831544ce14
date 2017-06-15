@@ -1,0 +1,26 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta name="Dokumentbe4schreibung" content="Index">
+	<meta name="viewport" content="width=device-width, initial-sclae=1.0">
+	<title>TicTacTo Anmeldung</title>
+	
+	<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+	<script src="socket.io/socket.io.js"></script>
+</head>
+
+<body>
+	<div id="SpielernameText"> Spielername waehlen: 
+		<input type="text" id="SpielernameInput"></input>
+		<button id="AnmeldeButton">  OK  </button>
+	</div>
+	<div id= asdasdasd></div>
+		
+<script>
+  var socket = io();
+</script>
+</body>
+
+<script src="/Ajax/testAuslagerung.js"></script>
+
+</html>

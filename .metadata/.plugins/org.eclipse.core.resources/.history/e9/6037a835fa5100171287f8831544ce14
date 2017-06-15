@@ -1,0 +1,121 @@
+<!DOCTYPE HTM>
+<HTML>
+<HEAD>
+	<script src="socket.io/socket.io.js"></script>
+	<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+	
+	<meta name="Dokumentbe4schreibung" content="Index">
+	<meta name="viewport" content="width=device-width, initial-sclae=1.0">
+	<title>TicTacTo</title>
+	<style> 
+	#table{
+		font: bold 100px 'Comic Sans';
+		margin-left:2em;
+		margin-top:2em;
+		display: table;
+	}
+	
+	table tr th{
+		width: 120px;
+		height: 120px;
+	}
+	
+	#S1Z_Eins{
+		border-right: 4px solid black;
+		border-bottom: 4px solid black;
+	}
+	#S1Z_Zwei
+	{
+		border-bottom: 4px solid black;
+	}
+	#S1Z_Drei
+	{
+		border-left: 4px solid black;
+		border-bottom: 4px solid black;
+	}
+	#S2Z_Eins{
+		border-right: 4px solid black;
+	}
+	#S2Z_Zwei
+	{
+		border-radius:: 2px;
+	}
+	#S2Z_Drei
+	{
+		border-left: 4px solid black;
+		border-radius:: 2px;
+		
+	}	
+	#S3Z_Eins{
+		border-right: 4px solid black;
+		border-top: 4px solid black;
+	}
+	#S3Z_Zwei
+	{
+		border-top: 4px solid black;
+	}
+	#S3Z_Drei
+	{
+		border-left: 4px solid black;
+		border-top: 4px solid black;
+	}
+	</style>
+</HEAD>
+
+<BODY>
+<input type="text" id="name" name="name" value="Namen eintragen"/>
+
+
+
+<div> Spieler 1: </div>
+<div> Spieler 2: </div>
+<div id="testSpielerNameetc"></div>
+
+
+<button onclick="sendRequest()"> Senden </button>
+<button onclick="getResponse()"> response </button>
+
+
+
+	<table id="table">
+		<tr id="S_Eins">
+			<th id="S1Z_Eins" onclick="WerlcherDarfClicken(this.id);"></th>
+			<th id="S1Z_Zwei" onclick="WerlcherDarfClicken(this.id);"></th>
+			<th id="S1Z_Drei" onclick="WerlcherDarfClicken(this.id);"></th>
+		</tr>
+		<tr id="S_Zwei">
+			<th id="S2Z_Eins" onclick="WerlcherDarfClicken(this.id);"></th>
+			<th id="S2Z_Zwei" onclick="WerlcherDarfClicken(this.id);"></th>
+			<th id="S2Z_Drei" onclick="WerlcherDarfClicken(this.id);"></th>
+		</tr>
+		<tr id="S_Drei">
+		 	<th id="S3Z_Eins" onclick="WerlcherDarfClicken(this.id);"></th>
+			<th id="S3Z_Zwei" onclick="WerlcherDarfClicken(this.id);"></th>
+			<th id="S3Z_Drei" onclick="WerlcherDarfClicken(this.id);"></th>
+		</tr>
+	</table>
+</BODY>
+<script type="text/javascript">
+var playername1= "";
+var player1 = true;
+var player2 = false;
+
+function WerlcherDarfClicken(el){
+	if(player1 == true ){
+		player2 = false;
+		document.getElementById(el).innerHTML='x';
+	}
+	if(player2 == true){
+		player1 = false;
+		document.getElementById(el).innerHTML='o';
+	}
+}
+
+
+</script>
+<script>
+<script>
+var socket = io();
+</script>
+<script src="/Ajax/testAuslagerung.js"></script>
+</HTML>

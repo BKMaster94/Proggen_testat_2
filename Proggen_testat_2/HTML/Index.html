@@ -1,11 +1,12 @@
 <!DOCTYPE HTM>
 <HTML>
 <HEAD>
+	<script src="socket.io/socket.io.js"></script>
+	<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+	
 	<meta name="Dokumentbe4schreibung" content="Index">
 	<meta name="viewport" content="width=device-width, initial-sclae=1.0">
 	<title>TicTacTo</title>
-	
-	<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 	<style> 
 	#table{
 		font: bold 100px 'Comic Sans';
@@ -94,7 +95,12 @@
 		</tr>
 	</table>
 </BODY>
+<script src="/Ajax/testAuslagerung.js"></script>
 <script type="text/javascript">
+
+
+
+
 var playername1= "";
 var player1 = true;
 var player2 = false;
@@ -110,32 +116,11 @@ function WerlcherDarfClicken(el){
 	}
 }
 
-var textname = document.getElementById("name").value;
-alert(textname);
+var socket = io();
 
-function sendRequest(){
-	
-	   xmlhttp = new XMLHttpRequest();
-	   xmlhttp.open("POST","http://localhost:8080/getstring", true);
-	   xmlhttp.send(textname);
-
-	   string=xmlhttp.responseText;
-	
-}
-
-function getResponse(){
-	
-		xhr = new XMLHttpRequest();
-
-		xhr.open("GET","http://localhost:8080/getResponse", true);
-		xhr.send('');
-	 	xhr.onreadystatechange = function() {
-		   if (xhr.readyState == 4) {
-		     document.getElementById("test").innerHTML = this.responseText;
-		   }	
-
-	 	}
-}
+socket.on('message', function(message){
+	alert('The Server has a massage for you: ' + message);
+});
 </script>
-<script src="/Ajax/testAuslagerung.js"></script>
+
 </HTML>
