@@ -206,7 +206,7 @@ appServer.use(bodyParser.urlencoded({ // brauchen wir für das Parsen vom Reques
 			else{
 				zeichenXO = "O";
 				wertDrin[6] = true;
-				SpielerFeldID[6] = 1;
+				SpielerFeldID[6] = 0;
 			}
 			zuege++;
 			io.to('SpielRaum').emit('S3Z_EinsEmiter', zeichenXO);
