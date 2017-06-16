@@ -382,6 +382,15 @@ appServer.get('/', function(req,res){ // Url Abfangen
 });
 
 
+appServer.get ('/loadGame', function(req,res){
+	res.sendFile(path.resolve('HTML/test.html'));
+});
+
+appServer.get('/Json' , function(req,res){
+	res.send(meinJSONObjekt);
+});
+
+
 appServer.get('/Ajax/testAuslagerung.js', function(req,res){ // URL Abfangen
 	res.sendFile(path.resolve('Ajax/testAuslagerung.js')); // Lade die Javascript datei ein.
 });

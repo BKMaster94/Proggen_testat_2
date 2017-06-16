@@ -382,6 +382,15 @@ appServer.get('/', function(req,res){ // Url Abfangen
 });
 
 
+appServer.get ('/loadGame', function(req,res){
+	res.sendFile(path.resolve('HTML/test.html'));
+});
+
+appServer.get('/Json' , function(req,res){
+	res.send(meinJSONObjekt);
+});
+
+
 appServer.get('/Ajax/testAuslagerung.js', function(req,res){ // URL Abfangen
 	res.sendFile(path.resolve('Ajax/testAuslagerung.js')); // Lade die Javascript datei ein.
 });
@@ -403,4 +412,8 @@ appServer.get('/SeiteWechseln', function (req,res){ // Die Momentane Seite soll 
 	res.sendFile(path.resolve('HTML/Index.html')); // Die Datei HTML/Index.html wird an den client geschickt
 });
 
+appServer.get('/get', function(req,res){ // Get Methode
+	res.send(test); // Sende dem Client informationen
+	console.log("Daten gesendet" + test);
+});
 

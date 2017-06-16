@@ -1,6 +1,27 @@
-//////////////////////////////////////////////////////////////////////////////
-//Spiel Anmeldung
-//////////////////////////////////////////////////////////////////////////////
+$("#target").click(function(){ // #Target == ID von HTML || .click == Auf click || Funktion in funktion
+	//alert("clickd"); // Alert == Dialogfenster
+	$.ajax({ // Jquery Ajax Funktion
+		url: "/test", // geben die Url weiter
+		type: "POST", // Mehtode auswählen
+		data: "test", // Daten übersenden 
+		success: function(result){ // Bei erfolg
+			//alert("success: " + result); // Gebe ein dialogfenster aus mit dem text aus dem Success
+		}
+	})
+});
+
+$("#butt").click(function(){
+	//alert("ziel");
+	$.ajax({
+		url: "/get",
+		type: "GET",
+		success: function(result){
+			//alert("success: " + result);
+			$("#ziel").html(result);
+		}
+	})
+});
+
 
 var $ziel = $('#testSpielerNameetc');
 
@@ -16,19 +37,18 @@ $("#AnmeldeButton").click(function(){ //Wenn der Button wird geklickt und die Fu
 		}
 	});
 });
-//////////////////////////////////////////////////////////////////////////////
-//Spiel Anmeldung Ende
-//////////////////////////////////////////////////////////////////////////////
 
 
-var socket = io(); // Socket wird geöffnet für die Clients
+
+var socket = io();
 
 
-//////////////////////////////////////////////////////////////////////////////
-//Spieler Initialisierung
-//////////////////////////////////////////////////////////////////////////////
+/////////
+// Spieler Initialisierung
+/////////
 var $playername1= $('#spieler1'); // Das HTML Object wird in eine JQuery Variable gespeichert
 var $playername2= $('#spieler2'); // Das HTML Object wird in eine JQuery Variable gespeichert
+
 
 socket.emit('username'); // Wird in die Username Funktion eingesprungen um den Benutzernamen festzulegen.
 
@@ -45,9 +65,30 @@ socket.on('SpielerName1', function(name){
 socket.on('SpielerName2', function(name){
 		$playername2.append(name); // Hier geben wir dem Ersten Spieler denn namen // JQuery.append |-> Hängge am innerHTML was an
 	});
-//////////////////////////////////////////////////////////////////////////////
-//Spieler Initialisierung || ENDE
-//////////////////////////////////////////////////////////////////////////////
+///////////
+
+var NeustartFenster;
+
+socket.on('Gewonnen', function(gewinner){ // Funktion zur Ermittlung des Gewinners
+	if(gewinner == 'Unentschieden'){
+		$('#gewonnenn').append('Sieger: Unentschieden')// Hier tragen wir das Unentschieden ein //JQuery.append |-> Hängge am innerHTML was an
+		$('#TicTacToe').hide();// Nach dem Beenden des Spiels wird das Feld wieder versteckt! |-> JQuery.hide();
+	}else{
+	$('#gewonnenn').append('Sieger: Spieler '+gewinner) // Hier tragen wir den Gewinner ein //JQuery.append |-> Hängge am innerHTML was an
+	$('#TicTacToe').hide(); // Nach dem Beenden des Spiels wird das Feld wieder versteckt! |-> JQuery.hide();
+	}
+	NeustartFenster = confirm('Neustarten ?'); // Confirm() |-> Alert mit auswahlmöglichkeit |-> Pure Javascript
+	
+	if(NeustartFenster)
+	{		
+		window.location.href = "/";
+	}
+	if(!test)
+	{
+		
+	}
+});
+
 //////////////////////////////////////////////////////////////////////////////
 //Spiel Feld Erkennung
 //////////////////////////////////////////////////////////////////////////////
@@ -131,29 +172,7 @@ $("#S3Z_Drei").click(function(){// Das Feld wird geklickt
 		$('#S3Z_Drei').append(zeichen);// Zeichen an der Stelle_____schicken
 	});
 //////////////////////////////////////////////////////////////////////////////
-//Spiel Feld Erkennung || ENDE
-//////////////////////////////////////////////////////////////////////////////
-//////////////////////////////////////////////////////////////////////////////
-//Gewinn Erkennung
-//////////////////////////////////////////////////////////////////////////////
-	var NeustartFenster;
-
-	socket.on('Gewonnen', function(gewinner){ // Funktion zur Ermittlung des Gewinners
-		if(gewinner == 'Unentschieden'){
-			$('#gewonnenn').append('Sieger: Unentschieden')// Hier tragen wir das Unentschieden ein //JQuery.append |-> Hängge am innerHTML was an
-			$('#TicTacToe').hide();// Nach dem Beenden des Spiels wird das Feld wieder versteckt! |-> JQuery.hide();
-		}else{
-		$('#gewonnenn').append('Sieger: Spieler '+gewinner) // Hier tragen wir den Gewinner ein //JQuery.append |-> Hängge am innerHTML was an
-		$('#TicTacToe').hide(); // Nach dem Beenden des Spiels wird das Feld wieder versteckt! |-> JQuery.hide();
-		}
-		NeustartFenster = confirm('Neustarten ?'); // Confirm() |-> Alert mit auswahlmöglichkeit |-> Pure Javascript
-		if(NeustartFenster)
-		{		
-			window.location.href = "/"; // Verlinkung auf die Startseite + Disconnect des Clients! |-> Pure Javascript
-		}
-	});
-//////////////////////////////////////////////////////////////////////////////
-//Gewinn Erkennung || ENDE
-//////////////////////////////////////////////////////////////////////////////
+	//Spiel Feld Erkennung || ENDE
+	//////////////////////////////////////////////////////////////////////////////
 	
 $('#TicTacToe').hide(); // Am anfang der Seite wird das TicTacToe Feld versteckt! Da nicht alle Spielr da sind.
