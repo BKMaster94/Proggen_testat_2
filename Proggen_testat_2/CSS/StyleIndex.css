@@ -1,0 +1,45 @@
+#table{
+		font: bold 100px 'Comic Sans';
+		margin-left:2em;
+		margin-top:2em;
+		display: table;
+	}
+table tr th{
+		width: 120px;
+		height: 120px;
+	}
+	
+#S1Z_Eins{
+		border-right: 4px solid black;
+		border-bottom: 4px solid black;
+	}
+#S1Z_Zwei
+	{
+		border-bottom: 4px solid black;
+	}
+#S1Z_Drei
+	{
+		border-left: 4px solid black;
+		border-bottom: 4px solid black;
+	}
+#S2Z_Eins{
+		border-right: 4px solid black;
+	}
+#S2Z_Zwei{
+		border-radius:: 2px;
+	}
+#S2Z_Drei{
+		border-left: 4px solid black;
+		border-radius:: 2px;
+	}	
+#S3Z_Eins{
+		border-right: 4px solid black;
+		border-top: 4px solid black;
+	}
+#S3Z_Zwei{
+		border-top: 4px solid black;
+	}
+#S3Z_Drei{
+		border-left: 4px solid black;
+		border-top: 4px solid black;
+	}
