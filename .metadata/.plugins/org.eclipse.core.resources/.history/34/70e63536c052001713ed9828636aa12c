@@ -60,13 +60,8 @@ $("#S1Z_Zwei").click(function(){
 		alert("Text von S1Z2: " +$('#S1Z_Zwei').text());
 		
 		for(var i=0; i<=1;i++){
-			if(i === 0)
-			{
+			if(i === 0){
 				
-			}
-			if(i === 1)
-			{
-								
 			}
 		}
 	});

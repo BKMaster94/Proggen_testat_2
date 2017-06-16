@@ -57,18 +57,6 @@ $("#S1Z_Zwei").click(function(){
 	socket.on('S1Z_ZweiEmiter', function(zeichen){
 	//	alert("wieder beim Client");
 		$('#S1Z_Zwei').append(zeichen);
-		alert("Text von S1Z2: " +$('#S1Z_Zwei').text());
-		
-		for(var i=0; i<=1;i++){
-			if(i === 0)
-			{
-				
-			}
-			if(i === 1)
-			{
-								
-			}
-		}
 	});
 
 $("#S1Z_Drei").click(function(){

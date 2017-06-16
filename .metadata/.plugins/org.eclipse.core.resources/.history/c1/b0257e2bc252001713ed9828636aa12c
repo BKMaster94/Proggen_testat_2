@@ -123,7 +123,7 @@ appServer.use(bodyParser.urlencoded({ // brauchen wir für das parsen vom Post b
 			if(wertDrin[2] === false){
 			if(zuege%2===0){
 				zeichenXY = "X";
-				wertDrin[2] = true;
+				wertDrin[2] = true
 				gewinnRaten[2] = 0;
 			}
 			else{
