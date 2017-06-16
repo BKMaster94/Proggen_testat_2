@@ -107,21 +107,21 @@ appServer.use(bodyParser.urlencoded({ // brauchen wir für das parsen vom Post b
 		// VIELE ABFRAGEN jedes Feld hat seine eigene abfrage
 		client.on('S1Z_Eins', function(){//Es wurde das Feld .. clicked
 			
-		if(client.id === zuege%2){ //ADI  wenn die id des Spielers gleich der zuege modulo 2 ist... somit immer abwechselnd
+		if(client.id === zuege%2){ //  wenn die id des Spielers gleich der zuege modulo 2 ist... somit immer abwechselnd
 //			console.log("S1Z_Eins im server angekommen");
 			if(wertDrin[0] === false){
 			
 			if(zuege%2===0){
-				zeichenXY = "X";
+				zeichenXY = "X"; // Das Zeichen des Spielers wird weiter gegeben
 				wertDrin[0] = true;
 				gewinnRaten[0] = 0;
 			}
 			else{
-				zeichenXY = "O";
+				zeichenXY = "O"; // Das Zeichen des Spielers wird weiter gegeben
 				wertDrin[0] = true;
 				gewinnRaten[0] = 1;
 			}
-			zuege++;
+			zuege++; //
 			io.emit('S1Z_EinsEmiter', zeichenXY);
 			}
 			//console.log("Wir sind bei Zug: " + zuege);
@@ -133,12 +133,12 @@ appServer.use(bodyParser.urlencoded({ // brauchen wir für das parsen vom Post b
 //			console.log("S1Z_Zwei im server angekommen");
 			if(wertDrin[1] === false){
 			if(zuege%2===0){
-				zeichenXY = "X";
+				zeichenXY = "X"; // Das Zeichen des Spielers wird weiter gegeben
 				wertDrin[1] = true;
 				gewinnRaten[1] = 0;
 			}
 			else{
-				zeichenXY = "O";
+				zeichenXY = "O"; // Das Zeichen des Spielers wird weiter gegeben
 				wertDrin[1] = true;
 				gewinnRaten[1] = 1;
 			}
@@ -154,12 +154,12 @@ appServer.use(bodyParser.urlencoded({ // brauchen wir für das parsen vom Post b
 //			console.log("S1Z_Drei im server angekommen");
 			if(wertDrin[2] === false){
 			if(zuege%2===0){
-				zeichenXY = "X";
+				zeichenXY = "X"; // Das Zeichen des Spielers wird weiter gegeben
 				wertDrin[2] = true;
 				gewinnRaten[2] = 0;
 			}
 			else{
-				zeichenXY = "O";
+				zeichenXY = "O"; // Das Zeichen des Spielers wird weiter gegeben
 				wertDrin[2] = true;
 				gewinnRaten[2] = 1;
 			}
@@ -175,13 +175,13 @@ appServer.use(bodyParser.urlencoded({ // brauchen wir für das parsen vom Post b
 //			console.log("S2Z_Eins im server angekommen");
 			if(wertDrin[3] === false){
 			if(zuege%2===0){
-				zeichenXY = "X";
+				zeichenXY = "X"; // Das Zeichen des Spielers wird weiter gegeben
 				wertDrin[3] = true;
 				gewinnRaten[3] = 0;
 			}
 			else{
-				zeichenXY = "O";
-				wertDrin[3] = true;
+				zeichenXY = "O"; // Das Zeichen des Spielers wird weiter gegeben
+				wertDrin[3] = true; 
 				gewinnRaten[3] = 1;
 			}
 			zuege++;
@@ -196,12 +196,12 @@ appServer.use(bodyParser.urlencoded({ // brauchen wir für das parsen vom Post b
 //			console.log("S2Z_Zwei im server angekommen");
 			if(wertDrin[4] === false){
 			if(zuege%2===0){
-				zeichenXY = "X";
+				zeichenXY = "X"; // Das Zeichen des Spielers wird weiter gegeben
 				wertDrin[4] = true;
 				gewinnRaten[4] = 0;
 			}
 			else{
-				zeichenXY = "O";
+				zeichenXY = "O"; // Das Zeichen des Spielers wird weiter gegeben
 				wertDrin[4] = true;
 				gewinnRaten[4] = 1;
 			}
@@ -217,12 +217,12 @@ appServer.use(bodyParser.urlencoded({ // brauchen wir für das parsen vom Post b
 //			console.log("S2Z_Drei im server angekommen");
 			if(wertDrin[5] === false){
 			if(zuege%2===0){
-				zeichenXY = "X";
+				zeichenXY = "X"; // Das Zeichen des Spielers wird weiter gegeben
 				wertDrin[5] = true;
 				gewinnRaten[5] = 0;
 			}
 			else{
-				zeichenXY = "O";
+				zeichenXY = "O"; // Das Zeichen des Spielers wird weiter gegeben
 				wertDrin[5] = true;
 				gewinnRaten[5] = 1;
 			}
@@ -238,12 +238,12 @@ appServer.use(bodyParser.urlencoded({ // brauchen wir für das parsen vom Post b
 //			console.log("S3Z_Eins im server angekommen");
 			if(wertDrin[6] === false){
 			if(zuege%2===0){
-				zeichenXY = "X";
+				zeichenXY = "X"; // Das Zeichen des Spielers wird weiter gegeben
 				wertDrin[6] = true;
 				gewinnRaten[6] = 0;
 			}
 			else{
-				zeichenXY = "O";
+				zeichenXY = "O"; // Das Zeichen des Spielers wird weiter gegeben
 				wertDrin[6] = true;
 				gewinnRaten[6] = 0;
 			}
@@ -259,12 +259,12 @@ appServer.use(bodyParser.urlencoded({ // brauchen wir für das parsen vom Post b
 //			console.log("S3Z_Zwei im server angekommen");
 			if(wertDrin[7] === false){
 			if(zuege%2===0){
-				zeichenXY = "X";
+				zeichenXY = "X"; // Das Zeichen des Spielers wird weiter gegeben
 				wertDrin[7] = true;
 				gewinnRaten[7] = 0;
 			}
 			else{
-				zeichenXY = "O";
+				zeichenXY = "O"; // Das Zeichen des Spielers wird weiter gegeben
 				wertDrin[7] = true;
 				gewinnRaten[7] = 1;
 			}
@@ -280,12 +280,12 @@ appServer.use(bodyParser.urlencoded({ // brauchen wir für das parsen vom Post b
 //			console.log("S3Z_Drei im server angekommen");
 			if(wertDrin[8] === false){
 			if(zuege%2===0){
-				zeichenXY = "X";
+				zeichenXY = "X"; // Das Zeichen des Spielers wird weiter gegeben
 				wertDrin[8] = true;
 				gewinnRaten[8] = 0;
 			}
 			else{
-				zeichenXY = "O";
+				zeichenXY = "O"; // Das Zeichen des Spielers wird weiter gegeben
 				wertDrin[8] = true;
 				gewinnRaten[8] = 1;
 			}

@@ -98,108 +98,110 @@ socket.on('Gewonnen', function(gewinner){
 
 
 
+///////////////////////////////////////////////////////////////////////////////
 
-//Wenn diese Fielder clicked werden emmite ich zum server
-// Vom Server kommt die der Call um das Feld mit dem im server festgelegten Zeichen zu markieren
-$("#S1Z_Eins").click(function(){
+///////////////////////////////////////////////////////////////////////////////
+$("#S1Z_Eins").click(function(){ // Das Feld wird geklickt
 //alert("S1Z_Eins");
-socket.emit('S1Z_Eins');
+socket.emit('S1Z_Eins'); // emit wird gemacht
 socket.emit('WennGewonnen'); // Nach jedem Klicken wird ein emit gemacht!
 });
 	socket.on('S1Z_EinsEmiter', function(zeichen){
 	//	alert("wieder beim Client");
-		$('#S1Z_Eins').append(zeichen);
+		$('#S1Z_Eins').append(zeichen); // Zeichen an der Stelle_____schicken
 	});
 	
-$("#S1Z_Zwei").click(function(){
+$("#S1Z_Zwei").click(function(){// Das Feld wird geklickt
 //	alert("S1Z_Zwei");
-	socket.emit('S1Z_Zwei');
+	socket.emit('S1Z_Zwei');// emit wird gemacht
 	socket.emit('WennGewonnen');
 });
 
 	socket.on('S1Z_ZweiEmiter', function(zeichen){
 	//	alert("wieder beim Client");
-		$('#S1Z_Zwei').append(zeichen);
+		$('#S1Z_Zwei').append(zeichen);// Zeichen an der Stelle_____schicken
 		//alert("Text von S1Z2: " +$('#S1Z_Zwei').text());
 	});
 
-$("#S1Z_Drei").click(function(){
+$("#S1Z_Drei").click(function(){// Das Feld wird geklickt
 //	alert("S1Z_Drei");
-	socket.emit('S1Z_Drei');
+	socket.emit('S1Z_Drei');// emit wird gemacht
 	socket.emit('WennGewonnen');
 });
 
 	socket.on('S1Z_DreiEmiter', function(zeichen){
 	//	alert("wieder beim Client");
-		$('#S1Z_Drei').append(zeichen);
+		$('#S1Z_Drei').append(zeichen);// Zeichen an der Stelle_____schicken
 	});
 	
-$("#S2Z_Eins").click(function(){
+$("#S2Z_Eins").click(function(){// Das Feld wird geklickt
 //	alert("S1Z_Eins");
-	socket.emit('S2Z_Eins');
+	socket.emit('S2Z_Eins');// emit wird gemacht
 	socket.emit('WennGewonnen');
 });
 
 	socket.on('S2Z_EinsEmiter', function(zeichen){
 	//	alert("wieder beim Client");
-		$('#S2Z_Eins').append(zeichen);
+		$('#S2Z_Eins').append(zeichen);// Zeichen an der Stelle_____schicken
 	});
 	
-$("#S2Z_Zwei").click(function(){
+$("#S2Z_Zwei").click(function(){// Das Feld wird geklickt
 //	alert("S1Z_Zwei");
-	socket.emit('S2Z_Zwei');
+	socket.emit('S2Z_Zwei');// emit wird gemacht
 	socket.emit('WennGewonnen');
 });
 
 	socket.on('S2Z_ZweiEmiter', function(zeichen){
 	//	alert("wieder beim Client");
-		$('#S2Z_Zwei').append(zeichen);
+		$('#S2Z_Zwei').append(zeichen);// Zeichen an der Stelle_____schicken
 	});
 	
-$("#S2Z_Drei").click(function(){
+$("#S2Z_Drei").click(function(){// Das Feld wird geklickt
 //	alert("S1Z_Drei");
-	socket.emit('S2Z_Drei');
+	socket.emit('S2Z_Drei');// emit wird gemacht
 	socket.emit('WennGewonnen');
 });
 
 	socket.on('S2Z_DreiEmiter', function(zeichen){
 	//	alert("wieder beim Client");
-		$('#S2Z_Drei').append(zeichen);
+		$('#S2Z_Drei').append(zeichen);// Zeichen an der Stelle_____schicken
 	});
 
-$("#S3Z_Eins").click(function(){
+$("#S3Z_Eins").click(function(){// Das Feld wird geklickt
 //	alert("S1Z_Eins");
-	socket.emit('S3Z_Eins');
+	socket.emit('S3Z_Eins');// emit wird gemacht
 	socket.emit('WennGewonnen');
 });
 
 	socket.on('S3Z_EinsEmiter', function(zeichen){
 	//	alert("wieder beim Client");
-		$('#S3Z_Eins').append(zeichen);
+		$('#S3Z_Eins').append(zeichen);// Zeichen an der Stelle_____schicken
 	});
 
-$("#S3Z_Zwei").click(function(){
+$("#S3Z_Zwei").click(function(){// Das Feld wird geklickt
 //	alert("S1Z_Zwei");
-	socket.emit('S3Z_Zwei');
+	socket.emit('S3Z_Zwei');// emit wird gemacht
 	socket.emit('WennGewonnen');
 });
 
 	socket.on('S3Z_ZweiEmiter', function(zeichen){
 	//	alert("wieder beim Client");
-		$('#S3Z_Zwei').append(zeichen);
+		$('#S3Z_Zwei').append(zeichen);// Zeichen an der Stelle_____schicken
 	});
 
-$("#S3Z_Drei").click(function(){
+$("#S3Z_Drei").click(function(){// Das Feld wird geklickt
 //	alert("S1Z_Drei");
-	socket.emit('S3Z_Drei');
+	socket.emit('S3Z_Drei');// emit wird gemacht
 	socket.emit('WennGewonnen');
 });
 
 	socket.on('S3Z_DreiEmiter', function(zeichen){
 	//	alert("wieder beim Client");
-		$('#S3Z_Drei').append(zeichen);
+		$('#S3Z_Drei').append(zeichen);// Zeichen an der Stelle_____schicken
 	});
+///////////////////////////////////////////////////////////////////////////////
 
+///////////////////////////////////////////////////////////////////////////////
 
 
 
