@@ -1,21 +1,22 @@
 <!DOCTYPE HTM>
 <HTML>
 <HEAD>
-	<meta name="Dokumentbe4schreibung" content="Index">
-	<meta name="viewport" content="width=device-width, initial-sclae=1.0">
-	
 	<script src="socket.io/socket.io.js"></script>
 	<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-
+	
+	<meta name="Dokumentbe4schreibung" content="Index">
+	<meta name="viewport" content="width=device-width, initial-sclae=1.0">
 	<link rel="stylesheet" type="text/css" href="CSS/StyleIndex.css">
 	<title>TicTacTo</title>
+
 </HEAD>
 <BODY>
 <div id="spieler1"> Spieler 1: </div>
 <div id="spieler2"> Spieler 2: </div>
-<div id="gewonnenn"></div>
+	<div id="gewonnenn"></div>
 
 <div id="TicTacToe">
+
 	<table id="table">
 		<tr id="S_Eins">
 			<th id="S1Z_Eins" ></th>

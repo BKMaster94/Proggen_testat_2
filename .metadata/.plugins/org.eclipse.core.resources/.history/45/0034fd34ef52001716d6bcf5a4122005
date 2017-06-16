@@ -1,12 +1,11 @@
 <!DOCTYPE HTM>
 <HTML>
 <HEAD>
-	<meta name="Dokumentbe4schreibung" content="Index">
-	<meta name="viewport" content="width=device-width, initial-sclae=1.0">
-	
 	<script src="socket.io/socket.io.js"></script>
 	<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-
+	
+	<meta name="Dokumentbe4schreibung" content="Index">
+	<meta name="viewport" content="width=device-width, initial-sclae=1.0">
 	<link rel="stylesheet" type="text/css" href="CSS/StyleIndex.css">
 	<title>TicTacTo</title>
 </HEAD>
