@@ -1,20 +1,21 @@
 //////////////////////////////////////////////////////////////////////////////
 //Variablen Initialisierung 
 //////////////////////////////////////////////////////////////////////////////
-var express = require('express'); // Express wird initialisert
-var appServer = express(); 
-var server = appServer.listen(8081, function(){ // Server wird gestartet und Hört auf den Jeweiligen Port!
-	console.log("Server gestartet auf Port: 8081");	// Consolen ausgabe zur überprüfung ob der Server Startet
+var express = require('express');
+var appServer = express();
+var server = appServer.listen(8081, function(){
+	console.log("Server gestartet auf Port: 8081");	
 });
-var io = require('socket.io').listen(server); // IO wird aufgesetzt auf das http.server Objekt
-var bodyParser = require('body-parser'); // Initialisierung des Body-Parsers
-var path = require('path'); // Lokale Path Variable für die Dateisuche 
-var ClientZaehler = 0; // Zählt wie viele Clients auf dem Server zugreifen über Socket.io
-var TempSpielerName = "empty"; // Temporärer Namens Halter für den Client
+var io = require('socket.io').listen(server);
+var fs= require('fs');
+var bodyParser = require('body-parser');
+var path = require('path');
+var clientCount = 0;
+var usernameForGame1 = "empty";
 var wertDrin = [false,false,false,false,false,false,false,false,false]; // Switch für häufigkeit des Klickens | JA ist nicht optimal :)
-var spieler1= null; // Wird benutzt um den Namen von Spieler1 weiter zu geben
-var spieler2= null; // Wird benutzt um den Namen von Spieler2 weiter zu geben
-var SpielerFeldID = [null,null,null,null,null,null,null,null,null]; // Hier wird die ID vom Jeweiligen Spieler eingetragen der ein Feld anklickt // Dient zur Gewinn Suche!
+var spieler1= null;
+var spieler2= null;
+var gewinnRaten = [null,null,null,null,null,null,null,null,null];
 var zeichenXO = "";//Das Zeichen "X" oder "O" im normalfall
 var zuege = 0;//anzahl der schon gemachten Zuege
 var i = 0;
@@ -31,19 +32,23 @@ appServer.use(bodyParser.urlencoded({ // brauchen wir für das Parsen vom Reques
 //Body-Parser ENDE
 //////////////////////////////////////////////////////////////////////////////
 
+// Ende Body-Parser
+
 
 // Hier fängt socket.io anwe
 
 	io.on('connection', function(client){
 		client.on('username', function() {
-			client.username = TempSpielerName;
+			client.username = usernameForGame1;
 			
-			ClientZaehler = ClientZaehler +1;
-			if(ClientZaehler <= 2 ){
+			clientCount = clientCount +1;
+			if(clientCount <= 2 ){
 				client.join('SpielRaum');
 				//console.log("Client: " + client.username + " ist nun im SpieleRaum");
-				if (ClientZaehler === 1){
-
+				if (clientCount === 1){
+//					spieler1 = client.username;
+//					client.id = 1; //ADI   Die Id des ersten clients wird auf 0 gesetzt
+//					console.log (spieler1);
 					
 					
 					
@@ -58,7 +63,11 @@ appServer.use(bodyParser.urlencoded({ // brauchen wir für das Parsen vom Reques
 					console.log("Spieler1: " +spieler1+ " || Spieler2: " + spieler2);
 					console.log("Spieler: " + client.id + " | Spilername: " + client.username);
 				}
-				if(ClientZaehler === 2){				
+				if(clientCount === 2){
+//					spieler2 = client.username;
+//					client.id=1;//ADI   Die Id des ersten clients wird auf 1 gesetzt
+//					console.log(spieler2);
+//					
 					console.log("Spieler1: " +spieler1+ " || Spieler2: " + spieler2);
 					
 					if(spieler1 === null){
@@ -78,17 +87,17 @@ appServer.use(bodyParser.urlencoded({ // brauchen wir für das Parsen vom Reques
 					spieler1=null;
 					spieler2=null;
 				}
-				io.to('SpielRaum').emit('gameReady', ClientZaehler);
+				io.to('SpielRaum').emit('gameReady', clientCount);
 
 			}
 			
 			console.log('A user is Connectet: ' + client.username + " | ID: " + client.id);
 			client.on('disconnect', function(){
-				ClientZaehler--;
+				clientCount--;
 				console.log("Client disconnected: " + client.username + " | ID: " + client.id);
-				console.log("Momentane user: " + ClientZaehler);
+				console.log("Momentane user: " + clientCount);
 			});
-			console.log("Momentane user: " + ClientZaehler);
+			console.log("Momentane user: " + clientCount);
 	    });
 		
 
@@ -103,12 +112,12 @@ appServer.use(bodyParser.urlencoded({ // brauchen wir für das Parsen vom Reques
 			if(zuege%2===0){
 				zeichenXO = "X"; // Das Zeichen des Spielers wird weiter gegeben
 				wertDrin[0] = true;
-				SpielerFeldID[0] = 0;
+				gewinnRaten[0] = 0;
 			}
 			else{
 				zeichenXO = "O"; // Das Zeichen des Spielers wird weiter gegeben
 				wertDrin[0] = true;
-				SpielerFeldID[0] = 1;
+				gewinnRaten[0] = 1;
 			}
 			zuege++; //
 			io.emit('S1Z_EinsEmiter', zeichenXO);
@@ -124,12 +133,12 @@ appServer.use(bodyParser.urlencoded({ // brauchen wir für das Parsen vom Reques
 			if(zuege%2===0){
 				zeichenXO = "X"; // Das Zeichen des Spielers wird weiter gegeben
 				wertDrin[1] = true;
-				SpielerFeldID[1] = 0;
+				gewinnRaten[1] = 0;
 			}
 			else{
 				zeichenXO = "O"; // Das Zeichen des Spielers wird weiter gegeben
 				wertDrin[1] = true;
-				SpielerFeldID[1] = 1;
+				gewinnRaten[1] = 1;
 			}
 			zuege++;
 			io.emit('S1Z_ZweiEmiter', zeichenXO);
@@ -145,12 +154,12 @@ appServer.use(bodyParser.urlencoded({ // brauchen wir für das Parsen vom Reques
 			if(zuege%2===0){
 				zeichenXO = "X"; // Das Zeichen des Spielers wird weiter gegeben
 				wertDrin[2] = true;
-				SpielerFeldID[2] = 0;
+				gewinnRaten[2] = 0;
 			}
 			else{
 				zeichenXO = "O"; // Das Zeichen des Spielers wird weiter gegeben
 				wertDrin[2] = true;
-				SpielerFeldID[2] = 1;
+				gewinnRaten[2] = 1;
 			}
 			zuege++;
 			io.emit('S1Z_DreiEmiter', zeichenXO);
@@ -166,12 +175,12 @@ appServer.use(bodyParser.urlencoded({ // brauchen wir für das Parsen vom Reques
 			if(zuege%2===0){
 				zeichenXO = "X"; // Das Zeichen des Spielers wird weiter gegeben
 				wertDrin[3] = true;
-				SpielerFeldID[3] = 0;
+				gewinnRaten[3] = 0;
 			}
 			else{
 				zeichenXO = "O"; // Das Zeichen des Spielers wird weiter gegeben
 				wertDrin[3] = true; 
-				SpielerFeldID[3] = 1;
+				gewinnRaten[3] = 1;
 			}
 			zuege++;
 			io.emit('S2Z_EinsEmiter', zeichenXO);
@@ -187,12 +196,12 @@ appServer.use(bodyParser.urlencoded({ // brauchen wir für das Parsen vom Reques
 			if(zuege%2===0){
 				zeichenXO = "X"; // Das Zeichen des Spielers wird weiter gegeben
 				wertDrin[4] = true;
-				SpielerFeldID[4] = 0;
+				gewinnRaten[4] = 0;
 			}
 			else{
 				zeichenXO = "O"; // Das Zeichen des Spielers wird weiter gegeben
 				wertDrin[4] = true;
-				SpielerFeldID[4] = 1;
+				gewinnRaten[4] = 1;
 			}
 			zuege++;
 			io.emit('S2Z_ZweiEmiter', zeichenXO);
@@ -208,12 +217,12 @@ appServer.use(bodyParser.urlencoded({ // brauchen wir für das Parsen vom Reques
 			if(zuege%2===0){
 				zeichenXO = "X"; // Das Zeichen des Spielers wird weiter gegeben
 				wertDrin[5] = true;
-				SpielerFeldID[5] = 0;
+				gewinnRaten[5] = 0;
 			}
 			else{
 				zeichenXO = "O"; // Das Zeichen des Spielers wird weiter gegeben
 				wertDrin[5] = true;
-				SpielerFeldID[5] = 1;
+				gewinnRaten[5] = 1;
 			}
 			zuege++;
 			io.emit('S2Z_DreiEmiter', zeichenXO);
@@ -229,12 +238,12 @@ appServer.use(bodyParser.urlencoded({ // brauchen wir für das Parsen vom Reques
 			if(zuege%2===0){
 				zeichenXO = "X"; // Das Zeichen des Spielers wird weiter gegeben
 				wertDrin[6] = true;
-				SpielerFeldID[6] = 0;
+				gewinnRaten[6] = 0;
 			}
 			else{
 				zeichenXO = "O"; // Das Zeichen des Spielers wird weiter gegeben
 				wertDrin[6] = true;
-				SpielerFeldID[6] = 0;
+				gewinnRaten[6] = 0;
 			}
 			zuege++;
 			io.emit('S3Z_EinsEmiter', zeichenXO);
@@ -250,12 +259,12 @@ appServer.use(bodyParser.urlencoded({ // brauchen wir für das Parsen vom Reques
 			if(zuege%2===0){
 				zeichenXO = "X"; // Das Zeichen des Spielers wird weiter gegeben
 				wertDrin[7] = true;
-				SpielerFeldID[7] = 0;
+				gewinnRaten[7] = 0;
 			}
 			else{
 				zeichenXO = "O"; // Das Zeichen des Spielers wird weiter gegeben
 				wertDrin[7] = true;
-				SpielerFeldID[7] = 1;
+				gewinnRaten[7] = 1;
 			}
 			zuege++;
 			io.emit('S3Z_ZweiEmiter', zeichenXO);
@@ -271,12 +280,12 @@ appServer.use(bodyParser.urlencoded({ // brauchen wir für das Parsen vom Reques
 			if(zuege%2===0){
 				zeichenXO = "X"; // Das Zeichen des Spielers wird weiter gegeben
 				wertDrin[8] = true;
-				SpielerFeldID[8] = 0;
+				gewinnRaten[8] = 0;
 			}
 			else{
 				zeichenXO = "O"; // Das Zeichen des Spielers wird weiter gegeben
 				wertDrin[8] = true;
-				SpielerFeldID[8] = 1;
+				gewinnRaten[8] = 1;
 			}
 			zuege++;
 			io.emit('S3Z_DreiEmiter', zeichenXO);
@@ -289,75 +298,75 @@ appServer.use(bodyParser.urlencoded({ // brauchen wir für das Parsen vom Reques
 			console.log("Wir sind bei Zug: " + zuege);
 			if(zuege > 4){
 				console.log("Suche Gewinner");
-				console.log(" 0: " + SpielerFeldID[0] + " 1: " + SpielerFeldID[1] + " 2: " + SpielerFeldID[2] + " 3: " + SpielerFeldID[3] + " 4: " + SpielerFeldID[4] + " 5: " + SpielerFeldID[5] + " 6: " + SpielerFeldID[6] + " 7: " + SpielerFeldID[7] + "8: " + SpielerFeldID[8]);
-				if(SpielerFeldID[0] === 1 && SpielerFeldID[1] === 1 && SpielerFeldID[2] === 1 || SpielerFeldID[2] === 0 && SpielerFeldID[1] === 0 && SpielerFeldID[0] === 0 ){
+				console.log(" 0: " + gewinnRaten[0] + " 1: " + gewinnRaten[1] + " 2: " + gewinnRaten[2] + " 3: " + gewinnRaten[3] + " 4: " + gewinnRaten[4] + " 5: " + gewinnRaten[5] + " 6: " + gewinnRaten[6] + " 7: " + gewinnRaten[7] + "8: " + gewinnRaten[8]);
+				if(gewinnRaten[0] === 1 && gewinnRaten[1] === 1 && gewinnRaten[2] === 1 || gewinnRaten[2] === 0 && gewinnRaten[1] === 0 && gewinnRaten[0] === 0 ){
 					zuege = 0;
-					for(i=0;i < SpielerFeldID.length;i++){
-						SpielerFeldID[i] = null;		
+					for(i=0;i < gewinnRaten.length;i++){
+						gewinnRaten[i] = null;		
 						wertDrin[i] = false;
 					}
-					io.emit('Gewonnen' , SpielerFeldID[0]+1);
+					io.emit('Gewonnen' , gewinnRaten[0]+1);
 				}
-				if(SpielerFeldID[6] === 1 && SpielerFeldID[7] === 1 && SpielerFeldID[8] === 1 || SpielerFeldID[6] === 0 && SpielerFeldID[7] === 0 && SpielerFeldID[8] === 0 ){
+				if(gewinnRaten[6] === 1 && gewinnRaten[7] === 1 && gewinnRaten[8] === 1 || gewinnRaten[6] === 0 && gewinnRaten[7] === 0 && gewinnRaten[8] === 0 ){
 					zuege = 0;
-					for(i=0;i < SpielerFeldID.length;i++){
-						SpielerFeldID[i] = null;		
+					for(i=0;i < gewinnRaten.length;i++){
+						gewinnRaten[i] = null;		
 						wertDrin[i] = false;
 					}
-					io.emit('Gewonnen' , SpielerFeldID[6]+1);
+					io.emit('Gewonnen' , gewinnRaten[6]+1);
 				}
-				if(SpielerFeldID[0] === 1 && SpielerFeldID[3] === 1 && SpielerFeldID[6] === 1 || SpielerFeldID[0] === 0 && SpielerFeldID[3] === 0 && SpielerFeldID[6] === 0 ){
+				if(gewinnRaten[0] === 1 && gewinnRaten[3] === 1 && gewinnRaten[6] === 1 || gewinnRaten[0] === 0 && gewinnRaten[3] === 0 && gewinnRaten[6] === 0 ){
 					zuege = 0;
-					for(i=0;i < SpielerFeldID.length;i++){
-						SpielerFeldID[i] = null;		
+					for(i=0;i < gewinnRaten.length;i++){
+						gewinnRaten[i] = null;		
 						wertDrin[i] = false;
 					}
-					io.emit('Gewonnen' ,  SpielerFeldID[0]+1);
+					io.emit('Gewonnen' ,  gewinnRaten[0]+1);
 				}
-				if(SpielerFeldID[2] === 1 && SpielerFeldID[5] === 1 && SpielerFeldID[8] === 1 || SpielerFeldID[2] === 0 && SpielerFeldID[5] === 0 && SpielerFeldID[8] === 0 ){
+				if(gewinnRaten[2] === 1 && gewinnRaten[5] === 1 && gewinnRaten[8] === 1 || gewinnRaten[2] === 0 && gewinnRaten[5] === 0 && gewinnRaten[8] === 0 ){
 					zuege = 0;
-					for(i=0;i < SpielerFeldID.length;i++){
-						SpielerFeldID[i] = null;		
+					for(i=0;i < gewinnRaten.length;i++){
+						gewinnRaten[i] = null;		
 						wertDrin[i] = false;
 					}
-					io.emit('Gewonnen' , SpielerFeldID[2]+1);
+					io.emit('Gewonnen' , gewinnRaten[2]+1);
 				}
-				if(SpielerFeldID[0] === 1 && SpielerFeldID[4] === 1 && SpielerFeldID[8] === 1 || SpielerFeldID[0] === 0 && SpielerFeldID[4] === 0 && SpielerFeldID[8] === 0 ){
+				if(gewinnRaten[0] === 1 && gewinnRaten[4] === 1 && gewinnRaten[8] === 1 || gewinnRaten[0] === 0 && gewinnRaten[4] === 0 && gewinnRaten[8] === 0 ){
 					zuege = 0;
-					for(i=0;i < SpielerFeldID.length;i++){
-						SpielerFeldID[i] = null;		
+					for(i=0;i < gewinnRaten.length;i++){
+						gewinnRaten[i] = null;		
 						wertDrin[i] = false;
 					}
-					io.emit('Gewonnen' , SpielerFeldID[0]+1);
+					io.emit('Gewonnen' , gewinnRaten[0]+1);
 				}
-				if(SpielerFeldID[2] === 1 && SpielerFeldID[4] === 1 && SpielerFeldID[6] === 1 || SpielerFeldID[2] === 0 && SpielerFeldID[4] === 0 && SpielerFeldID[6] === 0 ){
+				if(gewinnRaten[2] === 1 && gewinnRaten[4] === 1 && gewinnRaten[6] === 1 || gewinnRaten[2] === 0 && gewinnRaten[4] === 0 && gewinnRaten[6] === 0 ){
 					zuege = 0;
-					for(i=0;i < SpielerFeldID.length;i++){
-						SpielerFeldID[i] = null;		
+					for(i=0;i < gewinnRaten.length;i++){
+						gewinnRaten[i] = null;		
 						wertDrin[i] = false;
 					}
-					io.emit('Gewonnen' , SpielerFeldID[2]+1);
+					io.emit('Gewonnen' , gewinnRaten[2]+1);
 				}
-				if(SpielerFeldID[3] === 1 && SpielerFeldID[4] === 1 && SpielerFeldID[5] === 1 || SpielerFeldID[3] === 0 && SpielerFeldID[4] === 0 && SpielerFeldID[5] === 0 ){
+				if(gewinnRaten[3] === 1 && gewinnRaten[4] === 1 && gewinnRaten[5] === 1 || gewinnRaten[3] === 0 && gewinnRaten[4] === 0 && gewinnRaten[5] === 0 ){
 					zuege = 0;
-					for(i=0;i < SpielerFeldID.length;i++){
-						SpielerFeldID[i] = null;		
+					for(i=0;i < gewinnRaten.length;i++){
+						gewinnRaten[i] = null;		
 						wertDrin[i] = false;
 					}
-					io.emit('Gewonnen' , SpielerFeldID[3]+1);
+					io.emit('Gewonnen' , gewinnRaten[3]+1);
 				}
-				if(SpielerFeldID[1] === 1 && SpielerFeldID[4] === 1 && SpielerFeldID[7] === 1 || SpielerFeldID[1] === 0 && SpielerFeldID[4] === 0 && SpielerFeldID[6] === 0 ){
+				if(gewinnRaten[1] === 1 && gewinnRaten[4] === 1 && gewinnRaten[7] === 1 || gewinnRaten[1] === 0 && gewinnRaten[4] === 0 && gewinnRaten[6] === 0 ){
 					zuege = 0;
-					for(i=0;i < SpielerFeldID.length;i++){
-						SpielerFeldID[i] = null;		
+					for(i=0;i < gewinnRaten.length;i++){
+						gewinnRaten[i] = null;		
 						wertDrin[i] = false;
 					}
-					io.emit('Gewonnen' , SpielerFeldID[1]+1);
+					io.emit('Gewonnen' , gewinnRaten[1]+1);
 				}
 				if(zuege === 9){
 					zuege = 0;
-					for(i=0;i < SpielerFeldID.length;i++){
-						SpielerFeldID[i] = null;		
+					for(i=0;i < gewinnRaten.length;i++){
+						gewinnRaten[i] = null;		
 						wertDrin[i] = false;
 					}
 					io.emit('Gewonnen' , 'Unentschieden');
@@ -389,7 +398,7 @@ appServer.get('/CSS/StyleIndex.css', function(req,res){ // URL Abfangen
 
 appServer.post('/SpielerNamenBekommen', function (req,res){ //der SpielerName wird durch ein JSON an den server geschickt
 	res.status(200).json(req.body);//Der Status "Success" wird übergeben und ein json Obj wird zurückgeschickt
-	TempSpielerName = req.body.player; // Wert es JSON Objektes wird in eine Variable geschrieben. // wird der Benutzername Des Clients mit Socket.io()
+	usernameForGame1 = req.body.player; // Wert es JSON Objektes wird in eine Variable geschrieben. // wird der Benutzername Des Clients mit Socket.io()
 });
 
 appServer.get('/TicTacToeSpiel', function (req,res){ // Die Momentane Seite soll gewaechselt werden

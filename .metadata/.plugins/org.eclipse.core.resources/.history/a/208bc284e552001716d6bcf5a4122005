@@ -1,20 +1,21 @@
 //////////////////////////////////////////////////////////////////////////////
 //Variablen Initialisierung 
 //////////////////////////////////////////////////////////////////////////////
-var express = require('express'); // Express wird initialisert
-var appServer = express(); 
-var server = appServer.listen(8081, function(){ // Server wird gestartet und Hört auf den Jeweiligen Port!
-	console.log("Server gestartet auf Port: 8081");	// Consolen ausgabe zur überprüfung ob der Server Startet
+var express = require('express');
+var appServer = express();
+var server = appServer.listen(8081, function(){
+	console.log("Server gestartet auf Port: 8081");	
 });
-var io = require('socket.io').listen(server); // IO wird aufgesetzt auf das http.server Objekt
-var bodyParser = require('body-parser'); // Initialisierung des Body-Parsers
-var path = require('path'); // Lokale Path Variable für die Dateisuche 
-var ClientZaehler = 0; // Zählt wie viele Clients auf dem Server zugreifen über Socket.io
-var TempSpielerName = "empty"; // Temporärer Namens Halter für den Client
+var io = require('socket.io').listen(server);
+var fs= require('fs');
+var bodyParser = require('body-parser');
+var path = require('path');
+var clientCount = 0;
+var usernameForGame1 = "empty";
 var wertDrin = [false,false,false,false,false,false,false,false,false]; // Switch für häufigkeit des Klickens | JA ist nicht optimal :)
-var spieler1= null; // Wird benutzt um den Namen von Spieler1 weiter zu geben
-var spieler2= null; // Wird benutzt um den Namen von Spieler2 weiter zu geben
-var SpielerFeldID = [null,null,null,null,null,null,null,null,null]; // Hier wird die ID vom Jeweiligen Spieler eingetragen der ein Feld anklickt // Dient zur Gewinn Suche!
+var spieler1= null;
+var spieler2= null;
+var SpielerFeldID = [null,null,null,null,null,null,null,null,null]; // 
 var zeichenXO = "";//Das Zeichen "X" oder "O" im normalfall
 var zuege = 0;//anzahl der schon gemachten Zuege
 var i = 0;
@@ -36,13 +37,13 @@ appServer.use(bodyParser.urlencoded({ // brauchen wir für das Parsen vom Reques
 
 	io.on('connection', function(client){
 		client.on('username', function() {
-			client.username = TempSpielerName;
+			client.username = usernameForGame1;
 			
-			ClientZaehler = ClientZaehler +1;
-			if(ClientZaehler <= 2 ){
+			clientCount = clientCount +1;
+			if(clientCount <= 2 ){
 				client.join('SpielRaum');
 				//console.log("Client: " + client.username + " ist nun im SpieleRaum");
-				if (ClientZaehler === 1){
+				if (clientCount === 1){
 
 					
 					
@@ -58,7 +59,7 @@ appServer.use(bodyParser.urlencoded({ // brauchen wir für das Parsen vom Reques
 					console.log("Spieler1: " +spieler1+ " || Spieler2: " + spieler2);
 					console.log("Spieler: " + client.id + " | Spilername: " + client.username);
 				}
-				if(ClientZaehler === 2){				
+				if(clientCount === 2){				
 					console.log("Spieler1: " +spieler1+ " || Spieler2: " + spieler2);
 					
 					if(spieler1 === null){
@@ -78,17 +79,17 @@ appServer.use(bodyParser.urlencoded({ // brauchen wir für das Parsen vom Reques
 					spieler1=null;
 					spieler2=null;
 				}
-				io.to('SpielRaum').emit('gameReady', ClientZaehler);
+				io.to('SpielRaum').emit('gameReady', clientCount);
 
 			}
 			
 			console.log('A user is Connectet: ' + client.username + " | ID: " + client.id);
 			client.on('disconnect', function(){
-				ClientZaehler--;
+				clientCount--;
 				console.log("Client disconnected: " + client.username + " | ID: " + client.id);
-				console.log("Momentane user: " + ClientZaehler);
+				console.log("Momentane user: " + clientCount);
 			});
-			console.log("Momentane user: " + ClientZaehler);
+			console.log("Momentane user: " + clientCount);
 	    });
 		
 
@@ -389,7 +390,7 @@ appServer.get('/CSS/StyleIndex.css', function(req,res){ // URL Abfangen
 
 appServer.post('/SpielerNamenBekommen', function (req,res){ //der SpielerName wird durch ein JSON an den server geschickt
 	res.status(200).json(req.body);//Der Status "Success" wird übergeben und ein json Obj wird zurückgeschickt
-	TempSpielerName = req.body.player; // Wert es JSON Objektes wird in eine Variable geschrieben. // wird der Benutzername Des Clients mit Socket.io()
+	usernameForGame1 = req.body.player; // Wert es JSON Objektes wird in eine Variable geschrieben. // wird der Benutzername Des Clients mit Socket.io()
 });
 
 appServer.get('/TicTacToeSpiel', function (req,res){ // Die Momentane Seite soll gewaechselt werden
