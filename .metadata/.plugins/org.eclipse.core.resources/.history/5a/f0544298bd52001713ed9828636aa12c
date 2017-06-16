@@ -188,38 +188,32 @@ appServer.use(bodyParser.urlencoded({ // brauchen wir für das parsen vom Post b
 
 		if(client.id === zuege%2){
 //			console.log("S3Z_Eins im server angekommen");
-			if(wertDrin[6] === false){
+			
 			if(zuege%2===0){
 				zeichenXY = "X";
-				wertDrin[6] = true;
 			}
 			else{
 				zeichenXY = "O";
-				wertDrin[6] = true;
 			}
 			zuege++;
 			io.emit('S3Z_EinsEmiter', zeichenXY);
-			}
 		}
-	});
+		});
 		client.on('S3Z_Zwei', function(){//Es wurde das Feld .. clicked
 
 		if(client.id === zuege%2){
 //			console.log("S3Z_Zwei im server angekommen");
-			if(wertDrin[7] === false){
+			
 			if(zuege%2===0){
 				zeichenXY = "X";
-				wertDrin[7] = true;
 			}
 			else{
 				zeichenXY = "O";
-				wertDrin[7] = true;
 			}
 			zuege++;
 			io.emit('S3Z_ZweiEmiter', zeichenXY);
-			}
 		}
-	});
+		});
 		client.on('S3Z_Drei', function(){//Es wurde das Feld .. clicked
 
 		if(client.id === zuege%2){

@@ -116,110 +116,92 @@ appServer.use(bodyParser.urlencoded({ // brauchen wir für das parsen vom Post b
 
 		if(client.id === zuege%2){
 //			console.log("S1Z_Drei im server angekommen");
-			if(wertDrin[2] === false){
+			
 			if(zuege%2===0){
 				zeichenXY = "X";
-				wertDrin[2] = true;
 			}
 			else{
 				zeichenXY = "O";
-				wertDrin[2] = true;
 			}
 			zuege++;
 			io.emit('S1Z_DreiEmiter', zeichenXY);
-			}
 		}
-	});
+		});
 		client.on('S2Z_Eins', function(){//Es wurde das Feld .. clicked
 
 		if(client.id === zuege%2){
 //			console.log("S2Z_Eins im server angekommen");
-			if(wertDrin[3] === false){
+			
 			if(zuege%2===0){
 				zeichenXY = "X";
-				wertDrin[3] = true;
 			}
 			else{
 				zeichenXY = "O";
-				wertDrin[3] = true;
 			}
 			zuege++;
 			io.emit('S2Z_EinsEmiter', zeichenXY);
-			}
 		}
-	});
+		});
 		client.on('S2Z_Zwei', function(){//Es wurde das Feld .. clicked
 
 		if(client.id === zuege%2){
 //			console.log("S2Z_Zwei im server angekommen");
-			if(wertDrin[4] === false){
+			
 			if(zuege%2===0){
 				zeichenXY = "X";
-				wertDrin[4] = true;
 			}
 			else{
 				zeichenXY = "O";
-				wertDrin[4] = true;
 			}
 			zuege++;
 			io.emit('S2Z_ZweiEmiter', zeichenXY);
-			}
 		}
-	});
+		});
 		client.on('S2Z_Drei', function(){//Es wurde das Feld .. clicked
 
 		if(client.id === zuege%2){
 //			console.log("S2Z_Drei im server angekommen");
-			if(wertDrin[5] === false){
+			
 			if(zuege%2===0){
 				zeichenXY = "X";
-				wertDrin[5] = true;
 			}
 			else{
 				zeichenXY = "O";
-				wertDrin[5] = true;
 			}
 			zuege++;
 			io.emit('S2Z_DreiEmiter', zeichenXY);
-			}
 		}
-	});
+		});
 		client.on('S3Z_Eins', function(){//Es wurde das Feld .. clicked
 
 		if(client.id === zuege%2){
 //			console.log("S3Z_Eins im server angekommen");
-			if(wertDrin[6] === false){
+			
 			if(zuege%2===0){
 				zeichenXY = "X";
-				wertDrin[6] = true;
 			}
 			else{
 				zeichenXY = "O";
-				wertDrin[6] = true;
 			}
 			zuege++;
 			io.emit('S3Z_EinsEmiter', zeichenXY);
-			}
 		}
-	});
+		});
 		client.on('S3Z_Zwei', function(){//Es wurde das Feld .. clicked
 
 		if(client.id === zuege%2){
 //			console.log("S3Z_Zwei im server angekommen");
-			if(wertDrin[7] === false){
+			
 			if(zuege%2===0){
 				zeichenXY = "X";
-				wertDrin[7] = true;
 			}
 			else{
 				zeichenXY = "O";
-				wertDrin[7] = true;
 			}
 			zuege++;
 			io.emit('S3Z_ZweiEmiter', zeichenXY);
-			}
 		}
-	});
+		});
 		client.on('S3Z_Drei', function(){//Es wurde das Feld .. clicked
 
 		if(client.id === zuege%2){

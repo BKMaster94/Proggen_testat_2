@@ -209,17 +209,14 @@ appServer.use(bodyParser.urlencoded({ // brauchen wir für das parsen vom Post b
 			if(wertDrin[7] === false){
 			if(zuege%2===0){
 				zeichenXY = "X";
-				wertDrin[7] = true;
 			}
 			else{
 				zeichenXY = "O";
-				wertDrin[7] = true;
 			}
 			zuege++;
 			io.emit('S3Z_ZweiEmiter', zeichenXY);
-			}
 		}
-	});
+		});
 		client.on('S3Z_Drei', function(){//Es wurde das Feld .. clicked
 
 		if(client.id === zuege%2){
