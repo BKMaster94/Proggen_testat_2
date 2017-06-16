@@ -64,14 +64,12 @@ var socket = io();
 var test;
 socket.on('Gewonnen', function(gewinner){
  	//alert(gewinner);
-	
+	$('#TicTacToe').hide();
 	
 	if(gewinner == 'Unentschieden'){
 		$('#gewonnenn').append('Sieger: Unentschieden')
-		$('#TicTacToe').hide();
 	}else{
 	$('#gewonnenn').append('Sieger: Spieler '+gewinner)
-	$('#TicTacToe').hide();
 	}
 	test = confirm('Neustarten ?');
 	
@@ -81,7 +79,7 @@ socket.on('Gewonnen', function(gewinner){
 	}
 	if(!test)
 	{
-		
+		window.location.href = "www.google.de";
 	}
 
 });

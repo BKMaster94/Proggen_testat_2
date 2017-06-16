@@ -81,7 +81,7 @@ socket.on('Gewonnen', function(gewinner){
 	}
 	if(!test)
 	{
-		
+		window.location.href = "/";
 	}
 
 });
