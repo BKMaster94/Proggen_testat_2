@@ -36,45 +36,57 @@ appServer.use(bodyParser.urlencoded({ // brauchen wir für das Parsen vom Reques
 	io.on('connection', function(client){ // die Verbindung wird hergestellt zwischen server und Client.
 		client.on('username', function() { // Beim emit von 'username' wird der client getzwungen einen usernamen anzunehemen. // Falls keiner exestiert === 'emtpy';
 			client.username = TempSpielerName; // Name wird zugewiesen und kann von jetzt aus drauf zugegriffen werden mit client.username
-			console.log('A user is Connectet: ' + client.username + " | ID: " + client.id); // Diese abfrage wird beibehalten für die Übersicht und des Testens
+			
 			ClientZaehler = ClientZaehler +1; // Da ein Client jetzt komplett Verbunden ist wird der Zähler erhöht
-			client.on('disconnect', function(){ // Falls ein Nutzer die Verbindung Trennt 
-				ClientZaehler = ClientZaehler -1; // wird der Zähler runtergesetzt;
-				console.log("Client disconnected: " + client.username + " | ID: " + client.id); // Dann wird Ausgegeben welcher benutzer Rausgegeangen ist
-				console.log("Momentane user: " + ClientZaehler); // Und die Momentanten Benutzer angezeigt. für die Übersicht
-			});			
 			if(ClientZaehler <= 2 ){ // Wir erstellen ein Spiele raum wo sich 2 Benutzer Treffen können
 				client.join('SpielRaum'); // Der Client wird dem SpielRaum hinzugefügt, solange es nicht mehr als 2 Clients sind.
-				if (ClientZaehler === 1){ // Wenn der erste Client Connectet ist im SpieleRaum
-					client.id = Math.round(Math.random()); // Es wird zufällig bestimmt wo der Erste Client stehen wird und dies wird in der ID festgehalten || Entweder 0 oder 1 
-					if (client.id === 0){ // Wenn die Client id === 0 ist
-						spieler1 = client.username; // Wird der Benutzername Abgespeichert in die Spieler1 Variable.
+				//console.log("Client: " + client.username + " ist nun im SpieleRaum");
+				if (ClientZaehler === 1){
+
+					
+					
+					
+					client.id = Math.round(Math.random());
+					if (client.id === 0){
+						spieler1 = client.username;
 					}
-					if(client.id === 1){// Bei ID === 1
-						spieler2 = client.username; // Wird der Benutzername als Spieler2 Abgespeichert.
+					if(client.id === 1){
+						spieler2 = client.username;
 					}
-					console.log("Spieler: " + client.id + " | Spilername: " + client.username); // Diese Abfrage wird beibehalten aus übersichtlichen Gründen.
+
+					console.log("Spieler1: " +spieler1+ " || Spieler2: " + spieler2);
+					console.log("Spieler: " + client.id + " | Spilername: " + client.username);
 				}
-				if(ClientZaehler === 2){ // Wenn der Zweite Client Verbunden ist  							
-					if(spieler1 === null){ // Wird überprüft ob der erste nutzer Spiler 1 ist oder 2
-						spieler1 = client.username; // Dann wird jeweils der Name gesetzt
-						client.id = 0; // und natürlich auch die Spieler Position			
+				if(ClientZaehler === 2){				
+					console.log("Spieler1: " +spieler1+ " || Spieler2: " + spieler2);
+					
+					if(spieler1 === null){
+						spieler1 = client.username;
+						client.id = 0;						
 					}
 					if(spieler2 === null){
 						spieler2 = client.username;
 						client.id = 1;
 					}
-					console.log("Spieler: " + client.id + " | Spilername: " + client.username);// Diese Abfrage wird beibehalten aus übersichtlichen Gründen.
 					
-					io.to('SpielRaum').emit('SpielerName1', spieler1); // Nun werden die Spilerdaten übergeben an die Clients
-					io.to('SpielRaum').emit('SpielerName2', spieler2); // Nun werden die Spilerdaten übergeben an die Clients
-					spieler1=null; // danach werden die Variablen zurück gesetzt um ein Neustart zu ermöglichen
-					spieler2=null; 
+					
+					console.log("Spieler: " + client.id + " | Spilername: " + client.username);
+					
+					io.to('SpielRaum').emit('SpielerName1', spieler1);
+					io.to('SpielRaum').emit('SpielerName2', spieler2);
+					spieler1=null;
+					spieler2=null;
 				}
-				io.to('SpielRaum').emit('gameReady', ClientZaehler); // Nun wird jetzt die Spieleranzahl übergeben, damit die Clients auch wissen können wann beide Im Raum sind
+				io.to('SpielRaum').emit('gameReady', ClientZaehler);
+
 			}
-
-
+			
+			console.log('A user is Connectet: ' + client.username + " | ID: " + client.id);
+			client.on('disconnect', function(){
+				ClientZaehler--;
+				console.log("Client disconnected: " + client.username + " | ID: " + client.id);
+				console.log("Momentane user: " + ClientZaehler);
+			});
 			console.log("Momentane user: " + ClientZaehler);
 	    });
 		

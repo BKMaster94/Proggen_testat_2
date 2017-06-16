@@ -38,11 +38,6 @@ appServer.use(bodyParser.urlencoded({ // brauchen wir für das Parsen vom Reques
 			client.username = TempSpielerName; // Name wird zugewiesen und kann von jetzt aus drauf zugegriffen werden mit client.username
 			console.log('A user is Connectet: ' + client.username + " | ID: " + client.id); // Diese abfrage wird beibehalten für die Übersicht und des Testens
 			ClientZaehler = ClientZaehler +1; // Da ein Client jetzt komplett Verbunden ist wird der Zähler erhöht
-			client.on('disconnect', function(){ // Falls ein Nutzer die Verbindung Trennt 
-				ClientZaehler = ClientZaehler -1; // wird der Zähler runtergesetzt;
-				console.log("Client disconnected: " + client.username + " | ID: " + client.id); // Dann wird Ausgegeben welcher benutzer Rausgegeangen ist
-				console.log("Momentane user: " + ClientZaehler); // Und die Momentanten Benutzer angezeigt. für die Übersicht
-			});			
 			if(ClientZaehler <= 2 ){ // Wir erstellen ein Spiele raum wo sich 2 Benutzer Treffen können
 				client.join('SpielRaum'); // Der Client wird dem SpielRaum hinzugefügt, solange es nicht mehr als 2 Clients sind.
 				if (ClientZaehler === 1){ // Wenn der erste Client Connectet ist im SpieleRaum
@@ -74,7 +69,11 @@ appServer.use(bodyParser.urlencoded({ // brauchen wir für das Parsen vom Reques
 				io.to('SpielRaum').emit('gameReady', ClientZaehler); // Nun wird jetzt die Spieleranzahl übergeben, damit die Clients auch wissen können wann beide Im Raum sind
 			}
 
-
+			client.on('disconnect', function(){
+				ClientZaehler--;
+				console.log("Client disconnected: " + client.username + " | ID: " + client.id);
+				console.log("Momentane user: " + ClientZaehler);
+			});
 			console.log("Momentane user: " + ClientZaehler);
 	    });
 		
