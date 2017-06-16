@@ -1,26 +1,47 @@
 $("#target").click(function(){ // #Target == ID von HTML || .click == Auf click || Funktion in funktion
-	alert("clickd"); // Alert == Dialogfenster
+	//alert("clickd"); // Alert == Dialogfenster
 	$.ajax({ // Jquery Ajax Funktion
 		url: "/test", // geben die Url weiter
 		type: "POST", // Mehtode auswählen
 		data: "test", // Daten übersenden 
 		success: function(result){ // Bei erfolg
-			alert("success: " + result); // Gebe ein dialogfenster aus mit dem text aus dem Success
+			//alert("success: " + result); // Gebe ein dialogfenster aus mit dem text aus dem Success
 		}
 	})
 });
 
 $("#butt").click(function(){
-	alert("ziel");
+	//alert("ziel");
 	$.ajax({
 		url: "/get",
 		type: "GET",
 		success: function(result){
-			alert("success: " + result);
+			//alert("success: " + result);
 			$("#ziel").html(result);
 		}
 	})
 });
+
+//$.confirm({ // Jquery Confirm methode für das Neustarten des Spiels
+//	title:	 	'Neustart?',
+//	content:	'Soll das Spiel Neugestartet werden?',
+//	buttons: 	{
+//		Ja:		function(){
+//			window.location.href = "/";
+//		},
+//		Nein:	function(){
+//			alert("Danke und auf Wiedersehen");
+//			window.close();
+//		}
+//	}
+//});
+
+
+
+
+
+
+
 
 var $ziel = $('#testSpielerNameetc');
 
@@ -40,6 +61,39 @@ $("#AnmeldeButton").click(function(){ //Wenn der Button wird geklickt und die Fu
 
 
 var socket = io();
+var test;
+socket.on('Gewonnen', function(gewinner){
+ 	//alert(gewinner);
+	if(gewinner == 'Unentschieden'){
+		$('#gewonnenn').append('Sieger: Unentschieden')
+	}else{
+	$('#gewonnenn').append('Sieger: Spieler '+gewinner)
+	}
+	test = confirm('Neustarten ?');
+	
+	if(test)
+	{		
+		window.location.href = "/";
+	}
+	if(!test)
+	{
+		window.location.href = "www.google.de"
+	}
+
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 //Wenn diese Fielder clicked werden emmite ich zum server
 // Vom Server kommt die der Call um das Feld mit dem im server festgelegten Zeichen zu markieren
@@ -62,7 +116,7 @@ $("#S1Z_Zwei").click(function(){
 	socket.on('S1Z_ZweiEmiter', function(zeichen){
 	//	alert("wieder beim Client");
 		$('#S1Z_Zwei').append(zeichen);
-		alert("Text von S1Z2: " +$('#S1Z_Zwei').text());
+		//alert("Text von S1Z2: " +$('#S1Z_Zwei').text());
 	});
 
 $("#S1Z_Drei").click(function(){
@@ -143,18 +197,7 @@ $("#S3Z_Drei").click(function(){
 	});
 
 
-socket.on('Gewonnen', function(gewinner){
-	alert(gewinner);
-	$('#gewonnenn').append('Sieger: Spieler '+gewinner)
 
-	if(confirm('Neustart?')){
-		window.location.href = "/";
-	}else{
-		alert('Auf Wiedersehen');
-		window.close();
-	}
-
-})
 
 
 

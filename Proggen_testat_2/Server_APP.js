@@ -19,6 +19,8 @@ var spieler2= null;
 var gewinnRaten = [null,null,null,null,null,null,null,null,null];
 var zeichenXY = "";//Das Zeichen "X" oder "Y" im normalfall
 var zuege = 0;//anzahl der schon gemachten Zuege
+var i = 0;
+
 
 /*fs.writeFile(path.resolve('JSON/spielerName.json'), JSON.stringify(playerName), (err) => { // Test zum erstellen von datein.
 	  if (err) throw err;
@@ -83,6 +85,8 @@ appServer.use(bodyParser.urlencoded({ // brauchen wir für das parsen vom Post b
 					
 					io.to('SpielRaum').emit('SpielerName1', spieler1);
 					io.to('SpielRaum').emit('SpielerName2', spieler2);
+					spieler1=null;
+					spieler2=null;
 				}
 				io.to('SpielRaum').emit('gameReady', clientCount);
 
@@ -298,30 +302,75 @@ appServer.use(bodyParser.urlencoded({ // brauchen wir für das parsen vom Post b
 				console.log("Suche Gewinner");
 				console.log(" 0: " + gewinnRaten[0] + " 1: " + gewinnRaten[1] + " 2: " + gewinnRaten[2] + " 3: " + gewinnRaten[3] + " 4: " + gewinnRaten[4] + " 5: " + gewinnRaten[5] + " 6: " + gewinnRaten[6] + " 7: " + gewinnRaten[7] + "8: " + gewinnRaten[8]);
 				if(gewinnRaten[0] === 1 && gewinnRaten[1] === 1 && gewinnRaten[2] === 1 || gewinnRaten[2] === 0 && gewinnRaten[1] === 0 && gewinnRaten[0] === 0 ){
+					zuege = 0;
+					for(i=0;i < gewinnRaten.length;i++){
+						gewinnRaten[i] = null;		
+						wertDrin[i] = false;
+					}
 					io.emit('Gewonnen' , gewinnRaten[0]+1);
 				}
 				if(gewinnRaten[6] === 1 && gewinnRaten[7] === 1 && gewinnRaten[8] === 1 || gewinnRaten[6] === 0 && gewinnRaten[7] === 0 && gewinnRaten[8] === 0 ){
+					zuege = 0;
+					for(i=0;i < gewinnRaten.length;i++){
+						gewinnRaten[i] = null;		
+						wertDrin[i] = false;
+					}
 					io.emit('Gewonnen' , gewinnRaten[6]+1);
 				}
 				if(gewinnRaten[0] === 1 && gewinnRaten[3] === 1 && gewinnRaten[6] === 1 || gewinnRaten[0] === 0 && gewinnRaten[3] === 0 && gewinnRaten[6] === 0 ){
+					zuege = 0;
+					for(i=0;i < gewinnRaten.length;i++){
+						gewinnRaten[i] = null;		
+						wertDrin[i] = false;
+					}
 					io.emit('Gewonnen' ,  gewinnRaten[0]+1);
 				}
 				if(gewinnRaten[2] === 1 && gewinnRaten[5] === 1 && gewinnRaten[8] === 1 || gewinnRaten[2] === 0 && gewinnRaten[5] === 0 && gewinnRaten[8] === 0 ){
+					zuege = 0;
+					for(i=0;i < gewinnRaten.length;i++){
+						gewinnRaten[i] = null;		
+						wertDrin[i] = false;
+					}
 					io.emit('Gewonnen' , gewinnRaten[2]+1);
 				}
 				if(gewinnRaten[0] === 1 && gewinnRaten[4] === 1 && gewinnRaten[8] === 1 || gewinnRaten[0] === 0 && gewinnRaten[4] === 0 && gewinnRaten[8] === 0 ){
+					zuege = 0;
+					for(i=0;i < gewinnRaten.length;i++){
+						gewinnRaten[i] = null;		
+						wertDrin[i] = false;
+					}
 					io.emit('Gewonnen' , gewinnRaten[0]+1);
 				}
 				if(gewinnRaten[2] === 1 && gewinnRaten[4] === 1 && gewinnRaten[6] === 1 || gewinnRaten[2] === 0 && gewinnRaten[4] === 0 && gewinnRaten[6] === 0 ){
+					zuege = 0;
+					for(i=0;i < gewinnRaten.length;i++){
+						gewinnRaten[i] = null;		
+						wertDrin[i] = false;
+					}
 					io.emit('Gewonnen' , gewinnRaten[2]+1);
 				}
 				if(gewinnRaten[3] === 1 && gewinnRaten[4] === 1 && gewinnRaten[5] === 1 || gewinnRaten[3] === 0 && gewinnRaten[4] === 0 && gewinnRaten[5] === 0 ){
+					zuege = 0;
+					for(i=0;i < gewinnRaten.length;i++){
+						gewinnRaten[i] = null;		
+						wertDrin[i] = false;
+					}
 					io.emit('Gewonnen' , gewinnRaten[3]+1);
 				}
 				if(gewinnRaten[1] === 1 && gewinnRaten[4] === 1 && gewinnRaten[7] === 1 || gewinnRaten[1] === 0 && gewinnRaten[4] === 0 && gewinnRaten[6] === 0 ){
+					zuege = 0;
+					for(i=0;i < gewinnRaten.length;i++){
+						gewinnRaten[i] = null;		
+						wertDrin[i] = false;
+					}
 					io.emit('Gewonnen' , gewinnRaten[1]+1);
 				}
 				if(zuege === 9){
+					zuege = 0;
+					for(i=0;i < gewinnRaten.length;i++){
+						gewinnRaten[i] = null;		
+						wertDrin[i] = false;
+					}
 					io.emit('Gewonnen' , 'Unentschieden');
 				}
 			}

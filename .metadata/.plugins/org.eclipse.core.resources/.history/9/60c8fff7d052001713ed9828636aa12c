@@ -1,0 +1,398 @@
+// Hier werden die Variablen initalisiert
+var express = require('express');
+var appServer = express();
+var server = appServer.listen(8081, function(){
+	console.log("Server gestartet auf Port: 8081");	
+});
+var io = require('socket.io').listen(server);
+var fs= require('fs');
+var bodyParser = require('body-parser');
+var path = require('path');
+var test = "Server Daten";
+var abfangen = "";
+var meinJSONObjekt = require(path.resolve('JSON/spielerName.json'));
+var clientCount = 0;
+var usernameForGame1 = "empty";
+var wertDrin = [false,false,false,false,false,false,false,false,false]; // Switch für häufigkeit des Klickens
+var spieler1= null;
+var spieler2= null;
+var gewinnRaten = [null,null,null,null,null,null,null,null,null];
+var zeichenXY = "";//Das Zeichen "X" oder "Y" im normalfall
+var zuege = 0;//anzahl der schon gemachten Zuege
+
+
+/*fs.writeFile(path.resolve('JSON/spielerName.json'), JSON.stringify(playerName), (err) => { // Test zum erstellen von datein.
+	  if (err) throw err;
+	  console.log('The file has been saved!');
+	});*/
+
+// Hier ist der Body-Parser
+
+appServer.use(bodyParser.urlencoded({ // brauchen wir für das parsen vom Post body block
+	extended: true 
+}));
+
+// Ende Body-Parser
+
+
+// Hier fängt socket.io anwe
+
+	io.on('connection', function(client){
+		client.on('username', function() {
+			client.username = usernameForGame1;
+			
+			clientCount = clientCount +1;
+			if(clientCount <= 2 ){
+				client.join('SpielRaum');
+				//console.log("Client: " + client.username + " ist nun im SpieleRaum");
+				if (clientCount === 1){
+//					spieler1 = client.username;
+//					client.id = 1; //ADI   Die Id des ersten clients wird auf 0 gesetzt
+//					console.log (spieler1);
+					
+					
+					
+					client.id = Math.round(Math.random());
+					if (client.id === 0){
+						spieler1 = client.username;
+					}
+					if(client.id === 1){
+						spieler2 = client.username;
+					}
+
+					console.log("Spieler1: " +spieler1+ " || Spieler2: " + spieler2);
+					console.log("Spieler: " + client.id + " | Spilername: " + client.username);
+				}
+				if(clientCount === 2){
+//					spieler2 = client.username;
+//					client.id=1;//ADI   Die Id des ersten clients wird auf 1 gesetzt
+//					console.log(spieler2);
+//					
+					console.log("Spieler1: " +spieler1+ " || Spieler2: " + spieler2);
+					
+					if(spieler1 === null){
+						spieler1 = client.username;
+						client.id = 0;						
+					}
+					if(spieler2 === null){
+						spieler2 = client.username;
+						client.id = 1;
+					}
+					
+					
+					console.log("Spieler: " + client.id + " | Spilername: " + client.username);
+					
+					io.to('SpielRaum').emit('SpielerName1', spieler1);
+					io.to('SpielRaum').emit('SpielerName2', spieler2);
+					spieler1=null;
+					spieler2=null;
+				}
+				io.to('SpielRaum').emit('gameReady', clientCount);
+
+			}
+			
+			console.log('A user is Connectet: ' + client.username + " | ID: " + client.id);
+			client.emit('message', 'You are Connected');
+			client.on('disconnect', function(){
+				clientCount--;
+				console.log("Client disconnected: " + client.username + " | ID: " + client.id);
+				console.log("Momentane user: " + clientCount);
+			});
+			console.log("Momentane user: " + clientCount);
+	    });
+		
+
+		//Wurde Geklicked und nun wird ein Zeichen zum client gescchickt
+		// VIELE ABFRAGEN jedes Feld hat seine eigene abfrage
+		client.on('S1Z_Eins', function(){//Es wurde das Feld .. clicked
+			
+		if(client.id === zuege%2){ //ADI  wenn die id des Spielers gleich der zuege modulo 2 ist... somit immer abwechselnd
+//			console.log("S1Z_Eins im server angekommen");
+			if(wertDrin[0] === false){
+			
+			if(zuege%2===0){
+				zeichenXY = "X";
+				wertDrin[0] = true;
+				gewinnRaten[0] = 0;
+			}
+			else{
+				zeichenXY = "O";
+				wertDrin[0] = true;
+				gewinnRaten[0] = 1;
+			}
+			zuege++;
+			io.emit('S1Z_EinsEmiter', zeichenXY);
+			}
+			//console.log("Wir sind bei Zug: " + zuege);
+		}
+	});
+		client.on('S1Z_Zwei', function(){//Es wurde das Feld .. clicked
+
+		if(client.id === zuege%2){
+//			console.log("S1Z_Zwei im server angekommen");
+			if(wertDrin[1] === false){
+			if(zuege%2===0){
+				zeichenXY = "X";
+				wertDrin[1] = true;
+				gewinnRaten[1] = 0;
+			}
+			else{
+				zeichenXY = "O";
+				wertDrin[1] = true;
+				gewinnRaten[1] = 1;
+			}
+			zuege++;
+			io.emit('S1Z_ZweiEmiter', zeichenXY);
+			}
+			//console.log("Wir sind bei Zug: " + zuege);
+		}
+	});
+		client.on('S1Z_Drei', function(){//Es wurde das Feld .. clicked
+
+		if(client.id === zuege%2){
+//			console.log("S1Z_Drei im server angekommen");
+			if(wertDrin[2] === false){
+			if(zuege%2===0){
+				zeichenXY = "X";
+				wertDrin[2] = true;
+				gewinnRaten[2] = 0;
+			}
+			else{
+				zeichenXY = "O";
+				wertDrin[2] = true;
+				gewinnRaten[2] = 1;
+			}
+			zuege++;
+			io.emit('S1Z_DreiEmiter', zeichenXY);
+			}
+			//console.log("Wir sind bei Zug: " + zuege);
+		}
+	});
+		client.on('S2Z_Eins', function(){//Es wurde das Feld .. clicked
+
+		if(client.id === zuege%2){
+//			console.log("S2Z_Eins im server angekommen");
+			if(wertDrin[3] === false){
+			if(zuege%2===0){
+				zeichenXY = "X";
+				wertDrin[3] = true;
+				gewinnRaten[3] = 0;
+			}
+			else{
+				zeichenXY = "O";
+				wertDrin[3] = true;
+				gewinnRaten[3] = 1;
+			}
+			zuege++;
+			io.emit('S2Z_EinsEmiter', zeichenXY);
+			}
+			//console.log("Wir sind bei Zug: " + zuege);
+		}
+	});
+		client.on('S2Z_Zwei', function(){//Es wurde das Feld .. clicked
+
+		if(client.id === zuege%2){
+//			console.log("S2Z_Zwei im server angekommen");
+			if(wertDrin[4] === false){
+			if(zuege%2===0){
+				zeichenXY = "X";
+				wertDrin[4] = true;
+				gewinnRaten[4] = 0;
+			}
+			else{
+				zeichenXY = "O";
+				wertDrin[4] = true;
+				gewinnRaten[4] = 1;
+			}
+			zuege++;
+			io.emit('S2Z_ZweiEmiter', zeichenXY);
+			}
+			//console.log("Wir sind bei Zug: " + zuege);
+		}
+	});
+		client.on('S2Z_Drei', function(){//Es wurde das Feld .. clicked
+
+		if(client.id === zuege%2){
+//			console.log("S2Z_Drei im server angekommen");
+			if(wertDrin[5] === false){
+			if(zuege%2===0){
+				zeichenXY = "X";
+				wertDrin[5] = true;
+				gewinnRaten[5] = 0;
+			}
+			else{
+				zeichenXY = "O";
+				wertDrin[5] = true;
+				gewinnRaten[5] = 1;
+			}
+			zuege++;
+			io.emit('S2Z_DreiEmiter', zeichenXY);
+			}
+			//console.log("Wir sind bei Zug: " + zuege);
+		}
+	});
+		client.on('S3Z_Eins', function(){//Es wurde das Feld .. clicked
+
+		if(client.id === zuege%2){
+//			console.log("S3Z_Eins im server angekommen");
+			if(wertDrin[6] === false){
+			if(zuege%2===0){
+				zeichenXY = "X";
+				wertDrin[6] = true;
+				gewinnRaten[6] = 0;
+			}
+			else{
+				zeichenXY = "O";
+				wertDrin[6] = true;
+				gewinnRaten[6] = 0;
+			}
+			zuege++;
+			io.emit('S3Z_EinsEmiter', zeichenXY);
+			}
+			//console.log("Wir sind bei Zug: " + zuege);
+		}
+	});
+		client.on('S3Z_Zwei', function(){//Es wurde das Feld .. clicked
+
+		if(client.id === zuege%2){
+//			console.log("S3Z_Zwei im server angekommen");
+			if(wertDrin[7] === false){
+			if(zuege%2===0){
+				zeichenXY = "X";
+				wertDrin[7] = true;
+				gewinnRaten[7] = 0;
+			}
+			else{
+				zeichenXY = "O";
+				wertDrin[7] = true;
+				gewinnRaten[7] = 1;
+			}
+			zuege++;
+			io.emit('S3Z_ZweiEmiter', zeichenXY);
+			}
+			//console.log("Wir sind bei Zug: " + zuege);
+		}
+	});
+		client.on('S3Z_Drei', function(){//Es wurde das Feld .. clicked
+
+		if(client.id === zuege%2){
+//			console.log("S3Z_Drei im server angekommen");
+			if(wertDrin[8] === false){
+			if(zuege%2===0){
+				zeichenXY = "X";
+				wertDrin[8] = true;
+				gewinnRaten[8] = 0;
+			}
+			else{
+				zeichenXY = "O";
+				wertDrin[8] = true;
+				gewinnRaten[8] = 1;
+			}
+			zuege++;
+			io.emit('S3Z_DreiEmiter', zeichenXY);
+			}
+			//console.log("Wir sind bei Zug: " + zuege);
+		}
+	});
+		
+		client.on('WennGewonnen', function(){
+			console.log("Wir sind bei Zug: " + zuege);
+			if(zuege > 4){
+				console.log("Suche Gewinner");
+				console.log(" 0: " + gewinnRaten[0] + " 1: " + gewinnRaten[1] + " 2: " + gewinnRaten[2] + " 3: " + gewinnRaten[3] + " 4: " + gewinnRaten[4] + " 5: " + gewinnRaten[5] + " 6: " + gewinnRaten[6] + " 7: " + gewinnRaten[7] + "8: " + gewinnRaten[8]);
+				if(gewinnRaten[0] === 1 && gewinnRaten[1] === 1 && gewinnRaten[2] === 1 || gewinnRaten[2] === 0 && gewinnRaten[1] === 0 && gewinnRaten[0] === 0 ){
+					io.emit('Gewonnen' , gewinnRaten[0]+1);
+					zuege = 0;
+				}
+				if(gewinnRaten[6] === 1 && gewinnRaten[7] === 1 && gewinnRaten[8] === 1 || gewinnRaten[6] === 0 && gewinnRaten[7] === 0 && gewinnRaten[8] === 0 ){
+					io.emit('Gewonnen' , gewinnRaten[6]+1);
+					zuege = 0;
+				}
+				if(gewinnRaten[0] === 1 && gewinnRaten[3] === 1 && gewinnRaten[6] === 1 || gewinnRaten[0] === 0 && gewinnRaten[3] === 0 && gewinnRaten[6] === 0 ){
+					io.emit('Gewonnen' ,  gewinnRaten[0]+1);
+					zuege = 0;
+				}
+				if(gewinnRaten[2] === 1 && gewinnRaten[5] === 1 && gewinnRaten[8] === 1 || gewinnRaten[2] === 0 && gewinnRaten[5] === 0 && gewinnRaten[8] === 0 ){
+					io.emit('Gewonnen' , gewinnRaten[2]+1);
+					zuege = 0;
+				}
+				if(gewinnRaten[0] === 1 && gewinnRaten[4] === 1 && gewinnRaten[8] === 1 || gewinnRaten[0] === 0 && gewinnRaten[4] === 0 && gewinnRaten[8] === 0 ){
+					io.emit('Gewonnen' , gewinnRaten[0]+1);
+					zuege = 0;
+				}
+				if(gewinnRaten[2] === 1 && gewinnRaten[4] === 1 && gewinnRaten[6] === 1 || gewinnRaten[2] === 0 && gewinnRaten[4] === 0 && gewinnRaten[6] === 0 ){
+					io.emit('Gewonnen' , gewinnRaten[2]+1);
+					zuege = 0;
+				}
+				if(gewinnRaten[3] === 1 && gewinnRaten[4] === 1 && gewinnRaten[5] === 1 || gewinnRaten[3] === 0 && gewinnRaten[4] === 0 && gewinnRaten[5] === 0 ){
+					io.emit('Gewonnen' , gewinnRaten[3]+1);
+					zuege = 0;
+				}
+				if(gewinnRaten[1] === 1 && gewinnRaten[4] === 1 && gewinnRaten[7] === 1 || gewinnRaten[1] === 0 && gewinnRaten[4] === 0 && gewinnRaten[6] === 0 ){
+					io.emit('Gewonnen' , gewinnRaten[1]+1);
+					zuege = 0;
+				}
+				if(zuege === 9){
+					io.emit('Gewonnen' , 'Unentschieden');
+					zuege = 0;
+					
+					for(i=0;i<= gewinnRaten.length();i++){
+						gewinnRaten[i] = null;		
+						wertDrin[i] = false;
+					}
+				}
+			}
+		});
+		
+		
+		
+	});
+// Hier endet Socket.io
+
+
+	
+appServer.get('/', function(req,res){ // Url Abfangen
+	res.sendFile(path.resolve('HTML/Anmeldung.html')); // Nimm die HTML Datei aus dem Ordner
+});
+
+
+appServer.get ('/loadGame', function(req,res){
+	res.sendFile(path.resolve('HTML/test.html'));
+});
+
+appServer.get('/Json' , function(req,res){
+	res.send(meinJSONObjekt);
+});
+
+
+appServer.get('/Ajax/testAuslagerung.js', function(req,res){ // URL Abfangen
+	res.sendFile(path.resolve('Ajax/testAuslagerung.js')); // Lade die Javascript datei ein.
+});
+
+appServer.get('/CSS/StyleIndex.css', function(req,res){ // URL Abfangen
+	res.sendFile(path.resolve('CSS/StyleIndex.css')); // Lade die CSS datei ein.
+});
+
+appServer.post('/JsonPlayerNameBekommen', function (req,res){ //der SpielerName wird durch ein JSON an den server geschickt
+	abfangen = req.body; // Nehme das Object aus der Request und packe sie in eine Variable.
+	console.log(abfangen); //In der Console sehen wir die variable, welche das Object enthält
+	console.log("Request bekommen");
+	res.status(200).json(abfangen);//Der Status "Success" wird übergeben und ein json Obj wird zurückgeschickt
+	usernameForGame1 = abfangen.player;
+	console.log(usernameForGame1);
+});
+
+appServer.get('/SeiteWechseln', function (req,res){ // Die Momentane Seite soll gewaechselt werden
+	res.sendFile(path.resolve('HTML/Index.html')); // Die Datei HTML/Index.html wird an den client geschickt
+});
+
+appServer.get('/get', function(req,res){ // Get Methode
+	res.send(test); // Sende dem Client informationen
+	console.log("Daten gesendet" + test);
+});
+
+
+
+//appServer.listen(8081, function(){ // Höre auf den Port 8081
+//	console.log("Server Start on PORT 8081"); // Server console Ausgabe
+//});

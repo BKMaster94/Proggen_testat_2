@@ -63,13 +63,13 @@ var socket = io();
 
 socket.emit('username'); // Wird in die Username Funktion eingesprungen um den Benutzernamen festzulegen.
 socket.on('message', function(message){
-	alert('The Server has a massage for you: ' + message);
+	//alert('The Server has a massage for you: ' + message);
 	
 });
 
 
 socket.on('gameReady', function(message){
-	alert("momentane spielerzahl: " + message);
+	//alert("momentane spielerzahl: " + message);
 	
 	if(message === 2){
 				$('#TicTacToe').show();
@@ -77,12 +77,12 @@ socket.on('gameReady', function(message){
 });
 
 socket.on('SpielerName1', function(name){
-		alert(name);
+		//alert(name);
 		$playername1.append(name);
 	});
 
 socket.on('SpielerName2', function(name){
-		alert(name);
+		//alert(name);
 		$playername2.append(name);
 	});
 	
