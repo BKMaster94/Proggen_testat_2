@@ -94,7 +94,7 @@ appServer.use(bodyParser.urlencoded({ // brauchen wir für das Parsen vom Reques
 				SpielerFeldID[0] = 1; // Der Spieler wird sich gemerkt für die Gewinnberechnung
 			}
 			zuege++; // der zug wird erhöht
-			io.emit('S1Z_EinsEmiter', zeichenXO); // Das Zeichen wird an alle Clients weitergegeben
+			io.emit('S1Z_EinsEmiter', zeichenXO);
 			}
 		}
 	});

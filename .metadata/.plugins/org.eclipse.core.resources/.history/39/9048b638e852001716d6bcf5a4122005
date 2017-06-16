@@ -83,169 +83,181 @@ appServer.use(bodyParser.urlencoded({ // brauchen wir für das Parsen vom Reques
 		client.on('S1Z_Eins', function(){ //Es wurde das Feld .. Angeklickt	
 		if(client.id === zuege%2){ // wenn die id des Spielers gleich der zuege modulo 2 ist... somit immer abwechselnd
 			if(wertDrin[0] === false){ // Falls das Feld noch nicht geklickt worden ist darf geklickt werden sonst nicht !
-			if(zuege%2===0){ // Wenn Spieler 1 Dran ist
+			if(zuege%2===0){
 				zeichenXO = "X"; // Das Zeichen des Spielers wird weiter gegeben
-				wertDrin[0] = true; // Switch wird umgelegt
-				SpielerFeldID[0] = 0; // Der Spieler wird sich gemerkt für die Gewinnberechnung
+				wertDrin[0] = true;
+				SpielerFeldID[0] = 0;
 			}
-			else{ // Wenn Spieler 2 Dran ist
+			else{
 				zeichenXO = "O"; // Das Zeichen des Spielers wird weiter gegeben
-				wertDrin[0] = true; // Switch wird umgelegt
-				SpielerFeldID[0] = 1; // Der Spieler wird sich gemerkt für die Gewinnberechnung
+				wertDrin[0] = true;
+				SpielerFeldID[0] = 1;
 			}
-			zuege++; // der zug wird erhöht
-			io.emit('S1Z_EinsEmiter', zeichenXO); // Das Zeichen wird an alle Clients weitergegeben
+			zuege++; //
+			io.emit('S1Z_EinsEmiter', zeichenXO);
 			}
+			//console.log("Wir sind bei Zug: " + zuege);
 		}
 	});
-//////////////////////////////////////////////////////////////////////////////
-// Nun wiederholt sich alles für jedes Feld Wird durch kometare Abgetrennt zur Ordnung
-//////////////////////////////////////////////////////////////////////////////
-		client.on('S1Z_Zwei', function(){
+		client.on('S1Z_Zwei', function(){//Es wurde das Feld .. clicked
+
 		if(client.id === zuege%2){
+//			console.log("S1Z_Zwei im server angekommen");
 			if(wertDrin[1] === false){
 			if(zuege%2===0){
-				zeichenXO = "X";
+				zeichenXO = "X"; // Das Zeichen des Spielers wird weiter gegeben
 				wertDrin[1] = true;
 				SpielerFeldID[1] = 0;
 			}
 			else{
-				zeichenXO = "O";
+				zeichenXO = "O"; // Das Zeichen des Spielers wird weiter gegeben
 				wertDrin[1] = true;
 				SpielerFeldID[1] = 1;
 			}
 			zuege++;
 			io.emit('S1Z_ZweiEmiter', zeichenXO);
 			}
+			//console.log("Wir sind bei Zug: " + zuege);
 		}
 	});
-//////////////////////////////////////////////////////////////////////////////
-		client.on('S1Z_Drei', function(){
+		client.on('S1Z_Drei', function(){//Es wurde das Feld .. clicked
+
 		if(client.id === zuege%2){
+//			console.log("S1Z_Drei im server angekommen");
 			if(wertDrin[2] === false){
 			if(zuege%2===0){
-				zeichenXO = "X";
+				zeichenXO = "X"; // Das Zeichen des Spielers wird weiter gegeben
 				wertDrin[2] = true;
 				SpielerFeldID[2] = 0;
 			}
 			else{
-				zeichenXO = "O";
+				zeichenXO = "O"; // Das Zeichen des Spielers wird weiter gegeben
 				wertDrin[2] = true;
 				SpielerFeldID[2] = 1;
 			}
 			zuege++;
 			io.emit('S1Z_DreiEmiter', zeichenXO);
 			}
+			//console.log("Wir sind bei Zug: " + zuege);
 		}
 	});
-//////////////////////////////////////////////////////////////////////////////
-		client.on('S2Z_Eins', function(){
+		client.on('S2Z_Eins', function(){//Es wurde das Feld .. clicked
+
 		if(client.id === zuege%2){
+//			console.log("S2Z_Eins im server angekommen");
 			if(wertDrin[3] === false){
 			if(zuege%2===0){
-				zeichenXO = "X";
+				zeichenXO = "X"; // Das Zeichen des Spielers wird weiter gegeben
 				wertDrin[3] = true;
 				SpielerFeldID[3] = 0;
 			}
 			else{
-				zeichenXO = "O";
+				zeichenXO = "O"; // Das Zeichen des Spielers wird weiter gegeben
 				wertDrin[3] = true; 
 				SpielerFeldID[3] = 1;
 			}
 			zuege++;
 			io.emit('S2Z_EinsEmiter', zeichenXO);
 			}
+			//console.log("Wir sind bei Zug: " + zuege);
 		}
 	});
-//////////////////////////////////////////////////////////////////////////////
-		client.on('S2Z_Zwei', function(){
+		client.on('S2Z_Zwei', function(){//Es wurde das Feld .. clicked
+
 		if(client.id === zuege%2){
+//			console.log("S2Z_Zwei im server angekommen");
 			if(wertDrin[4] === false){
 			if(zuege%2===0){
-				zeichenXO = "X";
+				zeichenXO = "X"; // Das Zeichen des Spielers wird weiter gegeben
 				wertDrin[4] = true;
 				SpielerFeldID[4] = 0;
 			}
 			else{
-				zeichenXO = "O";
+				zeichenXO = "O"; // Das Zeichen des Spielers wird weiter gegeben
 				wertDrin[4] = true;
 				SpielerFeldID[4] = 1;
 			}
 			zuege++;
 			io.emit('S2Z_ZweiEmiter', zeichenXO);
 			}
+			//console.log("Wir sind bei Zug: " + zuege);
 		}
 	});
-//////////////////////////////////////////////////////////////////////////////
-		client.on('S2Z_Drei', function(){
+		client.on('S2Z_Drei', function(){//Es wurde das Feld .. clicked
 
 		if(client.id === zuege%2){
+//			console.log("S2Z_Drei im server angekommen");
 			if(wertDrin[5] === false){
 			if(zuege%2===0){
-				zeichenXO = "X";
+				zeichenXO = "X"; // Das Zeichen des Spielers wird weiter gegeben
 				wertDrin[5] = true;
 				SpielerFeldID[5] = 0;
 			}
 			else{
-				zeichenXO = "O";
+				zeichenXO = "O"; // Das Zeichen des Spielers wird weiter gegeben
 				wertDrin[5] = true;
 				SpielerFeldID[5] = 1;
 			}
 			zuege++;
 			io.emit('S2Z_DreiEmiter', zeichenXO);
 			}
+			//console.log("Wir sind bei Zug: " + zuege);
 		}
 	});
-//////////////////////////////////////////////////////////////////////////////
-		client.on('S3Z_Eins', function(){
+		client.on('S3Z_Eins', function(){//Es wurde das Feld .. clicked
+
 		if(client.id === zuege%2){
+//			console.log("S3Z_Eins im server angekommen");
 			if(wertDrin[6] === false){
 			if(zuege%2===0){
-				zeichenXO = "X";
+				zeichenXO = "X"; // Das Zeichen des Spielers wird weiter gegeben
 				wertDrin[6] = true;
 				SpielerFeldID[6] = 0;
 			}
 			else{
-				zeichenXO = "O";
+				zeichenXO = "O"; // Das Zeichen des Spielers wird weiter gegeben
 				wertDrin[6] = true;
 				SpielerFeldID[6] = 0;
 			}
 			zuege++;
 			io.emit('S3Z_EinsEmiter', zeichenXO);
 			}
+			//console.log("Wir sind bei Zug: " + zuege);
 		}
 	});
-//////////////////////////////////////////////////////////////////////////////
-		client.on('S3Z_Zwei', function(){
+		client.on('S3Z_Zwei', function(){//Es wurde das Feld .. clicked
+
 		if(client.id === zuege%2){
+//			console.log("S3Z_Zwei im server angekommen");
 			if(wertDrin[7] === false){
 			if(zuege%2===0){
-				zeichenXO = "X";
+				zeichenXO = "X"; // Das Zeichen des Spielers wird weiter gegeben
 				wertDrin[7] = true;
 				SpielerFeldID[7] = 0;
 			}
 			else{
-				zeichenXO = "O";
+				zeichenXO = "O"; // Das Zeichen des Spielers wird weiter gegeben
 				wertDrin[7] = true;
 				SpielerFeldID[7] = 1;
 			}
 			zuege++;
 			io.emit('S3Z_ZweiEmiter', zeichenXO);
 			}
+			//console.log("Wir sind bei Zug: " + zuege);
 		}
 	});
-//////////////////////////////////////////////////////////////////////////////
-		client.on('S3Z_Drei', function(){
+		client.on('S3Z_Drei', function(){//Es wurde das Feld .. clicked
 
 		if(client.id === zuege%2){
+//			console.log("S3Z_Drei im server angekommen");
 			if(wertDrin[8] === false){
 			if(zuege%2===0){
-				zeichenXO = "X";
+				zeichenXO = "X"; // Das Zeichen des Spielers wird weiter gegeben
 				wertDrin[8] = true;
 				SpielerFeldID[8] = 0;
 			}
 			else{
-				zeichenXO = "O";
+				zeichenXO = "O"; // Das Zeichen des Spielers wird weiter gegeben
 				wertDrin[8] = true;
 				SpielerFeldID[8] = 1;
 			}

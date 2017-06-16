@@ -94,52 +94,55 @@ appServer.use(bodyParser.urlencoded({ // brauchen wir für das Parsen vom Reques
 				SpielerFeldID[0] = 1; // Der Spieler wird sich gemerkt für die Gewinnberechnung
 			}
 			zuege++; // der zug wird erhöht
-			io.emit('S1Z_EinsEmiter', zeichenXO); // Das Zeichen wird an alle Clients weitergegeben
+			io.emit('S1Z_EinsEmiter', zeichenXO);
 			}
 		}
 	});
 //////////////////////////////////////////////////////////////////////////////
-// Nun wiederholt sich alles für jedes Feld Wird durch kometare Abgetrennt zur Ordnung
-//////////////////////////////////////////////////////////////////////////////
 		client.on('S1Z_Zwei', function(){
+
 		if(client.id === zuege%2){
+//			console.log("S1Z_Zwei im server angekommen");
 			if(wertDrin[1] === false){
 			if(zuege%2===0){
-				zeichenXO = "X";
+				zeichenXO = "X"; // Das Zeichen des Spielers wird weiter gegeben
 				wertDrin[1] = true;
 				SpielerFeldID[1] = 0;
 			}
 			else{
-				zeichenXO = "O";
+				zeichenXO = "O"; // Das Zeichen des Spielers wird weiter gegeben
 				wertDrin[1] = true;
 				SpielerFeldID[1] = 1;
 			}
 			zuege++;
 			io.emit('S1Z_ZweiEmiter', zeichenXO);
 			}
+			//console.log("Wir sind bei Zug: " + zuege);
 		}
 	});
-//////////////////////////////////////////////////////////////////////////////
-		client.on('S1Z_Drei', function(){
+		client.on('S1Z_Drei', function(){ //Es wurde das Feld .. Angeklickt	
+
 		if(client.id === zuege%2){
+//			console.log("S1Z_Drei im server angekommen");
 			if(wertDrin[2] === false){
 			if(zuege%2===0){
-				zeichenXO = "X";
+				zeichenXO = "X"; // Das Zeichen des Spielers wird weiter gegeben
 				wertDrin[2] = true;
 				SpielerFeldID[2] = 0;
 			}
 			else{
-				zeichenXO = "O";
+				zeichenXO = "O"; // Das Zeichen des Spielers wird weiter gegeben
 				wertDrin[2] = true;
 				SpielerFeldID[2] = 1;
 			}
 			zuege++;
 			io.emit('S1Z_DreiEmiter', zeichenXO);
 			}
+			//console.log("Wir sind bei Zug: " + zuege);
 		}
 	});
-//////////////////////////////////////////////////////////////////////////////
 		client.on('S2Z_Eins', function(){
+
 		if(client.id === zuege%2){
 			if(wertDrin[3] === false){
 			if(zuege%2===0){
@@ -157,8 +160,8 @@ appServer.use(bodyParser.urlencoded({ // brauchen wir für das Parsen vom Reques
 			}
 		}
 	});
-//////////////////////////////////////////////////////////////////////////////
 		client.on('S2Z_Zwei', function(){
+
 		if(client.id === zuege%2){
 			if(wertDrin[4] === false){
 			if(zuege%2===0){
@@ -176,7 +179,7 @@ appServer.use(bodyParser.urlencoded({ // brauchen wir für das Parsen vom Reques
 			}
 		}
 	});
-//////////////////////////////////////////////////////////////////////////////
+		
 		client.on('S2Z_Drei', function(){
 
 		if(client.id === zuege%2){
@@ -196,7 +199,7 @@ appServer.use(bodyParser.urlencoded({ // brauchen wir für das Parsen vom Reques
 			}
 		}
 	});
-//////////////////////////////////////////////////////////////////////////////
+		
 		client.on('S3Z_Eins', function(){
 		if(client.id === zuege%2){
 			if(wertDrin[6] === false){
@@ -215,7 +218,6 @@ appServer.use(bodyParser.urlencoded({ // brauchen wir für das Parsen vom Reques
 			}
 		}
 	});
-//////////////////////////////////////////////////////////////////////////////
 		client.on('S3Z_Zwei', function(){
 		if(client.id === zuege%2){
 			if(wertDrin[7] === false){
@@ -234,7 +236,6 @@ appServer.use(bodyParser.urlencoded({ // brauchen wir für das Parsen vom Reques
 			}
 		}
 	});
-//////////////////////////////////////////////////////////////////////////////
 		client.on('S3Z_Drei', function(){
 
 		if(client.id === zuege%2){
