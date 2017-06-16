@@ -262,7 +262,7 @@ appServer.use(bodyParser.urlencoded({ // brauchen wir für das Parsen vom Reques
 			if(zuege > 4){ // erst ab dem 5ten zug kann man gewinnen erst dann wird die Berechnung gemacht!
 				console.log(" 0: " + SpielerFeldID[0] + " 1: " + SpielerFeldID[1] + " 2: " + SpielerFeldID[2] + " 3: " + SpielerFeldID[3] + " 4: " + SpielerFeldID[4] + " 5: " + SpielerFeldID[5] + " 6: " + SpielerFeldID[6] + " 7: " + SpielerFeldID[7] + "8: " + SpielerFeldID[8]); // Diese Ausgabe gibt uns auskunft wo welcher Spiler Geklickt hat
 //////////////////////////////////////////////////////////////////////////////			
-				if((SpielerFeldID[0] === 1 && SpielerFeldID[1] === 1 && SpielerFeldID[2] === 1) || (SpielerFeldID[0] === 0 && SpielerFeldID[1] === 0 && SpielerFeldID[2] === 0)){ // Erkennung ob der Spieler Gewonnen hat || Wagerecht Oben !
+				if(SpielerFeldID[0] === 1 && SpielerFeldID[1] === 1 && SpielerFeldID[2] === 1 || SpielerFeldID[0] === 0 && SpielerFeldID[1] === 0 && SpielerFeldID[2] === 0 ){ // Erkennung ob der Spieler Wagerecht Oben Gewonnen hat
 					zuege = 0; // Züge werden zurück gesetzt
 					for(i=0;i < SpielerFeldID.length;i++){ // Alle Feld Daten und Switche werden zurück gesetzt
 						SpielerFeldID[i] = null;		
@@ -270,8 +270,8 @@ appServer.use(bodyParser.urlencoded({ // brauchen wir für das Parsen vom Reques
 					}
 					io.emit('Gewonnen' , SpielerFeldID[0]+1); // Der gewinner wird geschickt
 				}
-////////////////////////////////////////////////////////////////////////////// Alles folgt dem Gleichen Prinzip ! daher keine Genauere Kommentierung mehr!
-				if((SpielerFeldID[3] === 1 && SpielerFeldID[4] === 1 && SpielerFeldID[5] === 1) || (SpielerFeldID[3] === 0 && SpielerFeldID[4] === 0 && SpielerFeldID[5] === 0)){ // Erkennung ob der Spieler Gewonnen hat || Wagerecht Mitte !
+//////////////////////////////////////////////////////////////////////////////
+				if(SpielerFeldID[3] === 1 && SpielerFeldID[4] === 1 && SpielerFeldID[5] === 1 || SpielerFeldID[3] === 0 && SpielerFeldID[4] === 0 && SpielerFeldID[5] === 0 ){ // Wagerecht Mitte
 					zuege = 0;
 					for(i=0;i < SpielerFeldID.length;i++){
 						SpielerFeldID[i] = null;		
@@ -280,7 +280,7 @@ appServer.use(bodyParser.urlencoded({ // brauchen wir für das Parsen vom Reques
 					io.emit('Gewonnen' , SpielerFeldID[3]+1);
 				}
 //////////////////////////////////////////////////////////////////////////////
-				if((SpielerFeldID[6] === 1 && SpielerFeldID[7] === 1 && SpielerFeldID[8] === 1) || (SpielerFeldID[6] === 0 && SpielerFeldID[7] === 0 && SpielerFeldID[8] === 0 )){ // Erkennung ob der Spieler Gewonnen hat || Wagerecht Unten !
+				if(SpielerFeldID[6] === 1 && SpielerFeldID[7] === 1 && SpielerFeldID[8] === 1 || SpielerFeldID[6] === 0 && SpielerFeldID[7] === 0 && SpielerFeldID[8] === 0 ){ // Wagerecht Unten
 					zuege = 0;
 					for(i=0;i < SpielerFeldID.length;i++){
 						SpielerFeldID[i] = null;		
@@ -289,7 +289,7 @@ appServer.use(bodyParser.urlencoded({ // brauchen wir für das Parsen vom Reques
 					io.emit('Gewonnen' , SpielerFeldID[6]+1);
 				}
 //////////////////////////////////////////////////////////////////////////////
-				if((SpielerFeldID[0] === 1 && SpielerFeldID[3] === 1 && SpielerFeldID[6] === 1) || (SpielerFeldID[0] === 0 && SpielerFeldID[3] === 0 && SpielerFeldID[6] === 0 )){ // Erkennung ob der Spieler Gewonnen hat || Senkrecht Links !
+				if(SpielerFeldID[0] === 1 && SpielerFeldID[3] === 1 && SpielerFeldID[6] === 1 || SpielerFeldID[0] === 0 && SpielerFeldID[3] === 0 && SpielerFeldID[6] === 0 ){ // Senkrecht Links
 					zuege = 0;
 					for(i=0;i < SpielerFeldID.length;i++){
 						SpielerFeldID[i] = null;		
@@ -298,7 +298,7 @@ appServer.use(bodyParser.urlencoded({ // brauchen wir für das Parsen vom Reques
 					io.emit('Gewonnen' ,  SpielerFeldID[0]+1);
 				}
 //////////////////////////////////////////////////////////////////////////////
-				if((SpielerFeldID[1] === 1 && SpielerFeldID[4] === 1 && SpielerFeldID[7] === 1) || (SpielerFeldID[1] === 0 && SpielerFeldID[4] === 0 && SpielerFeldID[7] === 0 )){ // Erkennung ob der Spieler Gewonnen hat || Senkrecht Mitte !
+				if(SpielerFeldID[1] === 1 && SpielerFeldID[4] === 1 && SpielerFeldID[7] === 1 || SpielerFeldID[1] === 0 && SpielerFeldID[4] === 0 && SpielerFeldID[7] === 0 ){ // Senkrecht Mitte
 					zuege = 0;
 					for(i=0;i < SpielerFeldID.length;i++){
 						SpielerFeldID[i] = null;		
@@ -307,7 +307,7 @@ appServer.use(bodyParser.urlencoded({ // brauchen wir für das Parsen vom Reques
 					io.emit('Gewonnen' , SpielerFeldID[1]+1);
 				}
 //////////////////////////////////////////////////////////////////////////////
-				if((SpielerFeldID[2] === 1 && SpielerFeldID[5] === 1 && SpielerFeldID[8] === 1) || (SpielerFeldID[2] === 0 && SpielerFeldID[5] === 0 && SpielerFeldID[8] === 0 )){ // Erkennung ob der Spieler Gewonnen hat || Senkrecht Rechts !
+				if(SpielerFeldID[2] === 1 && SpielerFeldID[5] === 1 && SpielerFeldID[8] === 1 || SpielerFeldID[2] === 0 && SpielerFeldID[5] === 0 && SpielerFeldID[8] === 0 ){ // Senkrecht Rechts
 					zuege = 0;
 					for(i=0;i < SpielerFeldID.length;i++){
 						SpielerFeldID[i] = null;		
@@ -316,7 +316,7 @@ appServer.use(bodyParser.urlencoded({ // brauchen wir für das Parsen vom Reques
 					io.emit('Gewonnen' , SpielerFeldID[2]+1);
 				}
 //////////////////////////////////////////////////////////////////////////////
-				if((SpielerFeldID[0] === 1 && SpielerFeldID[4] === 1 && SpielerFeldID[8] === 1) || (SpielerFeldID[0] === 0 && SpielerFeldID[4] === 0 && SpielerFeldID[8] === 0 )){ // Erkennung ob der Spieler Gewonnen hat || Quer Oben Links Unten Rechts !
+				if(SpielerFeldID[0] === 1 && SpielerFeldID[4] === 1 && SpielerFeldID[8] === 1 || SpielerFeldID[0] === 0 && SpielerFeldID[4] === 0 && SpielerFeldID[8] === 0 ){ // Quer Oben Links Unten Rechts
 					zuege = 0;
 					for(i=0;i < SpielerFeldID.length;i++){
 						SpielerFeldID[i] = null;		
@@ -325,7 +325,7 @@ appServer.use(bodyParser.urlencoded({ // brauchen wir für das Parsen vom Reques
 					io.emit('Gewonnen' , SpielerFeldID[0]+1);
 				}
 //////////////////////////////////////////////////////////////////////////////
-				if((SpielerFeldID[2] === 1 && SpielerFeldID[4] === 1 && SpielerFeldID[6] === 1) || (SpielerFeldID[2] === 0 && SpielerFeldID[4] === 0 && SpielerFeldID[6] === 0 )){ // Erkennung ob der Spieler Gewonnen hat || Quer Oben Rechts Unten Links !
+				if(SpielerFeldID[2] === 1 && SpielerFeldID[4] === 1 && SpielerFeldID[6] === 1 || SpielerFeldID[2] === 0 && SpielerFeldID[4] === 0 && SpielerFeldID[6] === 0 ){ // Quer Oben Rechts Unten Links
 					zuege = 0;
 					for(i=0;i < SpielerFeldID.length;i++){
 						SpielerFeldID[i] = null;		
@@ -336,13 +336,13 @@ appServer.use(bodyParser.urlencoded({ // brauchen wir für das Parsen vom Reques
 //////////////////////////////////////////////////////////////////////////////
 				
 
-				if(zuege === 9){ // Wenn alle Züge erreicht worden sind und kein Gewinner gezogen wird ist das Spiel unentschieden
-					zuege = 0; // Alles wird zurück gesetzt
+				if(zuege === 9){
+					zuege = 0;
 					for(i=0;i < SpielerFeldID.length;i++){
 						SpielerFeldID[i] = null;		
 						wertDrin[i] = false;
 					}
-					io.emit('Gewonnen' , 'Unentschieden'); // Ein Unentschieden Text wird zu den Clients geschickt
+					io.emit('Gewonnen' , 'Unentschieden');
 				}
 			}
 		});
