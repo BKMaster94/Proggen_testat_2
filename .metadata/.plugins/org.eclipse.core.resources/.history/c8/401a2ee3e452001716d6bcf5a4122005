@@ -16,7 +16,7 @@ var wertDrin = [false,false,false,false,false,false,false,false,false]; // Switc
 var spieler1= null;
 var spieler2= null;
 var gewinnRaten = [null,null,null,null,null,null,null,null,null];
-var zeichenXY = "";//Das Zeichen "X" oder "O" im normalfall
+var zeichenXY = "";//Das Zeichen "X" oder "Y" im normalfall
 var zuege = 0;//anzahl der schon gemachten Zuege
 var i = 0;
 //////////////////////////////////////////////////////////////////////////////

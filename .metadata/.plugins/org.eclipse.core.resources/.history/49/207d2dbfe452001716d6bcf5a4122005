@@ -1,6 +1,4 @@
-//////////////////////////////////////////////////////////////////////////////
-//Variablen Initialisierung 
-//////////////////////////////////////////////////////////////////////////////
+// Hier werden die Variablen initalisiert
 var express = require('express');
 var appServer = express();
 var server = appServer.listen(8081, function(){
@@ -10,18 +8,17 @@ var io = require('socket.io').listen(server);
 var fs= require('fs');
 var bodyParser = require('body-parser');
 var path = require('path');
+var test = "Server Daten";
 var clientCount = 0;
 var usernameForGame1 = "empty";
-var wertDrin = [false,false,false,false,false,false,false,false,false]; // Switch für häufigkeit des Klickens | JA ist nicht optimal :)
+var wertDrin = [false,false,false,false,false,false,false,false,false]; // Switch für häufigkeit des Klickens
 var spieler1= null;
 var spieler2= null;
 var gewinnRaten = [null,null,null,null,null,null,null,null,null];
-var zeichenXY = "";//Das Zeichen "X" oder "O" im normalfall
+var zeichenXY = "";//Das Zeichen "X" oder "Y" im normalfall
 var zuege = 0;//anzahl der schon gemachten Zuege
 var i = 0;
-//////////////////////////////////////////////////////////////////////////////
-//Variablen Initialisierung ENDE
-//////////////////////////////////////////////////////////////////////////////
+
 
 //////////////////////////////////////////////////////////////////////////////
 //Body-Parser
@@ -30,7 +27,7 @@ appServer.use(bodyParser.urlencoded({ // brauchen wir für das Parsen vom Reques
 	extended: true 
 }));
 //////////////////////////////////////////////////////////////////////////////
-//Body-Parser ENDE
+//Body-Parser Ende
 //////////////////////////////////////////////////////////////////////////////
 
 // Ende Body-Parser

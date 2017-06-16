@@ -12,7 +12,7 @@ $("#AnmeldeButton").click(function(){ //Wenn der Button wird geklickt und die Fu
 		dataType: "json",
 		data: {"player": SpielernameInput.value},
 		success: function(data){
-			window.location.href = "/TicTacToeSpiel";
+			window.location.href = "/SeiteWechseln";
 		}
 	});
 });

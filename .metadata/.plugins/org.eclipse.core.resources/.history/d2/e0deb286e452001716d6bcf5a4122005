@@ -1,6 +1,4 @@
-//////////////////////////////////////////////////////////////////////////////
-//Variablen Initialisierung 
-//////////////////////////////////////////////////////////////////////////////
+// Hier werden die Variablen initalisiert
 var express = require('express');
 var appServer = express();
 var server = appServer.listen(8081, function(){
@@ -10,28 +8,23 @@ var io = require('socket.io').listen(server);
 var fs= require('fs');
 var bodyParser = require('body-parser');
 var path = require('path');
+var test = "Server Daten";
 var clientCount = 0;
 var usernameForGame1 = "empty";
-var wertDrin = [false,false,false,false,false,false,false,false,false]; // Switch für häufigkeit des Klickens | JA ist nicht optimal :)
+var wertDrin = [false,false,false,false,false,false,false,false,false]; // Switch für häufigkeit des Klickens
 var spieler1= null;
 var spieler2= null;
 var gewinnRaten = [null,null,null,null,null,null,null,null,null];
-var zeichenXY = "";//Das Zeichen "X" oder "O" im normalfall
+var zeichenXY = "";//Das Zeichen "X" oder "Y" im normalfall
 var zuege = 0;//anzahl der schon gemachten Zuege
 var i = 0;
-//////////////////////////////////////////////////////////////////////////////
-//Variablen Initialisierung ENDE
-//////////////////////////////////////////////////////////////////////////////
 
-//////////////////////////////////////////////////////////////////////////////
-//Body-Parser
-//////////////////////////////////////////////////////////////////////////////
-appServer.use(bodyParser.urlencoded({ // brauchen wir für das Parsen vom Request body block
+
+// Hier ist der Body-Parser
+
+appServer.use(bodyParser.urlencoded({ // brauchen wir für das parsen vom Post body block
 	extended: true 
 }));
-//////////////////////////////////////////////////////////////////////////////
-//Body-Parser ENDE
-//////////////////////////////////////////////////////////////////////////////
 
 // Ende Body-Parser
 
@@ -383,7 +376,6 @@ appServer.use(bodyParser.urlencoded({ // brauchen wir für das Parsen vom Reques
 
 //////////////////////////////////////////////////////////////////////////////
 //Node Route
-// req = Request || res = Respond
 //////////////////////////////////////////////////////////////////////////////
 appServer.get('/', function(req,res){ // Url Abfangen 
 	res.sendFile(path.resolve('HTML/Anmeldung.html')); // Nimm die HTML Datei aus dem Ordner
@@ -399,7 +391,7 @@ appServer.get('/CSS/StyleIndex.css', function(req,res){ // URL Abfangen
 
 appServer.post('/SpielerNamenBekommen', function (req,res){ //der SpielerName wird durch ein JSON an den server geschickt
 	res.status(200).json(req.body);//Der Status "Success" wird übergeben und ein json Obj wird zurückgeschickt
-	usernameForGame1 = req.body.player; // Wert es JSON Objektes wird in eine Variable geschrieben. // wird der Benutzername Des Clients mit Socket.io()
+	usernameForGame1 = req.body.player;
 });
 
 appServer.get('/TicTacToeSpiel', function (req,res){ // Die Momentane Seite soll gewaechselt werden

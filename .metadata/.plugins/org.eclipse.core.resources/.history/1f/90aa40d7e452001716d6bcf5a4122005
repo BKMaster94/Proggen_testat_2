@@ -10,13 +10,14 @@ var io = require('socket.io').listen(server);
 var fs= require('fs');
 var bodyParser = require('body-parser');
 var path = require('path');
+var test = "Server Daten";
 var clientCount = 0;
 var usernameForGame1 = "empty";
 var wertDrin = [false,false,false,false,false,false,false,false,false]; // Switch für häufigkeit des Klickens | JA ist nicht optimal :)
 var spieler1= null;
 var spieler2= null;
 var gewinnRaten = [null,null,null,null,null,null,null,null,null];
-var zeichenXY = "";//Das Zeichen "X" oder "O" im normalfall
+var zeichenXY = "";//Das Zeichen "X" oder "Y" im normalfall
 var zuege = 0;//anzahl der schon gemachten Zuege
 var i = 0;
 //////////////////////////////////////////////////////////////////////////////
