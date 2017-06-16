@@ -1,3 +1,4 @@
+
 $("#target").click(function(){ // #Target == ID von HTML || .click == Auf click || Funktion in funktion
 	//alert("clickd"); // Alert == Dialogfenster
 	$.ajax({ // Jquery Ajax Funktion
@@ -40,48 +41,20 @@ $("#AnmeldeButton").click(function(){ //Wenn der Button wird geklickt und die Fu
 
 
 
-var socket = io();
-
-
-/////////
-// Spieler Initialisierung
-/////////
-var $playername1= $('#spieler1'); // Das HTML Object wird in eine JQuery Variable gespeichert
-var $playername2= $('#spieler2'); // Das HTML Object wird in eine JQuery Variable gespeichert
-
-
-socket.emit('username'); // Wird in die Username Funktion eingesprungen um den Benutzernamen festzulegen.
-
-socket.on('gameReady', function(message){
-	if(message === 2){
-				$('#TicTacToe').show(); // Wenn beide Spieler im Raum sind wird das TicTacToe Feld geladen // Jquery.show()
-	}
-});
-
-socket.on('SpielerName1', function(name){
-		$playername1.append(name); // Hier geben wir dem Ersten Spieler denn namen // JQuery.append |-> Hängge am innerHTML was an
-	});
-
-socket.on('SpielerName2', function(name){
-		$playername2.append(name); // Hier geben wir dem Ersten Spieler denn namen // JQuery.append |-> Hängge am innerHTML was an
-	});
-///////////
-
-
-
-var NeustartFenster;
-
-socket.on('Gewonnen', function(gewinner){ // Funktion zur Ermittlung des Gewinners
-	if(gewinner == 'Unentschieden'){
-		$('#gewonnenn').append('Sieger: Unentschieden')// Hier tragen wir das Unentschieden ein //JQuery.append |-> Hängge am innerHTML was an
-		$('#TicTacToe').hide();// Nach dem Beenden des Spiels wird das Feld wieder versteckt! |-> JQuery.hide();
-	}else{
-	$('#gewonnenn').append('Sieger: Spieler '+gewinner) // Hier tragen wir den Gewinner ein //JQuery.append |-> Hängge am innerHTML was an
-	$('#TicTacToe').hide(); // Nach dem Beenden des Spiels wird das Feld wieder versteckt! |-> JQuery.hide();
-	}
-	NeustartFenster = confirm('Neustarten ?'); // Confirm() |-> Alert mit auswahlmöglichkeit |-> Pure Javascript
+socket.on('Gewonnen', function(gewinner){
+ 	//alert(gewinner);
 	
-	if(NeustartFenster)
+	
+	if(gewinner == 'Unentschieden'){
+		$('#gewonnenn').append('Sieger: Unentschieden')
+		$('#TicTacToe').hide();
+	}else{
+	$('#gewonnenn').append('Sieger: Spieler '+gewinner)
+	$('#TicTacToe').hide();
+	}
+	test = confirm('Neustarten ?');
+	
+	if(test)
 	{		
 		window.location.href = "/";
 	}
@@ -89,6 +62,7 @@ socket.on('Gewonnen', function(gewinner){ // Funktion zur Ermittlung des Gewinne
 	{
 		
 	}
+
 });
 
 ///////////////////////////////////////////////////////////////////////////////
@@ -192,13 +166,6 @@ $("#S3Z_Drei").click(function(){// Das Feld wird geklickt
 	//	alert("wieder beim Client");
 		$('#S3Z_Drei').append(zeichen);// Zeichen an der Stelle_____schicken
 	});
-	
-	
-	
-
-
-
-	$('#TicTacToe').hide();
 ///////////////////////////////////////////////////////////////////////////////
 
 ///////////////////////////////////////////////////////////////////////////////

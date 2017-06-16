@@ -93,6 +93,7 @@ appServer.use(bodyParser.urlencoded({ // brauchen wir für das parsen vom Post b
 			}
 			
 			console.log('A user is Connectet: ' + client.username + " | ID: " + client.id);
+			client.emit('message', 'You are Connected');
 			client.on('disconnect', function(){
 				clientCount--;
 				console.log("Client disconnected: " + client.username + " | ID: " + client.id);

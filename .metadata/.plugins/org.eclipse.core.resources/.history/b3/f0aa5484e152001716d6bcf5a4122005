@@ -41,7 +41,9 @@
 
 
 
-
+var $playername1= $('#spieler1');
+var $playername2= $('#spieler2');
+var player= "";
 
 /* var player1 = true;
 var player2 = false;

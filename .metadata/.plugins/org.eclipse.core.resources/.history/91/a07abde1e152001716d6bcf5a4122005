@@ -73,13 +73,13 @@ var NeustartFenster;
 
 socket.on('Gewonnen', function(gewinner){ // Funktion zur Ermittlung des Gewinners
 	if(gewinner == 'Unentschieden'){
-		$('#gewonnenn').append('Sieger: Unentschieden')// Hier tragen wir das Unentschieden ein //JQuery.append |-> Hängge am innerHTML was an
-		$('#TicTacToe').hide();// Nach dem Beenden des Spiels wird das Feld wieder versteckt! |-> JQuery.hide();
+		$('#gewonnenn').append('Sieger: Unentschieden')
+		$('#TicTacToe').hide();
 	}else{
-	$('#gewonnenn').append('Sieger: Spieler '+gewinner) // Hier tragen wir den Gewinner ein //JQuery.append |-> Hängge am innerHTML was an
-	$('#TicTacToe').hide(); // Nach dem Beenden des Spiels wird das Feld wieder versteckt! |-> JQuery.hide();
+	$('#gewonnenn').append('Sieger: Spieler '+gewinner)
+	$('#TicTacToe').hide();
 	}
-	NeustartFenster = confirm('Neustarten ?'); // Confirm() |-> Alert mit auswahlmöglichkeit |-> Pure Javascript
+	test = confirm('Neustarten ?');
 	
 	if(NeustartFenster)
 	{		
@@ -89,6 +89,7 @@ socket.on('Gewonnen', function(gewinner){ // Funktion zur Ermittlung des Gewinne
 	{
 		
 	}
+
 });
 
 ///////////////////////////////////////////////////////////////////////////////

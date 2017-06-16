@@ -41,47 +41,55 @@ $("#AnmeldeButton").click(function(){ //Wenn der Button wird geklickt und die Fu
 
 
 var socket = io();
-
+var test;
 
 /////////
 // Spieler Initialisierung
 /////////
-var $playername1= $('#spieler1'); // Das HTML Object wird in eine JQuery Variable gespeichert
-var $playername2= $('#spieler2'); // Das HTML Object wird in eine JQuery Variable gespeichert
-
-
 socket.emit('username'); // Wird in die Username Funktion eingesprungen um den Benutzernamen festzulegen.
+socket.on('message', function(message){
+	//alert('The Server has a massage for you: ' + message);
+	
+});
+
 
 socket.on('gameReady', function(message){
+	//alert("momentane spielerzahl: " + message);
+	
 	if(message === 2){
-				$('#TicTacToe').show(); // Wenn beide Spieler im Raum sind wird das TicTacToe Feld geladen // Jquery.show()
+				$('#TicTacToe').show();
 	}
 });
 
 socket.on('SpielerName1', function(name){
-		$playername1.append(name); // Hier geben wir dem Ersten Spieler denn namen // JQuery.append |-> Hängge am innerHTML was an
+		//alert(name);
+		$playername1.append(name);
 	});
 
 socket.on('SpielerName2', function(name){
-		$playername2.append(name); // Hier geben wir dem Ersten Spieler denn namen // JQuery.append |-> Hängge am innerHTML was an
+		//alert(name);
+		$playername2.append(name);
 	});
 ///////////
 
 
 
-var NeustartFenster;
 
-socket.on('Gewonnen', function(gewinner){ // Funktion zur Ermittlung des Gewinners
-	if(gewinner == 'Unentschieden'){
-		$('#gewonnenn').append('Sieger: Unentschieden')// Hier tragen wir das Unentschieden ein //JQuery.append |-> Hängge am innerHTML was an
-		$('#TicTacToe').hide();// Nach dem Beenden des Spiels wird das Feld wieder versteckt! |-> JQuery.hide();
-	}else{
-	$('#gewonnenn').append('Sieger: Spieler '+gewinner) // Hier tragen wir den Gewinner ein //JQuery.append |-> Hängge am innerHTML was an
-	$('#TicTacToe').hide(); // Nach dem Beenden des Spiels wird das Feld wieder versteckt! |-> JQuery.hide();
-	}
-	NeustartFenster = confirm('Neustarten ?'); // Confirm() |-> Alert mit auswahlmöglichkeit |-> Pure Javascript
+
+socket.on('Gewonnen', function(gewinner){
+ 	//alert(gewinner);
 	
-	if(NeustartFenster)
+	
+	if(gewinner == 'Unentschieden'){
+		$('#gewonnenn').append('Sieger: Unentschieden')
+		$('#TicTacToe').hide();
+	}else{
+	$('#gewonnenn').append('Sieger: Spieler '+gewinner)
+	$('#TicTacToe').hide();
+	}
+	test = confirm('Neustarten ?');
+	
+	if(test)
 	{		
 		window.location.href = "/";
 	}
@@ -89,6 +97,7 @@ socket.on('Gewonnen', function(gewinner){ // Funktion zur Ermittlung des Gewinne
 	{
 		
 	}
+
 });
 
 ///////////////////////////////////////////////////////////////////////////////

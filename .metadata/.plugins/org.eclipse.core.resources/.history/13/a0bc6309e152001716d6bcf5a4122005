@@ -41,7 +41,9 @@
 
 
 
-
+var $playername1= $('#spieler1');
+var $playername2= $('#spieler2');
+var player= "";
 
 /* var player1 = true;
 var player2 = false;
@@ -57,7 +59,36 @@ function WerlcherDarfClicken(el){
 	}
 }
  */
+var socket = io();
 
+socket.emit('username'); // Wird in die Username Funktion eingesprungen um den Benutzernamen festzulegen.
+socket.on('message', function(message){
+	//alert('The Server has a massage for you: ' + message);
+	
+});
+
+
+socket.on('gameReady', function(message){
+	//alert("momentane spielerzahl: " + message);
+	
+	if(message === 2){
+				$('#TicTacToe').show();
+	}
+});
+
+socket.on('SpielerName1', function(name){
+		//alert(name);
+		$playername1.append(name);
+	});
+
+socket.on('SpielerName2', function(name){
+		//alert(name);
+		$playername2.append(name);
+	});
+	
+
+
+$('#TicTacToe').hide();
 
 </script>
 </HTML>
