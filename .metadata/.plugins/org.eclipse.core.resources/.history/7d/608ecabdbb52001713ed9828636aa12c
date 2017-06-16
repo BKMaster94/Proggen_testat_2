@@ -34,7 +34,7 @@ appServer.use(bodyParser.urlencoded({ // brauchen wir für das parsen vom Post b
 // Ende Body-Parser
 
 
-// Hier fängt socket.io anwe
+// Hier fängt socket.io an
 
 	io.on('connection', function(client){
 		client.on('username', function() {

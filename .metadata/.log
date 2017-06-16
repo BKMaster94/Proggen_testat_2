@@ -9047,3 +9047,199 @@ user global configuration and to define the default location to store repositori
 not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
 EGit might behave differently since they see different configuration options.
 This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+!SESSION 2017-06-16 13:03:33.775 -----------------------------------------------
+eclipse.buildId=4.6.3.M20170301-0400
+java.version=1.8.0_121
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=de_DE
+Framework arguments:  -product org.eclipse.epp.package.javascript.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.javascript.product
+
+!ENTRY org.eclipse.egit.ui 2 0 2017-06-16 13:03:45.143
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\Bruno'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+!SESSION 2017-06-16 19:30:33.496 -----------------------------------------------
+eclipse.buildId=4.6.3.M20170301-0400
+java.version=1.8.0_121
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=de_DE
+Framework arguments:  -product org.eclipse.epp.package.javascript.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.javascript.product
+
+!ENTRY org.eclipse.egit.ui 2 0 2017-06-16 19:30:41.678
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\Bruno'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY org.eclipse.debug.ui 4 120 2017-06-16 19:31:31.795
+!MESSAGE org.eclipse.debug.ui.toggleBreakpointsTargetFactory extension failed to load breakpoint toggle target because the specified id is already registered.  Specified ID is: org.chromium.debug.ui.ChromiumToggleBreakpointTargetFactory
+
+!ENTRY tern.eclipse.ide.core 4 0 2017-06-16 19:38:42.102
+!MESSAGE TernError: No type found at the given position.
+!STACK 0
+tern.TernException: TernError: No type found at the given position.
+	at tern.server.DefaultResponseHandler.getData(DefaultResponseHandler.java:45)
+	at tern.server.protocol.TernResultsProcessorsFactory.makeRequestAndProcess(TernResultsProcessorsFactory.java:43)
+	at tern.eclipse.ide.internal.core.resources.IDETernServerAsyncReqProcessor.run(IDETernServerAsyncReqProcessor.java:104)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+Caused by: tern.TernException: TernError: No type found at the given position.
+	at tern.server.nodejs.NodejsTernHelper.makeRequest(NodejsTernHelper.java:86)
+	at tern.server.nodejs.NodejsTernServer.makeRequest(NodejsTernServer.java:163)
+	at tern.server.nodejs.NodejsTernServer.request(NodejsTernServer.java:127)
+	at tern.server.protocol.TernResultsProcessorsFactory.makeRequestAndProcess(TernResultsProcessorsFactory.java:42)
+	... 2 more
+
+!ENTRY tern.eclipse.ide.core 4 0 2017-06-16 19:42:46.910
+!MESSAGE TernError: No type found at the given position.
+!STACK 0
+tern.TernException: TernError: No type found at the given position.
+	at tern.server.DefaultResponseHandler.getData(DefaultResponseHandler.java:45)
+	at tern.server.protocol.TernResultsProcessorsFactory.makeRequestAndProcess(TernResultsProcessorsFactory.java:43)
+	at tern.eclipse.ide.internal.core.resources.IDETernServerAsyncReqProcessor.run(IDETernServerAsyncReqProcessor.java:104)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+Caused by: tern.TernException: TernError: No type found at the given position.
+	at tern.server.nodejs.NodejsTernHelper.makeRequest(NodejsTernHelper.java:86)
+	at tern.server.nodejs.NodejsTernServer.makeRequest(NodejsTernServer.java:163)
+	at tern.server.nodejs.NodejsTernServer.request(NodejsTernServer.java:127)
+	at tern.server.protocol.TernResultsProcessorsFactory.makeRequestAndProcess(TernResultsProcessorsFactory.java:42)
+	... 2 more
+
+!ENTRY tern.eclipse.ide.core 4 0 2017-06-16 19:44:11.135
+!MESSAGE TernError: No type found at the given position.
+!STACK 0
+tern.TernException: TernError: No type found at the given position.
+	at tern.server.DefaultResponseHandler.getData(DefaultResponseHandler.java:45)
+	at tern.server.protocol.TernResultsProcessorsFactory.makeRequestAndProcess(TernResultsProcessorsFactory.java:43)
+	at tern.eclipse.ide.internal.core.resources.IDETernServerAsyncReqProcessor.run(IDETernServerAsyncReqProcessor.java:104)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+Caused by: tern.TernException: TernError: No type found at the given position.
+	at tern.server.nodejs.NodejsTernHelper.makeRequest(NodejsTernHelper.java:86)
+	at tern.server.nodejs.NodejsTernServer.makeRequest(NodejsTernServer.java:163)
+	at tern.server.nodejs.NodejsTernServer.request(NodejsTernServer.java:127)
+	at tern.server.protocol.TernResultsProcessorsFactory.makeRequestAndProcess(TernResultsProcessorsFactory.java:42)
+	... 2 more
+
+!ENTRY tern.eclipse.ide.core 4 0 2017-06-16 19:44:58.792
+!MESSAGE TernError: No type found at the given position.
+!STACK 0
+tern.TernException: TernError: No type found at the given position.
+	at tern.server.DefaultResponseHandler.getData(DefaultResponseHandler.java:45)
+	at tern.server.protocol.TernResultsProcessorsFactory.makeRequestAndProcess(TernResultsProcessorsFactory.java:43)
+	at tern.eclipse.ide.internal.core.resources.IDETernServerAsyncReqProcessor.run(IDETernServerAsyncReqProcessor.java:104)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+Caused by: tern.TernException: TernError: No type found at the given position.
+	at tern.server.nodejs.NodejsTernHelper.makeRequest(NodejsTernHelper.java:86)
+	at tern.server.nodejs.NodejsTernServer.makeRequest(NodejsTernServer.java:163)
+	at tern.server.nodejs.NodejsTernServer.request(NodejsTernServer.java:127)
+	at tern.server.protocol.TernResultsProcessorsFactory.makeRequestAndProcess(TernResultsProcessorsFactory.java:42)
+	... 2 more
+
+!ENTRY tern.eclipse.ide.core 4 0 2017-06-16 19:45:07.127
+!MESSAGE TernError: No type found at the given position.
+!STACK 0
+tern.TernException: TernError: No type found at the given position.
+	at tern.server.DefaultResponseHandler.getData(DefaultResponseHandler.java:45)
+	at tern.server.protocol.TernResultsProcessorsFactory.makeRequestAndProcess(TernResultsProcessorsFactory.java:43)
+	at tern.eclipse.ide.internal.core.resources.IDETernServerAsyncReqProcessor.run(IDETernServerAsyncReqProcessor.java:104)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+Caused by: tern.TernException: TernError: No type found at the given position.
+	at tern.server.nodejs.NodejsTernHelper.makeRequest(NodejsTernHelper.java:86)
+	at tern.server.nodejs.NodejsTernServer.makeRequest(NodejsTernServer.java:163)
+	at tern.server.nodejs.NodejsTernServer.request(NodejsTernServer.java:127)
+	at tern.server.protocol.TernResultsProcessorsFactory.makeRequestAndProcess(TernResultsProcessorsFactory.java:42)
+	... 2 more
+
+!ENTRY tern.eclipse.ide.core 4 0 2017-06-16 19:45:10.700
+!MESSAGE TernError: No type found at the given position.
+!STACK 0
+tern.TernException: TernError: No type found at the given position.
+	at tern.server.DefaultResponseHandler.getData(DefaultResponseHandler.java:45)
+	at tern.server.protocol.TernResultsProcessorsFactory.makeRequestAndProcess(TernResultsProcessorsFactory.java:43)
+	at tern.eclipse.ide.internal.core.resources.IDETernServerAsyncReqProcessor.run(IDETernServerAsyncReqProcessor.java:104)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+Caused by: tern.TernException: TernError: No type found at the given position.
+	at tern.server.nodejs.NodejsTernHelper.makeRequest(NodejsTernHelper.java:86)
+	at tern.server.nodejs.NodejsTernServer.makeRequest(NodejsTernServer.java:163)
+	at tern.server.nodejs.NodejsTernServer.request(NodejsTernServer.java:127)
+	at tern.server.protocol.TernResultsProcessorsFactory.makeRequestAndProcess(TernResultsProcessorsFactory.java:42)
+	... 2 more
+
+!ENTRY tern.eclipse.ide.core 4 0 2017-06-16 19:45:10.811
+!MESSAGE TernError: No type found at the given position.
+!STACK 0
+tern.TernException: TernError: No type found at the given position.
+	at tern.server.DefaultResponseHandler.getData(DefaultResponseHandler.java:45)
+	at tern.server.protocol.TernResultsProcessorsFactory.makeRequestAndProcess(TernResultsProcessorsFactory.java:43)
+	at tern.eclipse.ide.internal.core.resources.IDETernServerAsyncReqProcessor.run(IDETernServerAsyncReqProcessor.java:104)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+Caused by: tern.TernException: TernError: No type found at the given position.
+	at tern.server.nodejs.NodejsTernHelper.makeRequest(NodejsTernHelper.java:86)
+	at tern.server.nodejs.NodejsTernServer.makeRequest(NodejsTernServer.java:163)
+	at tern.server.nodejs.NodejsTernServer.request(NodejsTernServer.java:127)
+	at tern.server.protocol.TernResultsProcessorsFactory.makeRequestAndProcess(TernResultsProcessorsFactory.java:42)
+	... 2 more
+
+!ENTRY tern.eclipse.ide.core 4 0 2017-06-16 19:45:12.659
+!MESSAGE TernError: No type found at the given position.
+!STACK 0
+tern.TernException: TernError: No type found at the given position.
+	at tern.server.DefaultResponseHandler.getData(DefaultResponseHandler.java:45)
+	at tern.server.protocol.TernResultsProcessorsFactory.makeRequestAndProcess(TernResultsProcessorsFactory.java:43)
+	at tern.eclipse.ide.internal.core.resources.IDETernServerAsyncReqProcessor.run(IDETernServerAsyncReqProcessor.java:104)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+Caused by: tern.TernException: TernError: No type found at the given position.
+	at tern.server.nodejs.NodejsTernHelper.makeRequest(NodejsTernHelper.java:86)
+	at tern.server.nodejs.NodejsTernServer.makeRequest(NodejsTernServer.java:163)
+	at tern.server.nodejs.NodejsTernServer.request(NodejsTernServer.java:127)
+	at tern.server.protocol.TernResultsProcessorsFactory.makeRequestAndProcess(TernResultsProcessorsFactory.java:42)
+	... 2 more
+
+!ENTRY tern.eclipse.ide.core 4 0 2017-06-16 19:46:35.771
+!MESSAGE TernError: No type found at the given position.
+!STACK 0
+tern.TernException: TernError: No type found at the given position.
+	at tern.server.DefaultResponseHandler.getData(DefaultResponseHandler.java:45)
+	at tern.server.protocol.TernResultsProcessorsFactory.makeRequestAndProcess(TernResultsProcessorsFactory.java:43)
+	at tern.eclipse.ide.internal.core.resources.IDETernServerAsyncReqProcessor.run(IDETernServerAsyncReqProcessor.java:104)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+Caused by: tern.TernException: TernError: No type found at the given position.
+	at tern.server.nodejs.NodejsTernHelper.makeRequest(NodejsTernHelper.java:86)
+	at tern.server.nodejs.NodejsTernServer.makeRequest(NodejsTernServer.java:163)
+	at tern.server.nodejs.NodejsTernServer.request(NodejsTernServer.java:127)
+	at tern.server.protocol.TernResultsProcessorsFactory.makeRequestAndProcess(TernResultsProcessorsFactory.java:42)
+	... 2 more
+
+!ENTRY tern.eclipse.ide.core 4 0 2017-06-16 19:47:21.662
+!MESSAGE TernError: No type found at the given position.
+!STACK 0
+tern.TernException: TernError: No type found at the given position.
+	at tern.server.DefaultResponseHandler.getData(DefaultResponseHandler.java:45)
+	at tern.server.protocol.TernResultsProcessorsFactory.makeRequestAndProcess(TernResultsProcessorsFactory.java:43)
+	at tern.eclipse.ide.internal.core.resources.IDETernServerAsyncReqProcessor.run(IDETernServerAsyncReqProcessor.java:104)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+Caused by: tern.TernException: TernError: No type found at the given position.
+	at tern.server.nodejs.NodejsTernHelper.makeRequest(NodejsTernHelper.java:86)
+	at tern.server.nodejs.NodejsTernServer.makeRequest(NodejsTernServer.java:163)
+	at tern.server.nodejs.NodejsTernServer.request(NodejsTernServer.java:127)
+	at tern.server.protocol.TernResultsProcessorsFactory.makeRequestAndProcess(TernResultsProcessorsFactory.java:42)
+	... 2 more
+
+!ENTRY tern.eclipse.ide.core 4 0 2017-06-16 19:47:21.810
+!MESSAGE TernError: No type found at the given position.
+!STACK 0
+tern.TernException: TernError: No type found at the given position.
+	at tern.server.DefaultResponseHandler.getData(DefaultResponseHandler.java:45)
+	at tern.server.protocol.TernResultsProcessorsFactory.makeRequestAndProcess(TernResultsProcessorsFactory.java:43)
+	at tern.eclipse.ide.internal.core.resources.IDETernServerAsyncReqProcessor.run(IDETernServerAsyncReqProcessor.java:104)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+Caused by: tern.TernException: TernError: No type found at the given position.
+	at tern.server.nodejs.NodejsTernHelper.makeRequest(NodejsTernHelper.java:86)
+	at tern.server.nodejs.NodejsTernServer.makeRequest(NodejsTernServer.java:163)
+	at tern.server.nodejs.NodejsTernServer.request(NodejsTernServer.java:127)
+	at tern.server.protocol.TernResultsProcessorsFactory.makeRequestAndProcess(TernResultsProcessorsFactory.java:42)
+	... 2 more

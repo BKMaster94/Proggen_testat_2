@@ -34,7 +34,7 @@ appServer.use(bodyParser.urlencoded({ // brauchen wir für das parsen vom Post b
 // Ende Body-Parser
 
 
-// Hier fängt socket.io anwe
+// Hier fängt socket.io an
 
 	io.on('connection', function(client){
 		client.on('username', function() {
@@ -78,17 +78,14 @@ appServer.use(bodyParser.urlencoded({ // brauchen wir für das parsen vom Post b
 		if(client.id === zuege%2){ //ADI  wenn die id des Spielers gleich der zuege modulo 2 ist... somit immer abwechselnd
 //			console.log("S1Z_Eins im server angekommen");
 			if(wertDrin[0] === false){
-			
+			io.emit('S1Z_EinsEmiter', zeichenXY);
 			if(zuege%2===0){
 				zeichenXY = "X";
-				wertDrin[0] = true;
 			}
 			else{
 				zeichenXY = "O";
-				wertDrin[0] = true;
 			}
 			zuege++;
-			io.emit('S1Z_EinsEmiter', zeichenXY);
 		}
 		}
 		});
@@ -96,7 +93,7 @@ appServer.use(bodyParser.urlencoded({ // brauchen wir für das parsen vom Post b
 
 		if(client.id === zuege%2){
 //			console.log("S1Z_Zwei im server angekommen");
-			
+			io.emit('S1Z_ZweiEmiter', zeichenXY);
 			if(zuege%2===0){
 				zeichenXY = "X";
 			}
@@ -104,14 +101,13 @@ appServer.use(bodyParser.urlencoded({ // brauchen wir für das parsen vom Post b
 				zeichenXY = "O";
 			}
 			zuege++;
-			io.emit('S1Z_ZweiEmiter', zeichenXY);
 		}
 		});
 		client.on('S1Z_Drei', function(){//Es wurde das Feld .. clicked
 
 		if(client.id === zuege%2){
 //			console.log("S1Z_Drei im server angekommen");
-			
+			io.emit('S1Z_DreiEmiter', zeichenXY);
 			if(zuege%2===0){
 				zeichenXY = "X";
 			}
@@ -119,14 +115,13 @@ appServer.use(bodyParser.urlencoded({ // brauchen wir für das parsen vom Post b
 				zeichenXY = "O";
 			}
 			zuege++;
-			io.emit('S1Z_DreiEmiter', zeichenXY);
 		}
 		});
 		client.on('S2Z_Eins', function(){//Es wurde das Feld .. clicked
 
 		if(client.id === zuege%2){
 //			console.log("S2Z_Eins im server angekommen");
-			
+			io.emit('S2Z_EinsEmiter', zeichenXY);
 			if(zuege%2===0){
 				zeichenXY = "X";
 			}
@@ -134,14 +129,13 @@ appServer.use(bodyParser.urlencoded({ // brauchen wir für das parsen vom Post b
 				zeichenXY = "O";
 			}
 			zuege++;
-			io.emit('S2Z_EinsEmiter', zeichenXY);
 		}
 		});
 		client.on('S2Z_Zwei', function(){//Es wurde das Feld .. clicked
 
 		if(client.id === zuege%2){
 //			console.log("S2Z_Zwei im server angekommen");
-			
+			io.emit('S2Z_ZweiEmiter', zeichenXY);
 			if(zuege%2===0){
 				zeichenXY = "X";
 			}
@@ -149,14 +143,13 @@ appServer.use(bodyParser.urlencoded({ // brauchen wir für das parsen vom Post b
 				zeichenXY = "O";
 			}
 			zuege++;
-			io.emit('S2Z_ZweiEmiter', zeichenXY);
 		}
 		});
 		client.on('S2Z_Drei', function(){//Es wurde das Feld .. clicked
 
 		if(client.id === zuege%2){
 //			console.log("S2Z_Drei im server angekommen");
-			
+			io.emit('S2Z_DreiEmiter', zeichenXY);
 			if(zuege%2===0){
 				zeichenXY = "X";
 			}
@@ -164,14 +157,13 @@ appServer.use(bodyParser.urlencoded({ // brauchen wir für das parsen vom Post b
 				zeichenXY = "O";
 			}
 			zuege++;
-			io.emit('S2Z_DreiEmiter', zeichenXY);
 		}
 		});
 		client.on('S3Z_Eins', function(){//Es wurde das Feld .. clicked
 
 		if(client.id === zuege%2){
 //			console.log("S3Z_Eins im server angekommen");
-			
+			io.emit('S3Z_EinsEmiter', zeichenXY);
 			if(zuege%2===0){
 				zeichenXY = "X";
 			}
@@ -179,14 +171,13 @@ appServer.use(bodyParser.urlencoded({ // brauchen wir für das parsen vom Post b
 				zeichenXY = "O";
 			}
 			zuege++;
-			io.emit('S3Z_EinsEmiter', zeichenXY);
 		}
 		});
 		client.on('S3Z_Zwei', function(){//Es wurde das Feld .. clicked
 
 		if(client.id === zuege%2){
 //			console.log("S3Z_Zwei im server angekommen");
-			
+			io.emit('S3Z_ZweiEmiter', zeichenXY);
 			if(zuege%2===0){
 				zeichenXY = "X";
 			}
@@ -194,14 +185,13 @@ appServer.use(bodyParser.urlencoded({ // brauchen wir für das parsen vom Post b
 				zeichenXY = "O";
 			}
 			zuege++;
-			io.emit('S3Z_ZweiEmiter', zeichenXY);
 		}
 		});
 		client.on('S3Z_Drei', function(){//Es wurde das Feld .. clicked
 
 		if(client.id === zuege%2){
 //			console.log("S3Z_Drei im server angekommen");
-			
+			io.emit('S3Z_DreiEmiter', zeichenXY);
 			if(zuege%2===0){
 				zeichenXY = "X";
 			}
@@ -209,7 +199,6 @@ appServer.use(bodyParser.urlencoded({ // brauchen wir für das parsen vom Post b
 				zeichenXY = "O";
 			}
 			zuege++;
-			io.emit('S3Z_DreiEmiter', zeichenXY);
 		}
 		});
 	});
