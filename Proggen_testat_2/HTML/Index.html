@@ -6,62 +6,10 @@
 	
 	<meta name="Dokumentbe4schreibung" content="Index">
 	<meta name="viewport" content="width=device-width, initial-sclae=1.0">
+	<link rel="stylesheet" type="text/css" href="CSS/StyleIndex.css">
 	<title>TicTacTo</title>
-	<style> 
-	#table{
-		font: bold 100px 'Comic Sans';
-		margin-left:2em;
-		margin-top:2em;
-		display: table;
-	}
-	
-	table tr th{
-		width: 120px;
-		height: 120px;
-	}
-	
-	#S1Z_Eins{
-		border-right: 4px solid black;
-		border-bottom: 4px solid black;
-	}
-	#S1Z_Zwei
-	{
-		border-bottom: 4px solid black;
-	}
-	#S1Z_Drei
-	{
-		border-left: 4px solid black;
-		border-bottom: 4px solid black;
-	}
-	#S2Z_Eins{
-		border-right: 4px solid black;
-	}
-	#S2Z_Zwei
-	{
-		border-radius:: 2px;
-	}
-	#S2Z_Drei
-	{
-		border-left: 4px solid black;
-		border-radius:: 2px;
-		
-	}	
-	#S3Z_Eins{
-		border-right: 4px solid black;
-		border-top: 4px solid black;
-	}
-	#S3Z_Zwei
-	{
-		border-top: 4px solid black;
-	}
-	#S3Z_Drei
-	{
-		border-left: 4px solid black;
-		border-top: 4px solid black;
-	}
-	</style>
-</HEAD>
 
+</HEAD>
 <BODY>
 <div id="spieler1"> Spieler 1: </div>
 <div id="spieler2"> Spieler 2: </div>
@@ -72,19 +20,19 @@
 
 	<table id="table">
 		<tr id="S_Eins">
-			<th id="S1Z_Eins" onclick="WerlcherDarfClicken(this.id);"></th>
-			<th id="S1Z_Zwei" onclick="WerlcherDarfClicken(this.id);"></th>
-			<th id="S1Z_Drei" onclick="WerlcherDarfClicken(this.id);"></th>
+			<th id="S1Z_Eins" ></th>
+			<th id="S1Z_Zwei" ></th>
+			<th id="S1Z_Drei" ></th>
 		</tr>
 		<tr id="S_Zwei">
-			<th id="S2Z_Eins" onclick="WerlcherDarfClicken(this.id);"></th>
-			<th id="S2Z_Zwei" onclick="WerlcherDarfClicken(this.id);"></th>
-			<th id="S2Z_Drei" onclick="WerlcherDarfClicken(this.id);"></th>
+			<th id="S2Z_Eins" ></th>
+			<th id="S2Z_Zwei" ></th>
+			<th id="S2Z_Drei" ></th>
 		</tr>
 		<tr id="S_Drei">
-		 	<th id="S3Z_Eins" onclick="WerlcherDarfClicken(this.id);"></th>
-			<th id="S3Z_Zwei" onclick="WerlcherDarfClicken(this.id);"></th>
-			<th id="S3Z_Drei" onclick="WerlcherDarfClicken(this.id);"></th>
+		 	<th id="S3Z_Eins" ></th>
+			<th id="S3Z_Zwei" ></th>
+			<th id="S3Z_Drei" ></th>
 		</tr>
 	</table>
 </div>
@@ -97,7 +45,8 @@
 var $playername1= $('#spieler1');
 var $playername2= $('#spieler2');
 var player= "";
-var player1 = true;
+
+/* var player1 = true;
 var player2 = false;
 
 function WerlcherDarfClicken(el){
@@ -110,7 +59,7 @@ function WerlcherDarfClicken(el){
 		document.getElementById(el).innerHTML='o';
 	}
 }
-
+ */
 var socket = io();
 
 socket.emit('username'); // Wird in die Username Funktion eingesprungen um den Benutzernamen festzulegen.
@@ -137,6 +86,8 @@ socket.on('SpielerName2', function(name){
 		alert(name);
 		$playername2.append(name);
 	});
+	
+
 
 $('#TicTacToe').hide();
 
