@@ -134,15 +134,14 @@ $("#S3Z_Drei").click(function(){// Das Feld wird geklickt
 	var NeustartFenster;
 
 	socket.on('Gewonnen', function(gewinner){ // Funktion zur Ermittlung des Gewinners
-		NeustartFenster = confirm('Neustarten ? || Gewinner: Spieler' + gewinner); // Confirm() |-> Alert mit auswahlmöglichkeit |-> Pure Javascript
 		if(gewinner == 'Unentschieden'){
-			NeustartFenster = confirm('Neustarten ? || Gewinner: Unentschieden'); // Confirm() |-> Alert mit auswahlmöglichkeit |-> Pure Javascript
 			$('#gewonnenn').append('Sieger: Unentschieden')// Hier tragen wir das Unentschieden ein //JQuery.append |-> Hängge am innerHTML was an
 			$('#TicTacToe').hide();// Nach dem Beenden des Spiels wird das Feld wieder versteckt! |-> JQuery.hide();
 		}else{
 		$('#gewonnenn').append('Sieger: Spieler '+gewinner) // Hier tragen wir den Gewinner ein //JQuery.append |-> Hängge am innerHTML was an
 		$('#TicTacToe').hide(); // Nach dem Beenden des Spiels wird das Feld wieder versteckt! |-> JQuery.hide();
 		}
+		NeustartFenster = confirm('Neustarten ? Gewinner: Spieler' + gewinner); // Confirm() |-> Alert mit auswahlmöglichkeit |-> Pure Javascript
 		if(NeustartFenster)
 		{		
 			window.location.href = "/"; // Verlinkung auf die Startseite + Disconnect des Clients! |-> Pure Javascript
